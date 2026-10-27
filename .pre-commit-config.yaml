@@ -1,0 +1,12 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-json
+        files: \.(json|dashpro)$
+        types: [file]
+      # .dashpro files stay on one line, exactly as the plugin exports them: only .json is reformatted
+      - id: pretty-format-json
+        args: [--autofix, --no-sort-keys, --indent=2]
+        files: \.json$
+        types: [file]

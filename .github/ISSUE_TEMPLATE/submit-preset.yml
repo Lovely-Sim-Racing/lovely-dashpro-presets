@@ -1,0 +1,60 @@
+name: Submit a Preset
+description: Share your Lovely Dashboard Pro setup with everyone
+title: "[Preset] "
+labels: ["preset submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing your setup! Export it from the Lovely Plugin first: **Dash Pro > Pages & Layout > Export**.
+        We'll check the preset, make the screenshots and add it to the list. You'll be notified here when it's live.
+
+  - type: input
+    id: name
+    attributes:
+      label: Preset name
+      description: A short name people will see in the plugin.
+      placeholder: LMU Endurance
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: The name to credit. Your GitHub name is used if you leave this empty.
+      placeholder: Your name or team
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: One or two sentences. What is it good for?
+      placeholder: Fuel and Virtual Energy focused, with a qualifying page.
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Optional, separated by commas. For example a sim, a class or a race type.
+      placeholder: LMU, Hypercar, Endurance
+
+  - type: textarea
+    id: preset
+    attributes:
+      label: Preset file
+      description: |
+        Zip your `.dashpro` file and drag the zip in here. GitHub doesn't accept `.dashpro` files directly.
+        Or open the `.dashpro` file in Notepad and paste everything here.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Sharing
+      options:
+        - label: I made this preset, or I have its author's permission to share it, and it may be published under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+          required: true
