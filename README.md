@@ -101,6 +101,20 @@ A `.dashpro` file is JSON on a single line, with one section per tab of the plug
   # EngineAlertEnabled      (Bool)   - Show the Engine & Ignition alerts
   # EngineAlertSize         (Int)    - 0: Small, 1: Full Screen
   # EngineAlertColors       (Int)    - 0: Normal, 1: Inverted
+  # LaunchAlertEnabled      (Bool)   - Show Launch Mode (off by default)
+  # LaunchAlertSize         (Int)    - 0: Small, 1: Full Screen
+  # LaunchAlertColors       (Int)    - 0: Normal, 1: Inverted
+  # LaunchClutchAbove       (Int)    - Launch Mode shows with the clutch above this %
+  # LaunchSpeedBelow        (Int)    - ...and the speed below this (SimHub's speed unit)
+  # LaunchWindow            (Int)    - Green window: 0: Auto (F1 only), 1: On, 2: Off
+  # LaunchRpmFrom           (Int)    - Green window RPM, from
+  # LaunchRpmTo             (Int)    - Green window RPM, to
+  # LaunchThrottleFrom      (Int)    - Green window throttle %, from
+  # LaunchThrottleTo        (Int)    - Green window throttle %, to
+  # LiftAlertEnabled        (Bool)   - Show Lift Now (Le Mans Ultimate's lift and coast cue)
+  # LiftAlertSize           (Int)    - 0: Strip, 1: Full Screen
+  # LiftAlertColors         (Int)    - 0: Normal, 1: Inverted
+  # LiftAlertPoint          (Int)    - Where on the lift and coast count (0-255) LIFT NOW starts, 220 by default
   # RotaryDialsEnabled      (Bool)   - Show the Rotary Dials labels and alerts
   # RotaryDialsColors       (Int)    - 0: Normal, 1: Inverted
   # DamageAlertEnabled      (Bool)   - Show the Damage Alert
