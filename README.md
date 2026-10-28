@@ -115,6 +115,11 @@ A `.dashpro` file is JSON on a single line, with one section per tab of the plug
   # LiftAlertSize           (Int)    - 0: Strip, 1: Full Screen
   # LiftAlertColors         (Int)    - 0: Normal, 1: Inverted
   # LiftAlertPoint          (Int)    - Where on the lift and coast count (0-255) LIFT NOW starts, 220 by default
+  # FuelAlertEnabled        (Bool)   - Show Fuel Warnings
+  # FuelAlertColors         (Int)    - LOW FUEL strip, 0: Normal, 1: Inverted
+  # FuelWarningLaps         (Int)    - Level 1: laps of fuel left when the Fuel value blinks red (0-10, 4 by default, 0: off)
+  # FuelCriticalLaps        (Int)    - Level 2: laps of fuel left when the LOW FUEL strip shows (0-10, 2 by default, 0: off)
+  # PitNowAlertEnabled      (Bool)   - Show the PIT NOW strip with the fuel warnings (last 20% of the lap with about a lap of fuel left, not in F1)
   # RotaryDialsEnabled      (Bool)   - Show the Rotary Dials labels and alerts
   # RotaryDialsColors       (Int)    - 0: Normal, 1: Inverted
   # DamageAlertEnabled      (Bool)   - Show the Damage Alert
