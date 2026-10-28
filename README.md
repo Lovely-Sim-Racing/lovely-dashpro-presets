@@ -127,6 +127,7 @@ A `.dashpro` file is JSON on a single line, with one section per tab of the plug
   # EngineWarningFuelPressure (Bool) - Warn on fuel pressure (iRacing)
   # EngineWarningWaterLimit (Int)    - Sims without warning lights: water temperature limit in °C (110 by default, 0: off)
   # EngineWarningOilLimit   (Int)    - Sims without warning lights: oil temperature limit in °C (130 by default, 0: off)
+  # FlagsAlertEnabled       (Bool)   - Show Flags (a block over the gear for 3 s, then a thin bar across the top while the flag is out)
   # RotaryDialsEnabled      (Bool)   - Show the Rotary Dials labels and alerts
   # RotaryDialsColors       (Int)    - 0: Normal, 1: Inverted
   # DamageAlertEnabled      (Bool)   - Show the Damage Alert
