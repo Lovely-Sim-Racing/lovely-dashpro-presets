@@ -4,7 +4,7 @@
       "id": "dash-pro-default",
       "name": "Dash Pro Default",
       "author": "Lovely Sim Racing",
-      "description": "The pages and layouts Lovely Dashboard Pro comes with: tyres, TC and ABS on the main page, full screen standings and track map, and a qualifying page with delta and estimated lap.",
+      "description": "The pages and layouts Lovely Dashboard Pro comes with: tyres, TC and ABS on the main page, full screen standings, damage and track map, and a qualifying page with delta, estimated lap and average tyre temperatures.",
       "tags": [
         "Default",
         "All Sims"
@@ -12,6 +12,7 @@
       "pages": [
         "Primary",
         "Leaderboard",
+        "Damage",
         "Map",
         "Quali"
       ],
@@ -21,12 +22,13 @@
       "pageImages": [
         "dash-pro-default/pages/01-primary.png",
         "dash-pro-default/pages/02-leaderboard.png",
-        "dash-pro-default/pages/03-map.png",
-        "dash-pro-default/pages/04-quali.png"
+        "dash-pro-default/pages/03-damage.png",
+        "dash-pro-default/pages/04-map.png",
+        "dash-pro-default/pages/05-quali.png"
       ],
       "lapReview": "dash-pro-default/lap-review.png",
       "added": "2026-10-24",
-      "updated": "2026-10-26"
+      "updated": "2026-10-29"
     }
   ]
 }
