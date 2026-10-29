@@ -4,5 +4,6 @@
   "description": "The pages and layouts Lovely Dashboard Pro comes with: tyres, TC and ABS on the main page, full screen standings, damage and track map, and a qualifying page with delta, estimated lap and average tyre temperatures.",
   "tags": ["Default", "All Sims"],
   "added": "2026-10-24",
-  "updated": "2026-10-29"
+  "updated": "2026-10-29",
+  "featured": 1
 }

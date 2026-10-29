@@ -62,13 +62,15 @@ The screenshots show each page on the 854x480 Lovely Dashboard Pro, with sample 
       "pageImages": [ "dash-pro-default/pages/01-primary.png", "..." ],
       "lapReview": "dash-pro-default/lap-review.png",
       "added": "2026-10-24",
-      "updated": "2026-10-26"
+      "updated": "2026-10-26",
+      "featured": 1
     }
   ]
 }
 ```
 
 - All paths are relative to `presets/`.
+- `featured` is set by us in a preset's `info.json`: featured presets show first in the plugin, 1 first. It's `null` for the others, which show newest first.
 - `version` is the preset format. The plugin only imports versions it supports.
 
 ## File Format

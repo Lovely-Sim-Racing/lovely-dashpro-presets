@@ -3,7 +3,8 @@
 
   Each folder in presets/ holds:
     preset.dashpro   the preset, exactly as the Lovely Plugin exports it
-    info.json        name, author, description, tags, added, updated
+    info.json        name, author, description, tags, added, updated, and optionally featured
+                     (1, 2, 3...: shown first in Browse Presets, in that order; set by us, not by submitters)
     preview.png      all pages and the Lap Review on one sheet   (made by Render-Preset.ps1)
     pages/*.png      one image per page, in order                (made by Render-Preset.ps1)
     lap-review.png   the preset's Lap Review over the first page (made by Render-Preset.ps1)
@@ -37,6 +38,10 @@ foreach ($dir in Get-ChildItem -LiteralPath $presetsDir -Directory | Sort-Object
     if (-not $preset.AlertsNotifications) { $problems += "${id}: no AlertsNotifications section" }
     if ($null -eq $preset.LapReview) { $problems += "${id}: no LapReview section" }
     foreach ($field in 'name', 'author', 'description') { if (-not $info.$field) { $problems += "${id}: info.json has no $field" } }
+    $featured = $null
+    if ($null -ne $info.featured) {
+        if ($info.featured -is [int] -and $info.featured -ge 1) { $featured = [int]$info.featured } else { $problems += "${id}: featured must be a whole number from 1 (1 is shown first)" }
+    }
 
     $pageImages = @(Get-ChildItem -LiteralPath (Join-Path $dir.FullName 'pages') -Filter *.png -ErrorAction SilentlyContinue | Sort-Object Name | ForEach-Object { "$id/pages/$($_.Name)" })
     $hasPreview = Test-Path (Join-Path $dir.FullName 'preview.png')
@@ -59,6 +64,7 @@ foreach ($dir in Get-ChildItem -LiteralPath $presetsDir -Directory | Sort-Object
         lapReview   = if ($hasLapReview) { "$id/lap-review.png" } else { $null }
         added       = $info.added
         updated     = $info.updated
+        featured    = $featured
     }
 }
 
