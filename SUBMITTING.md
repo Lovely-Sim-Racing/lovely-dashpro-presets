@@ -44,7 +44,7 @@ Open a new issue with the **[Submit a Preset](../../issues/new?template=submit-p
 Tick the sharing box and submit.
 
 ## 4. What happens next
-- We check that the preset imports and works with the current Lovely Plugin.
+- We check the preset against the current Lovely Plugin: its format, its pages and every module in it.
 - We make the screenshots for you: every page on the 854x480 Lovely Dashboard Pro, plus the Lap Review, with sample race data (Le Mans Ultimate at Spa).
 - We add it to the list, and it shows in **Browse Presets** in the plugin.
 - You get a reply on your issue when it's live, or if something needs fixing.

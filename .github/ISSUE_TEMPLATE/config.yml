@@ -1,1 +1,5 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and help
+    url: https://lsr.gg/discord
+    about: Ask about presets, the Lovely Plugin or Lovely Dashboard Pro on the Lovely Sim Racing Discord.
