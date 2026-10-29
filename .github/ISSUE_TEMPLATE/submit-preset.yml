@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for sharing your setup! Export it from the Lovely Plugin first: **Dash Pro > Pages & Layout > Export**.
+        Thanks for sharing your setup! Export it from the Lovely Plugin first: **Dash Pro > Export** (top right).
         We'll check the preset, make the screenshots and add it to the list. You'll be notified here when it's live.
 
   - type: input

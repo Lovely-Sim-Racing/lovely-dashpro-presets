@@ -1,5 +1,5 @@
 <p align="center">
-<img width="150" height="150" alt="Lovely Sim Racing" src="https://raw.githubusercontent.com/Lovely-Sim-Racing/lovely-car-classes/main/docs/images/lr-logo-small.png">
+<img width="150" height="150" alt="Lovely Sim Racing" src="https://raw.githubusercontent.com/Lovely-Sim-Racing/lovely-dashboard/main/docs/images/lr-team-icon.png">
 </p>
 
 <h1 align="center">Lovely Dash Pro Presets</h1>
@@ -14,12 +14,12 @@ Ready-made page setups for Lovely Dashboard Pro, shared by the community.<br>
 ## How to
 
 ### In the Lovely Plugin
-Open **Dash Pro > Pages & Layout** and click **Browse** to see every preset here, with screenshots. Pick one and click **Import**.
+Open **Dash Pro** and click **Browse Presets** (top right) to see every preset here, with screenshots. Pick one and click **Import**.
 
-A preset replaces the pages and layouts, the Alerts & Notifications settings and the Lap Review settings of whatever you have selected: All Devices, a device, a sim, a class or a single vehicle. Everything else stays as it is.
+A preset replaces the pages and layouts, the Lap Review settings and the Alerts & Notifications settings of whatever you have selected: All Devices, a device, a sim, a class or a single vehicle. Everything else stays as it is.
 
 ### By hand
-Download a preset's `preset.dashpro` file from the [presets](presets) folder, then click **Import** on the Pages & Layout tab and choose the file.
+Download a preset's `preset.dashpro` file from the [presets](presets) folder, then click **Import** (top right of the Dash Pro page) and choose the file.
 
 ## Presets
 Every preset has its own folder in `presets/`:
@@ -129,6 +129,7 @@ A `.dashpro` file is JSON on a single line, with one section per tab of the plug
   # EngineWarningOilLimit   (Int)    - Sims without warning lights: oil temperature limit in °C (130 by default, 0: off)
   # FlagsAlertEnabled       (Bool)   - Show Flags (a block over the gear for 3 s, then a thin bar across the top while the flag is out)
   # RotaryDialsEnabled      (Bool)   - Show the Rotary Dials labels and alerts
+  # RotaryDialsSize         (Int)    - 0: Strip, 1: Full Screen (the default)
   # RotaryDialsColors       (Int)    - 0: Normal, 1: Inverted
   # DamageAlertEnabled      (Bool)   - Show the Damage Alert
   # DamageAlertSize         (Int)    - 0: Strip, 1: Full Screen, 2: Block
@@ -155,12 +156,12 @@ Presets made before each session had its own Lap Review layout have one layout d
 
 Lap Review modules: `Lap Time`, `Lap Delta`, `Sectors`, `Sector Deltas`, `Position`, `Gaps`, `Fuel Used`, `Fuel Left`, `VE Used`, `VE Left`, `Fuel / VE Used`, `Tire Wear`, `Lap Validity`, `Top Speed` and `Blank` (empty).
 
-A preset has no device, sim, class or vehicle in it. It describes one setup: pages and layouts, Alerts & Notifications settings and Lap Review settings. Importing it replaces all three for the selected level.
+A preset has no device, sim, class or vehicle in it. It describes one setup: pages and layouts, Lap Review settings and Alerts & Notifications settings. Importing it replaces all three for the selected level.
 
 ## Contributing
-Sharing a preset takes a couple of minutes, and you don't need to know Git.
+Sharing a preset takes a couple of minutes, and you don't need to know Git. See **[How to Submit Your Preset](SUBMITTING.md)**.
 
-1. In the Lovely Plugin, set up your pages and click **Export** on the Pages & Layout tab.
+1. In the Lovely Plugin, set up your pages and click **Export** at the top right of the Dash Pro page.
 2. Open a new issue with the **[Submit a Preset](../../issues/new?template=submit-preset.yml)** form.
 3. Fill in a name and a short description, and attach your preset: zip the `.dashpro` file and drag the zip in (GitHub doesn't accept `.dashpro` files directly), or paste the file's contents.
 
