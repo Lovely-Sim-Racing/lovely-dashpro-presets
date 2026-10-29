@@ -67,6 +67,74 @@
       "added": "2026-10-29",
       "updated": "2026-10-29",
       "featured": 2
+    },
+    {
+      "id": "lovely-dashboard-companion",
+      "name": "Lovely Dashboard Companion",
+      "author": "Lovely Sim Racing",
+      "description": "The Lovely Dashboard Companion in Lovely Dashboard Pro: full screen map, track opponents, standings, relative, radar, telemetry, tyres and damage.",
+      "tags": [
+        "Official",
+        "Default",
+        "Lovely Sim Racing",
+        "Lovely Dashboard",
+        "All Sims",
+        "16:9"
+      ],
+      "pages": [
+        "Map",
+        "Track Opponents",
+        "Standings",
+        "Relative",
+        "Radar",
+        "Telemetry",
+        "Tires",
+        "Damage"
+      ],
+      "version": 1,
+      "path": "lovely-dashboard-companion/preset.dashpro",
+      "preview": "lovely-dashboard-companion/preview.png",
+      "pageImages": [
+        "lovely-dashboard-companion/pages/01-map.png",
+        "lovely-dashboard-companion/pages/02-track-opponents.png",
+        "lovely-dashboard-companion/pages/03-standings.png",
+        "lovely-dashboard-companion/pages/04-relative.png",
+        "lovely-dashboard-companion/pages/05-radar.png",
+        "lovely-dashboard-companion/pages/06-telemetry.png",
+        "lovely-dashboard-companion/pages/07-tires.png",
+        "lovely-dashboard-companion/pages/08-damage.png"
+      ],
+      "lapReview": null,
+      "added": "2026-10-29",
+      "updated": "2026-10-29",
+      "featured": 3
+    },
+    {
+      "id": "lovely-flags",
+      "name": "Lovely Flags",
+      "author": "Lovely Sim Racing",
+      "description": "The Lovely Flags dashboard in Lovely Dashboard Pro: one full screen page with the flags.",
+      "tags": [
+        "Official",
+        "Default",
+        "Lovely Sim Racing",
+        "Lovely Dashboard",
+        "All Sims",
+        "16:9"
+      ],
+      "pages": [
+        "Flags"
+      ],
+      "version": 1,
+      "path": "lovely-flags/preset.dashpro",
+      "preview": "lovely-flags/preview.png",
+      "pageImages": [
+        "lovely-flags/pages/01-flags.png"
+      ],
+      "lapReview": null,
+      "added": "2026-10-29",
+      "updated": "2026-10-29",
+      "featured": 4
     }
   ]
 }

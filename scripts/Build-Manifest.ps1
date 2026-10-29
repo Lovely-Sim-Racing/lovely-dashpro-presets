@@ -47,7 +47,11 @@ foreach ($dir in Get-ChildItem -LiteralPath $presetsDir -Directory | Sort-Object
     $hasPreview = Test-Path (Join-Path $dir.FullName 'preview.png')
     if (-not $hasPreview) { $problems += "${id}: preview.png is missing (run Render-Preset.ps1)" }
     $hasLapReview = Test-Path (Join-Path $dir.FullName 'lap-review.png')
-    if (-not $hasLapReview) { $problems += "${id}: lap-review.png is missing (run Render-Preset.ps1)" }
+    # The Lap Review image only when the preset shows it in a session (missing flags: Practice and Qualifying on, Race off)
+    $lr = $preset.LapReview
+    $lapReviewOn = $null -ne $lr -and (($null -eq $lr.IsPractice -or $lr.IsPractice) -or ($null -eq $lr.IsQualifying -or $lr.IsQualifying) -or ($lr.IsRace -eq $true))
+    if ($lapReviewOn -and -not $hasLapReview) { $problems += "${id}: lap-review.png is missing (run Render-Preset.ps1)" }
+    if (-not $lapReviewOn) { $hasLapReview = $false }
     if ($pageImages.Count -ne $names.Count) { $problems += "${id}: $($pageImages.Count) page images for $($names.Count) pages (run Render-Preset.ps1)" }
 
     $entries += [ordered]@{
