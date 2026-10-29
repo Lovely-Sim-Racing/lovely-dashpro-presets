@@ -30,6 +30,34 @@
       "added": "2026-10-24",
       "updated": "2026-10-29",
       "featured": 1
+    },
+    {
+      "id": "lovely-dashboard-classic",
+      "name": "Lovely Dashboard Classic",
+      "author": "Lovely Sim Racing",
+      "description": "The original Lovely Dashboard, reincarnated in Lovely Dashboard Pro.",
+      "tags": [
+        "Lovely Dashboard"
+      ],
+      "pages": [
+        "Primary",
+        "Relative",
+        "Standings",
+        "Map"
+      ],
+      "version": 1,
+      "path": "lovely-dashboard-classic/preset.dashpro",
+      "preview": "lovely-dashboard-classic/preview.png",
+      "pageImages": [
+        "lovely-dashboard-classic/pages/01-primary.png",
+        "lovely-dashboard-classic/pages/02-relative.png",
+        "lovely-dashboard-classic/pages/03-standings.png",
+        "lovely-dashboard-classic/pages/04-map.png"
+      ],
+      "lapReview": "lovely-dashboard-classic/lap-review.png",
+      "added": "2026-10-29",
+      "updated": "2026-10-29",
+      "featured": 2
     }
   ]
 }
