@@ -171,7 +171,7 @@
       "id": "rallye-dash",
       "name": "Rallye Dash",
       "author": "Lovely Sim Racing",
-      "description": "A rally dash: one main page with gear, RPM, speed, delta, lap time, the four tyres and the engine's temperatures and pressures, plus full screen standings, damage and a zoomed-in track map. Both sidebars are Virtual RPM - ATSR shift lights, which need ATSR Hub Evo.",
+      "description": "A rally dash: one main page with gear, RPM, speed, delta, lap time, the four tyres and the engine's temperatures and pressures, plus full screen standings, damage and a zoomed-in track map. Both sidebars are Virtual RPM shift lights.",
       "tags": [
         "Official",
         "Rallye",
@@ -193,7 +193,7 @@
         "rallye-dash/pages/03-damage.png",
         "rallye-dash/pages/04-map.png"
       ],
-      "lapReview": "rallye-dash/lap-review.png",
+      "lapReview": null,
       "added": "2026-11-11",
       "updated": "2026-11-11",
       "featured": null
