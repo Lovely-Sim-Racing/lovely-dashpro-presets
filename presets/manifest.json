@@ -36,6 +36,37 @@
       "featured": 1
     },
     {
+      "id": "hypercar-endurance-lmu",
+      "name": "Hypercar Endurance LMU",
+      "author": "George Margetis-HVT",
+      "description": "Made for Hypercar endurance races in Le Mans Ultimate, with everything Team Hellas Vision Racing uses in long races. The Marge page's top bar uses Virtual RPM - ATSR, which needs ATSR Hub Evo.",
+      "tags": [
+        "LMU",
+        "Hypercar",
+        "Endurance",
+        "16:9"
+      ],
+      "pages": [
+        "Default Page",
+        "Leaderboard",
+        "Map",
+        "Marge"
+      ],
+      "version": 1,
+      "path": "hypercar-endurance-lmu/preset.dashpro",
+      "preview": "hypercar-endurance-lmu/preview.png",
+      "pageImages": [
+        "hypercar-endurance-lmu/pages/01-default-page.png",
+        "hypercar-endurance-lmu/pages/02-leaderboard.png",
+        "hypercar-endurance-lmu/pages/03-map.png",
+        "hypercar-endurance-lmu/pages/04-marge.png"
+      ],
+      "lapReview": "hypercar-endurance-lmu/lap-review.png",
+      "added": "2026-11-11",
+      "updated": "2026-11-11",
+      "featured": null
+    },
+    {
       "id": "lovely-dashboard-classic",
       "name": "Lovely Dashboard Classic",
       "author": "Lovely Sim Racing",
