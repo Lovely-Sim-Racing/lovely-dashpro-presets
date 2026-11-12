@@ -154,6 +154,7 @@ foreach ($dir in $dirs) {
         ''
         $info.description
         ''
+        $(if ($images) { "![$($pages[0].Name)](pages/$($images[0].Name))"; '' })
         '| | |'
         '| --- | --- |'
         (Row 'Author' $info.author)
@@ -163,8 +164,6 @@ foreach ($dir in $dirs) {
         (Row 'Added' $info.added)
         (Row 'Updated' $info.updated)
         (Row 'Preset format' "v$($preset.Version)")
-        ''
-        "![$($info.name)](preview.png)"
         ''
         '## Import'
         "In the Lovely Plugin, open **Dash Pro**, click **Browse Presets**, pick **$($info.name)** and click **Import**."

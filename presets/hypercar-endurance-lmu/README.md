@@ -5,6 +5,8 @@
 
 Made for Hypercar endurance races in Le Mans Ultimate, with everything Team Hellas Vision Racing uses in long races. The Marge page's top bar uses Virtual RPM - ATSR, which needs ATSR Hub Evo.
 
+![Default Page](pages/01-default-page.png)
+
 | | |
 | --- | --- |
 | **Author** | George Margetis-HVT |
@@ -14,8 +16,6 @@ Made for Hypercar endurance races in Le Mans Ultimate, with everything Team Hell
 | **Added** | 2026-11-11 |
 | **Updated** | 2026-11-11 |
 | **Preset format** | v1 |
-
-![Hypercar Endurance LMU](preview.png)
 
 ## Import
 In the Lovely Plugin, open **Dash Pro**, click **Browse Presets**, pick **Hypercar Endurance LMU** and click **Import**.

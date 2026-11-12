@@ -5,6 +5,8 @@
 
 The Lovely Dashboard Companion in Lovely Dashboard Pro: full screen map, track opponents, standings, relative, radar, telemetry, tyres and damage.
 
+![Map](pages/01-map.png)
+
 | | |
 | --- | --- |
 | **Author** | Lovely Sim Racing |
@@ -13,8 +15,6 @@ The Lovely Dashboard Companion in Lovely Dashboard Pro: full screen map, track o
 | **Added** | 2026-10-29 |
 | **Updated** | 2026-10-29 |
 | **Preset format** | v1 |
-
-![Lovely Dashboard Companion](preview.png)
 
 ## Import
 In the Lovely Plugin, open **Dash Pro**, click **Browse Presets**, pick **Lovely Dashboard Companion** and click **Import**.

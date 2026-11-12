@@ -5,6 +5,8 @@
 
 A rally dash: one main page with gear, speed, RPM, session and lap time, the four tyres and the engine's temperatures and pressures, plus a full screen zoomed-in track map, damage and standings. Both sidebars are Virtual RPM shift lights.
 
+![Primary](pages/01-primary.png)
+
 | | |
 | --- | --- |
 | **Author** | Lovely Sim Racing |
@@ -13,8 +15,6 @@ A rally dash: one main page with gear, speed, RPM, session and lap time, the fou
 | **Added** | 2026-11-11 |
 | **Updated** | 2026-11-12 |
 | **Preset format** | v1 |
-
-![Rallye Dash](preview.png)
 
 ## Import
 In the Lovely Plugin, open **Dash Pro**, click **Browse Presets**, pick **Rallye Dash** and click **Import**.

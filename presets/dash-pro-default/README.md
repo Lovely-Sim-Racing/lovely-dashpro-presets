@@ -5,6 +5,8 @@
 
 The pages and layouts Lovely Dashboard Pro comes with: tyres, TC and ABS on the main page, full screen standings, damage and track map, and a qualifying page with delta, estimated lap and average tyre temperatures.
 
+![Primary](pages/01-primary.png)
+
 | | |
 | --- | --- |
 | **Author** | Lovely Sim Racing |
@@ -13,8 +15,6 @@ The pages and layouts Lovely Dashboard Pro comes with: tyres, TC and ABS on the 
 | **Added** | 2026-10-24 |
 | **Updated** | 2026-11-09 |
 | **Preset format** | v1 |
-
-![Dash Pro Default](preview.png)
 
 ## Import
 In the Lovely Plugin, open **Dash Pro**, click **Browse Presets**, pick **Dash Pro Default** and click **Import**.

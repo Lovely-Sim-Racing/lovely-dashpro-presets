@@ -5,6 +5,8 @@
 
 The Lovely Flags dashboard in Lovely Dashboard Pro: one full screen page with the flags.
 
+![Flags](pages/01-flags.png)
+
 | | |
 | --- | --- |
 | **Author** | Lovely Sim Racing |
@@ -13,8 +15,6 @@ The Lovely Flags dashboard in Lovely Dashboard Pro: one full screen page with th
 | **Added** | 2026-10-29 |
 | **Updated** | 2026-10-29 |
 | **Preset format** | v1 |
-
-![Lovely Flags](preview.png)
 
 ## Import
 In the Lovely Plugin, open **Dash Pro**, click **Browse Presets**, pick **Lovely Flags** and click **Import**.

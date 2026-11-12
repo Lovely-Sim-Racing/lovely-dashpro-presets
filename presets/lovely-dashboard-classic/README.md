@@ -5,6 +5,8 @@
 
 The original Lovely Dashboard, reincarnated in Lovely Dashboard Pro.
 
+![Primary](pages/01-primary.png)
+
 | | |
 | --- | --- |
 | **Author** | Lovely Sim Racing |
@@ -13,8 +15,6 @@ The original Lovely Dashboard, reincarnated in Lovely Dashboard Pro.
 | **Added** | 2026-10-29 |
 | **Updated** | 2026-10-29 |
 | **Preset format** | v1 |
-
-![Lovely Dashboard Classic](preview.png)
 
 ## Import
 In the Lovely Plugin, open **Dash Pro**, click **Browse Presets**, pick **Lovely Dashboard Classic** and click **Import**.
