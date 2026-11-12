@@ -4,5 +4,6 @@
   "description": "A rally dash: one main page with gear, speed, RPM, session and lap time, the four tyres and the engine's temperatures and pressures, plus a full screen zoomed-in track map, damage and standings. Both sidebars are Virtual RPM shift lights.",
   "tags": ["Official", "Rallye", "16:9", "Rally"],
   "added": "2026-11-11",
-  "updated": "2026-11-12"
+  "updated": "2026-11-12",
+  "featured": 5
 }
