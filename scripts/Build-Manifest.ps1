@@ -2,12 +2,14 @@
   Builds presets/manifest.json from the preset folders and checks every preset.
 
   Each folder in presets/ holds:
-    preset.dashpro   the preset, exactly as the Lovely Plugin exports it
+    {id}.dashpro     the preset, exactly as the Lovely Plugin exports it, named like its folder
     info.json        name, author, description, tags, added, updated, and optionally featured
                      (1, 2, 3...: shown first in Browse Presets, in that order; set by us, not by submitters)
     preview.png      all pages and the Lap Review on one sheet   (made by Render-Preset.ps1)
     pages/*.png      one image per page, in order                (made by Render-Preset.ps1)
     lap-review.png   the preset's Lap Review over the first page (made by Render-Preset.ps1)
+
+  Then writes every preset's README.md (scripts/Build-Readmes.ps1).
 
   Usage:  .\scripts\Build-Manifest.ps1          (from the repo root; exits with an error if a preset is invalid)
 #>
@@ -19,12 +21,15 @@ $problems = @(); $entries = @()
 
 foreach ($dir in Get-ChildItem -LiteralPath $presetsDir -Directory | Sort-Object Name) {
     $id = $dir.Name
-    $presetFile = Join-Path $dir.FullName 'preset.dashpro'
+    $presetName = "$id.dashpro"
+    $presetFile = Join-Path $dir.FullName $presetName
     $infoFile = Join-Path $dir.FullName 'info.json'
-    if (-not (Test-Path $presetFile)) { $problems += "${id}: preset.dashpro is missing"; continue }
+    if (-not (Test-Path -LiteralPath $presetFile)) { $problems += "${id}: $presetName is missing"; continue }
     if (-not (Test-Path $infoFile)) { $problems += "${id}: info.json is missing"; continue }
+    $others = @(Get-ChildItem -LiteralPath $dir.FullName -Filter *.dashpro | Where-Object { $_.Name -ne $presetName })
+    if ($others) { $problems += "${id}: only $presetName belongs here, not " + (($others | ForEach-Object { $_.Name }) -join ', ') }
 
-    try { $preset = Get-Content -Raw -Encoding UTF8 $presetFile | ConvertFrom-Json } catch { $problems += "${id}: preset.dashpro is not valid JSON"; continue }
+    try { $preset = Get-Content -Raw -Encoding UTF8 -LiteralPath $presetFile | ConvertFrom-Json } catch { $problems += "${id}: $presetName is not valid JSON"; continue }
     try { $info = Get-Content -Raw -Encoding UTF8 $infoFile | ConvertFrom-Json } catch { $problems += "${id}: info.json is not valid JSON"; continue }
 
     $pages = @($preset.PagesLayout.Pages)
@@ -62,7 +67,7 @@ foreach ($dir in Get-ChildItem -LiteralPath $presetsDir -Directory | Sort-Object
         tags        = @($info.tags)
         pages       = $names
         version     = $preset.Version
-        path        = "$id/preset.dashpro"
+        path        = "$id/$presetName"
         preview     = if ($hasPreview) { "$id/preview.png" } else { $null }
         pageImages  = $pageImages
         lapReview   = if ($hasLapReview) { "$id/lap-review.png" } else { $null }
@@ -84,3 +89,7 @@ if (Test-Path $nj) {
 }
 [IO.File]::WriteAllText((Join-Path $presetsDir 'manifest.json'), $json + "`n", (New-Object Text.UTF8Encoding($false)))
 "manifest.json: $($entries.Count) preset(s)"
+
+# Each preset's README.md, from the same files
+& (Join-Path $PSScriptRoot 'Build-Readmes.ps1') -Root $Root | Out-Null
+"README.md: $($entries.Count) preset(s)"

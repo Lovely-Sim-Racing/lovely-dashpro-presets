@@ -21,7 +21,7 @@
         "Quali"
       ],
       "version": 1,
-      "path": "dash-pro-default/preset.dashpro",
+      "path": "dash-pro-default/dash-pro-default.dashpro",
       "preview": "dash-pro-default/preview.png",
       "pageImages": [
         "dash-pro-default/pages/01-primary.png",
@@ -53,7 +53,7 @@
         "Marge"
       ],
       "version": 1,
-      "path": "hypercar-endurance-lmu/preset.dashpro",
+      "path": "hypercar-endurance-lmu/hypercar-endurance-lmu.dashpro",
       "preview": "hypercar-endurance-lmu/preview.png",
       "pageImages": [
         "hypercar-endurance-lmu/pages/01-default-page.png",
@@ -86,7 +86,7 @@
         "Map"
       ],
       "version": 1,
-      "path": "lovely-dashboard-classic/preset.dashpro",
+      "path": "lovely-dashboard-classic/lovely-dashboard-classic.dashpro",
       "preview": "lovely-dashboard-classic/preview.png",
       "pageImages": [
         "lovely-dashboard-classic/pages/01-primary.png",
@@ -123,7 +123,7 @@
         "Damage"
       ],
       "version": 1,
-      "path": "lovely-dashboard-companion/preset.dashpro",
+      "path": "lovely-dashboard-companion/lovely-dashboard-companion.dashpro",
       "preview": "lovely-dashboard-companion/preview.png",
       "pageImages": [
         "lovely-dashboard-companion/pages/01-map.png",
@@ -157,7 +157,7 @@
         "Flags"
       ],
       "version": 1,
-      "path": "lovely-flags/preset.dashpro",
+      "path": "lovely-flags/lovely-flags.dashpro",
       "preview": "lovely-flags/preview.png",
       "pageImages": [
         "lovely-flags/pages/01-flags.png"
@@ -171,7 +171,7 @@
       "id": "rallye-dash",
       "name": "Rallye Dash",
       "author": "Lovely Sim Racing",
-      "description": "A rally dash: one main page with gear, RPM, speed, delta, lap time, the four tyres and the engine's temperatures and pressures, plus full screen standings, damage and a zoomed-in track map. Both sidebars are Virtual RPM shift lights.",
+      "description": "A rally dash: one main page with gear, speed, RPM, session and lap time, the four tyres and the engine's temperatures and pressures, plus a full screen zoomed-in track map, damage and standings. Both sidebars are Virtual RPM shift lights.",
       "tags": [
         "Official",
         "Rallye",
@@ -180,22 +180,22 @@
       ],
       "pages": [
         "Primary",
-        "Leaderboard",
+        "Map",
         "Damage",
-        "Map"
+        "Leaderboard"
       ],
       "version": 1,
-      "path": "rallye-dash/preset.dashpro",
+      "path": "rallye-dash/rallye-dash.dashpro",
       "preview": "rallye-dash/preview.png",
       "pageImages": [
         "rallye-dash/pages/01-primary.png",
-        "rallye-dash/pages/02-leaderboard.png",
+        "rallye-dash/pages/02-map.png",
         "rallye-dash/pages/03-damage.png",
-        "rallye-dash/pages/04-map.png"
+        "rallye-dash/pages/04-leaderboard.png"
       ],
       "lapReview": null,
       "added": "2026-11-11",
-      "updated": "2026-11-11",
+      "updated": "2026-11-12",
       "featured": null
     }
   ]

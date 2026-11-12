@@ -1,8 +1,8 @@
 {
   "name": "Rallye Dash",
   "author": "Lovely Sim Racing",
-  "description": "A rally dash: one main page with gear, RPM, speed, delta, lap time, the four tyres and the engine's temperatures and pressures, plus full screen standings, damage and a zoomed-in track map. Both sidebars are Virtual RPM shift lights.",
+  "description": "A rally dash: one main page with gear, speed, RPM, session and lap time, the four tyres and the engine's temperatures and pressures, plus a full screen zoomed-in track map, damage and standings. Both sidebars are Virtual RPM shift lights.",
   "tags": ["Official", "Rallye", "16:9", "Rally"],
   "added": "2026-11-11",
-  "updated": "2026-11-11"
+  "updated": "2026-11-12"
 }

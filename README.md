@@ -19,25 +19,26 @@ Open **Dash Pro** and click **Browse Presets** (top right) to see every preset h
 A preset replaces the pages and layouts, the Lap Review settings and the Alerts & Notifications settings of whatever you have selected: All Devices, a device, a sim, a class or a single vehicle. Everything else stays as it is.
 
 ### By hand
-Download a preset's `preset.dashpro` file from the [presets](presets) folder, then click **Import** (top right of the Dash Pro page) and choose the file.
+Download a preset's `.dashpro` file from its folder in [presets](presets) (`dash-pro-default/dash-pro-default.dashpro`, for example), then click **Import** (top right of the Dash Pro page) and choose the file.
 
 ## Presets
 Every preset has its own folder in `presets/`:
 
 ```
 presets/
-  manifest.json            the list of all presets (generated)
+  manifest.json                the list of all presets (generated)
   dash-pro-default/
-    preset.dashpro         the preset, exactly as the plugin exports it
-    info.json              name, author, description and tags
-    preview.png            all pages and the Lap Review on one image
-    lap-review.png         the preset's Lap Review, over the first page
+    dash-pro-default.dashpro   the preset, exactly as the plugin exports it
+    info.json                  name, author, description and tags
+    README.md                  the preset's page: every page, the Lap Review and the alerts (generated)
+    preview.png                all pages and the Lap Review on one image
+    lap-review.png             the preset's Lap Review, over the first page
     pages/
-      01-primary.png       one image per page, in page order
+      01-primary.png           one image per page, in page order
       02-leaderboard.png
 ```
 
-Folder names follow the same name format as [Lovely Car Data](https://github.com/Lovely-Sim-Racing/lovely-car-data#name-format): lowercase, accents replaced, spaces and special characters as single hyphens.
+Folder names, and the `.dashpro` file in each, follow the same name format as [Lovely Car Data](https://github.com/Lovely-Sim-Racing/lovely-car-data#name-format): lowercase, accents replaced, spaces and special characters as single hyphens.
 
 The screenshots show each page on the 854x480 Lovely Dashboard Pro, with sample race data (Le Mans Ultimate at Spa), and the Lap Review as it shows after a lap. The numbers are for illustration only.
 
@@ -57,7 +58,7 @@ The screenshots show each page on the 854x480 Lovely Dashboard Pro, with sample 
       "tags": [ "Default", "All Sims" ],
       "pages": [ "Primary", "Leaderboard", "Map", "Quali" ],
       "version": 1,
-      "path": "dash-pro-default/preset.dashpro",
+      "path": "dash-pro-default/dash-pro-default.dashpro",
       "preview": "dash-pro-default/preview.png",
       "pageImages": [ "dash-pro-default/pages/01-primary.png", "..." ],
       "lapReview": "dash-pro-default/lap-review.png",
@@ -173,9 +174,9 @@ We check every submission, make the screenshots and add it to the list. You'll g
 ### Maintainers
 Submissions are added with two scripts:
 
-1. Create `presets/{name}/` with the `preset.dashpro` and an `info.json`.
+1. Create `presets/{name}/` with the preset as `{name}.dashpro` and an `info.json`.
 2. Render the screenshots with `Render-Preset.ps1 -Folder presets/{name}` (Lovely preview tools; needs SimHub and the Lovely dashboards on the same PC).
-3. Run `scripts/Build-Manifest.ps1`. It checks every preset and rewrites `presets/manifest.json`, and stops if anything is wrong.
+3. Run `scripts/Build-Manifest.ps1`. It checks every preset, rewrites `presets/manifest.json` and every preset's `README.md` (with `scripts/Build-Readmes.ps1`), and stops if anything is wrong.
 
 To keep the JSON files consistently formatted, the repo uses the same `pre-commit` hooks as the other Lovely repos. They check every `.json` and `.dashpro` file, and format the `.json` files; `.dashpro` files stay on one line, exactly as the plugin exports them:
 
