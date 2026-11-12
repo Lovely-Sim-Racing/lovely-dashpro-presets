@@ -1,5 +1,5 @@
 <p align="center">
-<img width="150" height="150" alt="Lovely Sim Racing" src="https://raw.githubusercontent.com/Lovely-Sim-Racing/lovely-dashboard/main/docs/images/lr-team-icon.png">
+<img width="150" height="150" alt="Lovely Sim Racing" src="./docs/images/lr-team-icon.png">
 </p>
 
 <h1 align="center">Lovely Dash Pro Presets</h1>
