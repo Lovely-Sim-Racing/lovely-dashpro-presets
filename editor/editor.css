@@ -159,6 +159,37 @@ main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24
 .static.locked { opacity: .35; }
 .dash.preview .static.dimmed { opacity: .2; }
 
+/* The central column's sector bar in the preview: sectors fill one after another (the dash's colours: the sector being
+   driven in green, then faster green, slower yellow, fastest purple), then the lap starts again */
+.sector-anim { overflow: visible; }
+.sector-anim .sector { position: absolute; background: #494949; border-radius: 5px; overflow: hidden; }
+.sector-fill { position: absolute; top: 0; bottom: 0; left: 0; width: 0; border-radius: 5px; background: #00ff02; animation: 7.5s linear infinite; }
+.sector-fill.s1 { animation-name: ld-sector-1; }
+.sector-fill.s2 { animation-name: ld-sector-2; }
+.sector-fill.s3 { animation-name: ld-sector-3; }
+@keyframes ld-sector-1 {
+  0% { width: 0; opacity: 1; background: #00ff02; }
+  27% { width: 100%; background: #00ff02; }
+  90% { width: 100%; opacity: 1; }
+  96%, 100% { width: 100%; opacity: 0; }
+}
+@keyframes ld-sector-2 {
+  0%, 27% { width: 0; opacity: 1; background: #00ff02; }
+  54% { width: 100%; background: #00ff02; }
+  55%, 90% { width: 100%; opacity: 1; background: #ffe04c; }
+  96%, 100% { width: 100%; opacity: 0; background: #ffe04c; }
+}
+@keyframes ld-sector-3 {
+  0%, 54% { width: 0; opacity: 1; background: #00ff02; }
+  81% { width: 100%; background: #00ff02; }
+  82%, 90% { width: 100%; opacity: 1; background: #c500ce; }
+  96%, 100% { width: 100%; opacity: 0; background: #c500ce; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sector-fill { animation: none; display: none; }
+  .sector-anim { display: none; }
+}
+
 .panel {
   position: absolute; background: rgba(24, 24, 24, .96); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; z-index: 3;
   display: flex; flex-direction: column; gap: 6px; color: var(--text);
