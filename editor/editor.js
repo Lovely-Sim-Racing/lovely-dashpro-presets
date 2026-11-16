@@ -880,6 +880,81 @@
       el('button', { type: 'button', class: 'btn btn-accent', onclick: () => { download(text); closeModal(); } }, `Download ${fileName()}`)]);
   }
 
+  // ---------------------------------------------------------------- submit (GitHub's Submit a Preset form, filled in)
+  const REPO = 'https://github.com/Lovely-Sim-Racing/lovely-dashpro-presets';
+  const MAX_URL = 8000; // GitHub refuses much longer links
+
+  // gzip + base64: a whole preset fits in the link this way (the plain JSON usually doesn't)
+  async function gzipBase64(text) {
+    const stream = new Blob([text]).stream().pipeThrough(new CompressionStream('gzip'));
+    const bytes = new Uint8Array(await new Response(stream).arrayBuffer());
+    let bin = '';
+    for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(bin);
+  }
+
+  async function gunzipBase64(b64) {
+    const bytes = Uint8Array.from(atob(b64.replace(/\s+/g, '')), (c) => c.charCodeAt(0));
+    return new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+  }
+
+  // The issue link with every field filled in; the preset as JSON if it fits, else compressed, else left to attach
+  async function submitUrl(fields, text) {
+    const link = (preset) => {
+      const q = new URLSearchParams({ template: 'submit-preset.yml', title: `[Preset] ${fields.name}`, name: fields.name, author: fields.author, description: fields.description, tags: fields.tags, preset });
+      return `${REPO}/issues/new?${q}`;
+    };
+    const plain = link('Sent from the online editor.\n\n```json\n' + text + '\n```');
+    if (plain.length <= MAX_URL) return { url: plain, how: 'plain' };
+    const packed = link('Sent from the online editor, compressed (gzip, base64): the .dashpro is the unpacked text.\n\n```dashpro-gzip-base64\n' + await gzipBase64(text) + '\n```');
+    if (packed.length <= MAX_URL) return { url: packed, how: 'compressed' };
+    return { url: link('Attach the zipped .dashpro here (it was too big to include).'), how: 'attach' };
+  }
+
+  function submitDialog() {
+    const check = validate(state.preset);
+    if (check.problems.length) { showProblems('Fix these before submitting', check.problems, check.warnings); return; }
+    let author = '';
+    try { author = localStorage.getItem(STORE + '-author') || ''; } catch (e) { /* no storage */ }
+    const field = (label, input, hint) => el('label', { style: { display: 'grid', gap: '4px', marginBottom: '12px' } }, el('span', null, label), input, hint ? el('span', { style: { color: 'var(--muted)', fontSize: '12px' } }, hint) : null);
+    const name = el('input', { type: 'text', maxlength: '60', value: state.name || '', placeholder: 'LMU Endurance' });
+    const who = el('input', { type: 'text', maxlength: '60', value: author, placeholder: 'Your name or team' });
+    const desc = el('textarea', { rows: '3', maxlength: '400', placeholder: 'Fuel and Virtual Energy focused, with a qualifying page.', style: { minHeight: '70px', font: 'inherit' } });
+    const tags = el('input', { type: 'text', maxlength: '120', placeholder: 'LMU, Hypercar, Endurance' });
+    const error = el('p', { style: { color: 'var(--danger)', minHeight: '1.4em', margin: '0' } });
+    const go = async () => {
+      const fields = { name: name.value.trim(), author: who.value.trim(), description: desc.value.trim(), tags: tags.value.trim() };
+      if (!fields.name) { error.textContent = 'The preset needs a name.'; name.focus(); return; }
+      if (!fields.description) { error.textContent = 'Add a sentence or two about it.'; desc.focus(); return; }
+      if (fields.name !== state.name) { state.name = fields.name; $('#presetName').value = fields.name; save(); }
+      try { localStorage.setItem(STORE + '-author', fields.author); } catch (e) { /* no storage */ }
+      const text = exportText();
+      const { url, how } = await submitUrl(fields, text);
+      if (how === 'attach') download(text);
+      window.open(url, '_blank', 'noopener');
+      closeModal();
+      openModal('Finish on GitHub', [
+        el('p', null, 'GitHub\'s Submit a Preset form opened in a new tab, filled in. Sign in if it asks, tick the sharing box, then click Create.'),
+        how === 'attach' ? el('p', null, `This preset is too big to include in the link: ${fileName()} was saved. Zip it and drag the zip into the "Preset file" box.`) : null,
+        el('p', null, 'We check it, make the screenshots and add it to the presets. You\'re notified on the issue when it\'s live.'),
+        el('p', null, el('a', { href: url, target: '_blank', rel: 'noopener' }, 'Open the form again')),
+      ], [el('button', { type: 'button', class: 'btn btn-accent', onclick: closeModal }, 'OK')]);
+    };
+    const body = [
+      el('p', null, `Share this preset (${pages().length} page${pages().length === 1 ? '' : 's'}) in the community presets. This opens GitHub's Submit a Preset form, filled in. You need a free GitHub account.`),
+      field('Preset name', name, 'A short name people will see in the plugin.'),
+      field('Author', who, 'The name to credit. Your GitHub name is used if you leave this empty.'),
+      field('Description', desc, 'One or two sentences. What is it good for?'),
+      field('Tags', tags, 'Optional, separated by commas. For example a sim, a class or a race type.'),
+    ];
+    if (check.warnings.length) body.push(el('p', null, 'Worth a look first:'), el('ul', { class: 'warnings' }, check.warnings.map((w) => el('li', null, w))));
+    body.push(error);
+    openModal('Submit to the community presets', body, [
+      el('button', { type: 'button', class: 'btn', onclick: closeModal }, 'Cancel'),
+      el('button', { type: 'button', class: 'btn btn-accent', onclick: go }, 'Continue on GitHub')]);
+    (state.name ? desc : name).focus();
+  }
+
   function download(text) {
     const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
     const a = el('a', { href: url, download: fileName() });
@@ -929,6 +1004,7 @@
     $('#btnNew').addEventListener('click', () => { if (loadPreset(S.defaults.preset, '', 'a new preset (the Dash Pro Default)')) $('#presetName').focus(); });
     $('#btnOpen').addEventListener('click', openDialog);
     $('#btnExport').addEventListener('click', exportDialog);
+    $('#btnSubmit').addEventListener('click', submitDialog);
     $('#presetName').addEventListener('input', (e) => { state.name = e.target.value; save(); });
     $('#fileInput').addEventListener('change', (e) => {
       const file = e.target.files[0];
@@ -993,7 +1069,7 @@
   }
 
   // For checks in the browser console: the current preset as the plugin's Export writes it
-  window.lovelyEditor = { exportText: () => exportText(), state, normalize: (p) => normalize(p), parseJson, toJson };
+  window.lovelyEditor = { exportText: () => exportText(), state, normalize: (p) => normalize(p), parseJson, toJson, submitUrl, gunzipBase64 };
 
   start();
 })();
