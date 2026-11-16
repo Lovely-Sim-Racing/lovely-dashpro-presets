@@ -677,10 +677,14 @@
         "Lap Validity": "lapreview/normal/fullscreen/lap-validity.png",
         "Top Speed": "lapreview/normal/fullscreen/top-speed.png"
       },
-      "panel": "lapreview/normal/fullscreen-panel.png",
-      "headline": "lapreview/normal/fullscreen-headline.png",
-      "sectors": "lapreview/normal/fullscreen-sectors.png",
-      "band": "lapreview/normal/strip-band.png"
+      "panelSectors": "lapreview/normal/fullscreen-sectors.png",
+      "panelModules": "lapreview/normal/fullscreen-modules.png",
+      "band": {
+        "0": "lapreview/normal/strip-band-0.png",
+        "1": "lapreview/normal/strip-band-1.png",
+        "2": "lapreview/normal/strip-band-2.png",
+        "3": "lapreview/normal/strip-band-3.png"
+      }
     },
     "Inverted": {
       "140x94": {
@@ -763,10 +767,14 @@
         "Lap Validity": "lapreview/inverted/fullscreen/lap-validity.png",
         "Top Speed": "lapreview/inverted/fullscreen/top-speed.png"
       },
-      "panel": "lapreview/inverted/fullscreen-panel.png",
-      "headline": "lapreview/inverted/fullscreen-headline.png",
-      "sectors": "lapreview/inverted/fullscreen-sectors.png",
-      "band": "lapreview/inverted/strip-band.png"
+      "panelSectors": "lapreview/inverted/fullscreen-sectors.png",
+      "panelModules": "lapreview/inverted/fullscreen-modules.png",
+      "band": {
+        "0": "lapreview/inverted/strip-band-0.png",
+        "1": "lapreview/inverted/strip-band-1.png",
+        "2": "lapreview/inverted/strip-band-2.png",
+        "3": "lapreview/inverted/strip-band-3.png"
+      }
     }
   },
   "plugin": "4.2.0.0"

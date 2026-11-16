@@ -1,6 +1,12 @@
-# Online Editor Data
+# Online Editor
 
-Data for the online Lovely Dash Pro editor. Everything here is generated from the Lovely Plugin and the Lovely Dashboard Pro, so the online editor offers exactly what the plugin's Dash Pro editor offers. Don't edit these files by hand.
+The Lovely Dash Pro editor in the browser: `index.html`, `editor.css` and `editor.js`, with no build step. It has the plugin's three Dash Pro tabs (Pages Layout, Alerts & Notifications, Lap Review), a preview made from the module images below, and opens and exports `.dashpro` presets exactly as the plugin writes them. Work in progress is kept in the browser.
+
+To try it locally, serve the repository root over HTTP (the editor reads `../presets/` for the community presets) and open `/editor/`.
+
+## Data
+
+Everything below is generated from the Lovely Plugin and the Lovely Dashboard Pro, so the online editor offers exactly what the plugin's Dash Pro editor offers. Don't edit these files by hand.
 
 ## editor-schema.json
 
