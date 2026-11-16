@@ -600,8 +600,9 @@
 
     const barIndex = BAR_ORDER.indexOf(L.SidebarTopbar.BarMode);
     main.append(el('div', { class: 'toolbars' },
-      el('div', { class: 'group' }, el('span', { class: 'label' }, 'Layout'), segmented(S.options.pageLayouts, L.PageLayout, (i) => change(() => { L.PageLayout = i; }))),
+      // As in the plugin: Modules / Layout on the left, the page layout in the middle, the bars on the right
       el('div', { class: 'group' }, segmented(['Modules', 'Layout'], state.layoutMode ? 1 : 0, (i) => { state.layoutMode = i === 1; render(); })),
+      el('div', { class: 'group' }, el('span', { class: 'label' }, 'Layout'), segmented(S.options.pageLayouts, L.PageLayout, (i) => change(() => { L.PageLayout = i; }))),
       el('div', { class: 'group' }, el('span', { class: 'label' }, 'Bars'), segmented(BAR_LABELS, barIndex, (i) => change(() => { L.SidebarTopbar.BarMode = BAR_ORDER[i]; })))));
 
     const dash = dashCanvas(main);
