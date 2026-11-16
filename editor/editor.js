@@ -526,14 +526,6 @@
     if (state.preview) {
       const key = 'gear' + (inputs ? '-inputs' : '') + (sectors ? '-sectors' : '');
       addStatic(dash, { x: C.x, y: top, w: C.width, h: C.inputsHeight }, null, { image: IMG.central[key], opacity: staticOpacity, radius: 0, background: 'transparent' });
-      // The sector bar, driven: each sector fills in turn, then shows how it went (drawn over the image's still bar)
-      if (sectors) {
-        const seg = (C.width + C.sectorGap) / 3 - C.sectorGap;
-        const bar = addStatic(dash, { x: C.x, y: top, w: C.width, h: C.sectorBarHeight }, null, { class: 'sector-anim', radius: 0, background: 'transparent', opacity: staticOpacity });
-        for (let i = 0; i < 3; i++) {
-          bar.append(place(el('div', { class: 'sector' }, el('div', { class: `sector-fill s${i + 1}` })), { x: i * (seg + C.sectorGap), y: 0, w: seg, h: C.sectorBarHeight }));
-        }
-      }
     } else {
       const shift = sectors ? C.sectorBarShift : 0;
       if (sectors) {
