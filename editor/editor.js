@@ -1079,6 +1079,14 @@
     $('#btnOpen').addEventListener('click', openDialog);
     $('#btnExport').addEventListener('click', exportDialog);
     $('#btnSubmit').addEventListener('click', submitDialog);
+    // Lovely Dash Pro promo: shown until closed (remembered in this browser; the footer link stays)
+    let promoClosed = false;
+    try { promoClosed = localStorage.getItem(STORE + '-promo-closed') === '1'; } catch (e) { /* no storage: show it */ }
+    $('#promo').hidden = promoClosed;
+    $('#promoClose').addEventListener('click', () => {
+      $('#promo').hidden = true;
+      try { localStorage.setItem(STORE + '-promo-closed', '1'); } catch (e) { /* no storage */ }
+    });
     $('#fileInput').addEventListener('change', (e) => {
       const file = e.target.files[0];
       e.target.value = '';
