@@ -2538,7 +2538,8 @@
         "Column3": "Estimated Lap",
         "Column4": "Class Session Best"
       },
-      "FullScreenPage": 0
+      "FullScreenPage": 0,
+      "FullScreen": null
     },
     "alerts": {
       "AlertEnabled": true,
