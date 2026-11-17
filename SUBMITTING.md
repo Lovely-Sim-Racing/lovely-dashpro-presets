@@ -19,9 +19,6 @@ A preset is one Dash Pro setup, saved from the Lovely Plugin as a `.dashpro` fil
 
 A preset doesn't include a device, sim, class or vehicle. Whoever imports it chooses where it goes.
 
-## The quick way: the online editor
-Built your preset in the **[Lovely Dash Pro Preset Editor](https://lovely-sim-racing.github.io/lovely-dashpro-presets/editor/)**, or opened your exported `.dashpro` there? Click **Submit** in the editor. It asks for the name, author, description and tags, then opens the Submit a Preset form with everything filled in, preset included. Tick the sharing box and submit. That replaces steps 2 and 3 below.
-
 ## 1. Export it from the Lovely Plugin
 1. Open **Dash Pro** in the Lovely Plugin.
 2. Select the level whose setup you want to share: All Devices, a device, a sim, a class or a vehicle. The preset is exactly what that level shows.
