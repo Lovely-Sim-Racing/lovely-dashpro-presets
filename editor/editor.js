@@ -1028,9 +1028,20 @@
     (state.name ? desc : name).focus();
   }
 
-  // Google Analytics event (index.html loads GA on the live site only; a no-op elsewhere)
+  // Google Analytics event: only once GA has started (the visitor accepted cookies, on the live site); a no-op otherwise
   function track(name, params) {
-    try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) { /* never break the editor */ }
+    try { if (window.gaStarted && typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) { /* never break the editor */ }
+  }
+
+  // Cookie banner: asks once (until answered); "Cookie settings" in the footer asks again
+  function wireConsent() {
+    const banner = $('#consent');
+    if (!banner || typeof window.analyticsConsent !== 'function') return;
+    banner.hidden = window.analyticsConsent() !== null;
+    const answer = (granted) => { window.setAnalyticsConsent(granted); banner.hidden = true; };
+    $('#consentAccept').addEventListener('click', () => answer(true));
+    $('#consentDecline').addEventListener('click', () => answer(false));
+    $('#cookieSettings').addEventListener('click', () => { banner.hidden = false; $('#consentAccept').focus(); });
   }
 
   function download(text) {
@@ -1094,6 +1105,7 @@
       $('#promo').hidden = true;
       try { sessionStorage.setItem(STORE + '-promo-closed', '1'); } catch (e) { /* no storage */ }
     });
+    wireConsent();
     $('#fileInput').addEventListener('change', (e) => {
       const file = e.target.files[0];
       e.target.value = '';
