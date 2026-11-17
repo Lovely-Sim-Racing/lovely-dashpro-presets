@@ -91,6 +91,32 @@
       "featured": null
     },
     {
+      "id": "lmu-hyper",
+      "name": "LMU Hyper",
+      "author": "Rontti",
+      "description": "For Hypercar in Le Mans Ultimate, with a Primary page for practice and the race, with track gaps on top and the fuel, VE and battery sidebars, and a Quali page with the delta along the top and in a large module next to the estimated lap time.",
+      "tags": [
+        "LMU",
+        "Hypercar",
+        "16:9"
+      ],
+      "pages": [
+        "Primary",
+        "Quali"
+      ],
+      "version": 1,
+      "path": "lmu-hyper/lmu-hyper.dashpro",
+      "preview": "lmu-hyper/preview.png",
+      "pageImages": [
+        "lmu-hyper/pages/01-primary.png",
+        "lmu-hyper/pages/02-quali.png"
+      ],
+      "lapReview": "lmu-hyper/lap-review.png",
+      "added": "2026-11-17",
+      "updated": "2026-11-17",
+      "featured": null
+    },
+    {
       "id": "lovely-dashboard-classic",
       "name": "Lovely Dashboard Classic",
       "author": "Lovely Sim Racing",
