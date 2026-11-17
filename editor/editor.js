@@ -1043,7 +1043,8 @@
   }
 
   function download(text) {
-    const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+    // octet-stream, not application/json: with a JSON type some browsers (Safari, mobile Chrome) save it as .dashpro.json
+    const url = URL.createObjectURL(new Blob([text], { type: 'application/octet-stream' }));
     const a = el('a', { href: url, download: fileName() });
     document.body.append(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
