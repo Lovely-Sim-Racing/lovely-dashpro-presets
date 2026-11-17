@@ -35,13 +35,17 @@
     </div>
   </header>
 
-  <nav class="tabs" role="tablist">
-    <button class="tab" role="tab" data-tab="pages" type="button">Pages Layout</button>
-    <button class="tab" role="tab" data-tab="alerts" type="button">Alerts &amp; Notifications</button>
-    <button class="tab" role="tab" data-tab="lapReview" type="button">Lap Review</button>
-    <span class="tab-spacer"></span>
-    <button class="link" id="btnUndo" type="button" title="Undo (Ctrl+Z)">Undo</button>
-    <button class="link" id="btnRedo" type="button" title="Redo (Ctrl+Y)">Redo</button>
+  <!-- The plugin's three Dash Pro tabs, in its order, styled like SimHub's tabs -->
+  <nav class="tabs">
+    <div class="tab-strip" role="tablist">
+      <button class="tab" role="tab" data-tab="pages" type="button">Pages &amp; Layout</button>
+      <button class="tab" role="tab" data-tab="lapReview" type="button">Lap Review</button>
+      <button class="tab" role="tab" data-tab="alerts" type="button">Alerts &amp; Notifications</button>
+    </div>
+    <div class="tab-tools">
+      <button class="link" id="btnUndo" type="button" title="Undo (Ctrl+Z)">Undo</button>
+      <button class="link" id="btnRedo" type="button" title="Redo (Ctrl+Y)">Redo</button>
+    </div>
   </nav>
 
   <main id="main">

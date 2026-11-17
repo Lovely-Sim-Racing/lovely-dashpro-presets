@@ -77,15 +77,23 @@ textarea { width: 100%; min-height: 160px; font: 12px/1.4 Consolas, monospace; r
 .icon-btn { background: none; border: 0; color: var(--muted); cursor: pointer; font-size: 14px; padding: 2px 6px; border-radius: 4px; }
 .icon-btn:hover { color: var(--text); background: var(--button-hover); }
 
-.tabs {
-  display: flex; gap: 4px; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--line-faint); background: #000;
-  overflow-x: auto;
+/* SimHub's tabs (SHTabControl / SHTabItem): 35px tabs with rounded tops, grey, the selected one in the accent colour
+   with small curved flares joining it to a 2px accent line under the row. Centred; Undo / Redo on the right */
+.tabs { position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 10px 130px 0; background: #000; border-bottom: 2px solid var(--accent); }
+.tab-strip { display: flex; align-items: flex-end; gap: 2px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.tab-strip::-webkit-scrollbar { display: none; }
+.tab {
+  position: relative; height: 35px; margin: 0 8px; padding: 0 22px 2px; border: 0; border-radius: 8px 8px 0 0;
+  background: #2f2f2f; color: #fafafa; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap; flex: none;
 }
-.tab { background: none; border: 0; border-bottom: 3px solid transparent; padding: 12px 14px 10px; font-size: 15px; color: var(--muted); cursor: pointer; white-space: nowrap; }
-.tab:hover { color: var(--text); }
-.tab.active { color: var(--text); border-bottom-color: var(--accent); }
-.tab-spacer { flex: 1; }
-.tabs .link { margin-left: 14px; font-size: 14px; }
+.tab:hover { background: rgba(43, 152, 251, .35); }
+.tab.active { background: var(--accent); color: #fff; }
+/* The flares: an 8px quarter-circle cut-out either side of the selected tab's foot */
+.tab.active::before, .tab.active::after { content: ""; position: absolute; bottom: 0; width: 8px; height: 8px; pointer-events: none; }
+.tab.active::before { left: -8px; background: radial-gradient(circle at 0 0, transparent 7.5px, var(--accent) 8px); }
+.tab.active::after { right: -8px; background: radial-gradient(circle at 100% 0, transparent 7.5px, var(--accent) 8px); }
+.tab-tools { position: absolute; right: 24px; bottom: 9px; display: flex; gap: 14px; }
+.tabs .link { font-size: 14px; }
 
 main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24px 40px; }
 .loading { color: var(--muted); padding: 40px 0; }
@@ -188,7 +196,8 @@ main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24
 .picto.selected span { background: #fff; }
 .toolbars .picto-row { min-height: 34px; width: 540px; max-width: 100%; }
 
-.lock-note { color: var(--muted); margin: 0 0 10px; }
+/* The plugin's notes under a section title (Lap Review off in a session, sessions without a page): orange */
+.lock-note { color: #e3a50a; font-size: 13px; margin: -4px 0 10px; }
 
 /* ---------------------------------------------------------------- picker popup */
 .popup {
@@ -274,6 +283,15 @@ main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24
 /* Narrower: the shield stays centred; the preset's name and actions go on a row of their own */
 @media (max-width: 980px) {
   .top-actions { grid-column: 1 / -1; justify-self: start; justify-content: flex-start; }
+}
+
+/* Phone: Undo / Redo on a row of their own above the tabs; the tabs a little tighter (they scroll sideways if they
+   still don't fit) */
+@media (max-width: 720px) {
+  .tabs { flex-wrap: wrap; padding: 6px 16px 0; }
+  .tab-tools { position: static; order: -1; flex: 0 0 100%; justify-content: flex-end; padding-bottom: 6px; }
+  .tab { margin: 0 3px; padding: 0 9px 2px; font-size: 12px; height: 32px; }
+  .tab-strip { gap: 0; }
 }
 
 /* Phone: the shield centred on top, then the wordmark, then the preset's name and actions */

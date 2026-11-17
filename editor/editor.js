@@ -189,7 +189,8 @@
       for (const c of ['Column1', 'Column2', 'Column3', 'Column4']) offer(M.data, (L.ModuleData || {})[c], 'the Data row', n);
       const rows = ((L.CentralColumn || {}).CentralRowModules) || {};
       for (const r of ['Row1', 'Row2', 'Row3', 'Row4', 'Row5']) offer(M.data, rows[r], 'the central column', n);
-      if (L.FullScreenPage < 0 || L.FullScreenPage >= M.fullScreen.length) warnings.push(`${n}: Full Screen page ${L.FullScreenPage} doesn't exist.`);
+      if (L.FullScreen != null && !M.fullScreen.includes(L.FullScreen)) warnings.push(`${n}: Full Screen page "${L.FullScreen}" doesn't exist.`);
+      else if (L.FullScreen == null && (L.FullScreenPage < 0 || L.FullScreenPage >= M.fullScreen.length)) warnings.push(`${n}: Full Screen page ${L.FullScreenPage} doesn't exist.`);
     }
     const lr = preset.LapReview;
     for (const s of SESSIONS) {
@@ -229,6 +230,12 @@
   const pageLabel = (p) => {
     const on = SESSIONS.filter((s) => p.Layout && p.Layout['Is' + s]).map((s) => s[0]);
     return on.length ? `${p.Name} (${on.join(', ')})` : p.Name;
+  };
+  // The sessions no page is active in, as the plugin words them: "Race", "Qualifying or Race", "Practice, Qualifying or Race".
+  // Empty when every session has a page
+  const sessionsWithoutPage = () => {
+    const missing = SESSIONS.filter((s) => !pages().some((p) => p.Layout && p.Layout['Is' + s]));
+    return missing.length <= 1 ? missing.join('') : `${missing.slice(0, -1).join(', ')} or ${missing[missing.length - 1]}`;
   };
   const allowed = (kind) => (kind === 'lapReview' ? S.modules.lapReview : S.modules[kind]) || [];
   const frameFor = (barMode) => S.geometry.frames[clamp(barMode, 0, S.geometry.frames.length - 1)];
@@ -479,7 +486,9 @@
       const fs = S.modules.fullScreen;
       addSlot(dash, {
         zone: 'Full screen page', kind: 'fullScreen', box: f.fullScreen,
-        get: () => fs[clamp(L.FullScreenPage, 0, fs.length - 1)], set: (v) => { const i = fs.indexOf(v); if (i >= 0) L.FullScreenPage = i; },
+        // By name (FullScreen), else by number (FullScreenPage, older presets); saved both ways, like the plugin
+        get: () => fs.includes(L.FullScreen) ? L.FullScreen : fs[clamp(L.FullScreenPage, 0, fs.length - 1)],
+        set: (v) => { const i = fs.indexOf(v); if (i >= 0) { L.FullScreenPage = i; L.FullScreen = v; } },
         image: (n) => IMG.fullScreen[n],
       }, slotOpts);
       if (opts.panels && state.layoutMode) addPanel(dash, f.fullScreen, el('div', { class: 'caption' }, 'Full Screen has no layout options. Switch to Modules to pick the page.'));
@@ -603,6 +612,9 @@
         SESSIONS.map((s) => toggle(s, L['Is' + s], (v) => change(() => { L['Is' + s] = v; }))))));
 
     main.append(sectionTitle('DASHBOARD LAYOUT', toggle('Preview', state.preview, (v) => { state.preview = v; save(); render(); }, 'Show the modules as the dash draws them')));
+    // As the plugin: only when a session has no page
+    const without = sessionsWithoutPage();
+    if (without) main.append(el('p', { class: 'lock-note' }, `No page is active in ${without}. The page buttons go through all pages there.`));
 
     const barIndex = BAR_ORDER.indexOf(L.SidebarTopbar.BarMode);
     main.append(el('div', { class: 'toolbars' },
