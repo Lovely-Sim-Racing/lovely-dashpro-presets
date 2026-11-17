@@ -139,6 +139,7 @@ main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24
 .dash.preview .slot::after { content: ""; position: absolute; inset: -2px; border-radius: 6px; border: 2px solid transparent; pointer-events: none; transition: border-color .1s; }
 .dash.preview .slot:hover::after { border-color: var(--accent); background: rgba(43, 152, 251, 0.08); }
 .dash.preview .slot.blank::after { border: 1px dashed #3a3a3a; }
+.dash.preview .slot.no-image { background: #1c1c1c; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); font-size: 13px; padding: 0 6px; overflow: hidden; }
 .dash.preview .slot.blank:hover::after { border: 2px solid var(--accent); }
 .dash.preview .slot.blank .plus { color: #555; font-size: 22px; }
 .dash.preview .slot.blank:hover .plus { color: var(--accent); }

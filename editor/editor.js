@@ -293,7 +293,8 @@
       const path = blank ? null : slot.image(value);
       if (path) e.append(el('img', { src: img(path), alt: value, draggable: 'false' }));
       else if (blank) e.append(el('span', { class: 'plus' }, '+'));
-      else e.append(el('span', null, value));
+      // No image: a module the current dashboards don't have yet (or one this editor doesn't know). Its name, in a box
+      else { e.classList.add('no-image'); e.title = `${value}: no preview yet`; e.append(el('span', { class: slot.vertical ? 'vertical' : null }, value)); }
     } else {
       const label = el('span', { class: slot.vertical ? 'vertical' : null }, blank ? '+' : value);
       e.append(label);
