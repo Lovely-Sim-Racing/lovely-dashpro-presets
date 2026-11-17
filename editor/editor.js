@@ -939,7 +939,7 @@
     name.addEventListener('keydown', (e) => { if (e.key === 'Enter') downloadBtn.click(); });
     const body = [
       el('p', null, `${pages().length} page${pages().length === 1 ? '' : 's'}, with Alerts & Notifications and Lap Review. In the Lovely Plugin, open Dash Pro and click Import, then pick this file.`),
-      formField('Preset name', name, 'Names the file. Submitting it uses this name too.'),
+      formField('Preset name', name),
     ];
     if (check.warnings.length) body.push(el('ul', { class: 'warnings' }, check.warnings.map((w) => el('li', null, w))));
     body.push(error);
