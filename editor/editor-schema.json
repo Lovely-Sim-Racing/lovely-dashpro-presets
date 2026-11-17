@@ -1,0 +1,2865 @@
+{
+  "schema": 1,
+  "plugin": "4.2.0.0",
+  "preset": {
+    "format": "LovelyDashProPreset",
+    "version": 1
+  },
+  "modules": {
+    "topbar": [
+      "Delta",
+      "Track Gaps",
+      "Class Gaps",
+      "Sector Bar",
+      "Virtual RPM",
+      "Virtual RPM - ATSR",
+      "Rev Bar",
+      "Inputs",
+      "Spotter",
+      "Fuel",
+      "Virtual Energy",
+      "Fuel / VE",
+      "Linear Map",
+      "SoC",
+      "Utility Bar",
+      "Next Race"
+    ],
+    "sidebar": [
+      "Fuel",
+      "Throttle",
+      "Brake",
+      "Inputs",
+      "Virtual RPM",
+      "Virtual RPM - ATSR",
+      "Spotter",
+      "Virtual Energy",
+      "Fuel / VE",
+      "Linear Map",
+      "SoC",
+      "Delta"
+    ],
+    "module": [
+      "TC",
+      "TC 2",
+      "TC Slip",
+      "ABS",
+      "Brake Bias",
+      "Brake Migration",
+      "Engine Map",
+      "Fuel Mix",
+      "Engine Power",
+      "Engine Brake",
+      "Turbo",
+      "Boost",
+      "ERS",
+      "MGU",
+      "MGU-K",
+      "Regen",
+      "ERS Mode",
+      "SoC",
+      "P2P",
+      "Throttle Shape",
+      "Differential",
+      "Diff Entry",
+      "Diff Mid",
+      "Diff Exit",
+      "Front Roll Bar",
+      "Rear Roll Bar",
+      "Roll Bars",
+      "Weight Jacker",
+      "Speed",
+      "Fuel",
+      "Fuel %",
+      "Fuel Average",
+      "Fuel 5 Lap Average",
+      "Fuel Laps Left",
+      "Fuel Time Left",
+      "Fuel Last Lap",
+      "Fuel This Lap",
+      "Refuel",
+      "Pit Window",
+      "VE %",
+      "VE Average",
+      "VE 5 Lap Average",
+      "VE Laps Left",
+      "Battery",
+      "Oil Pressure",
+      "Oil Temp",
+      "Water Temp",
+      "Oil Level",
+      "Fuel Pressure",
+      "Torque",
+      "Last Lap",
+      "Current Lap",
+      "Estimated Lap",
+      "Delta",
+      "Session Best",
+      "Overall Session Best",
+      "Class Session Best",
+      "Optimal Best Lap",
+      "5 Lap Average",
+      "10 Lap Average",
+      "All-Time Best",
+      "Position",
+      "Pit Loss",
+      "Track Ahead",
+      "Track Behind",
+      "Track Gaps",
+      "Class Ahead",
+      "Class Behind",
+      "Class Gaps",
+      "Tire Front Left",
+      "Tire Front Right",
+      "Tire Rear Left",
+      "Tire Rear Right",
+      "Tire Front Left AVG",
+      "Tire Front Right AVG",
+      "Tire Rear Left AVG",
+      "Tire Rear Right AVG",
+      "Blank"
+    ],
+    "data": [
+      "Session Name",
+      "Session Time",
+      "PC Time",
+      "Time Remaining",
+      "Lap",
+      "Position",
+      "Pit Loss",
+      "Track Ahead",
+      "Track Behind",
+      "Class Ahead",
+      "Class Behind",
+      "RPM",
+      "Speed",
+      "Throttle",
+      "Brake",
+      "Clutch",
+      "Last Lap",
+      "Current Lap",
+      "Estimated Lap",
+      "Delta",
+      "Session Best",
+      "Overall Session Best",
+      "Class Session Best",
+      "Optimal Best Lap",
+      "5 Lap Average",
+      "10 Lap Average",
+      "All-Time Best",
+      "Fuel",
+      "Fuel %",
+      "Fuel Average",
+      "Fuel 5 Lap Average",
+      "Fuel Laps Left",
+      "Fuel Time Left",
+      "Fuel Last Lap",
+      "Fuel This Lap",
+      "Refuel",
+      "Pit Window",
+      "VE %",
+      "VE Average",
+      "VE 5 Lap Average",
+      "VE Laps Left",
+      "iRating Estimate",
+      "Incidents",
+      "Current Lap Sectors",
+      "ERS Mode",
+      "P2P",
+      "Lift & Coast",
+      "Functions",
+      "Race Controls",
+      "Weather",
+      "Blank"
+    ],
+    "fullScreen": [
+      "Relative",
+      "Standings",
+      "Track Opponents",
+      "Class Opponents",
+      "Map Animated",
+      "Map Static",
+      "Radar",
+      "Telemetry",
+      "Lap History",
+      "Race Flags",
+      "Tire Info",
+      "Damage"
+    ],
+    "lapReview": [
+      "Lap Time",
+      "Lap Delta",
+      "Sectors",
+      "Sector Deltas",
+      "Position",
+      "Gaps",
+      "Fuel Used",
+      "Fuel Left",
+      "VE Used",
+      "VE Left",
+      "Fuel / VE Used",
+      "Tire Wear",
+      "Lap Validity",
+      "Top Speed",
+      "Blank"
+    ],
+    "empty": "Blank",
+    "categories": [
+      {
+        "name": "Timing",
+        "modules": [
+          "Session Name",
+          "Session Time",
+          "PC Time",
+          "Time Remaining",
+          "Lap",
+          "Position",
+          "Pit Loss",
+          "Track Ahead",
+          "Track Behind",
+          "Track Gaps",
+          "Class Ahead",
+          "Class Behind",
+          "Class Gaps",
+          "Last Lap",
+          "Current Lap",
+          "Estimated Lap",
+          "Delta",
+          "Session Best",
+          "Overall Session Best",
+          "Class Session Best",
+          "Optimal Best Lap",
+          "5 Lap Average",
+          "10 Lap Average",
+          "All-Time Best",
+          "Current Lap Sectors",
+          "Sector Bar"
+        ]
+      },
+      {
+        "name": "Fuel and energy",
+        "modules": [
+          "Fuel",
+          "Fuel %",
+          "Fuel Average",
+          "Fuel 5 Lap Average",
+          "Fuel Laps Left",
+          "Fuel Time Left",
+          "Fuel Last Lap",
+          "Fuel This Lap",
+          "Refuel",
+          "Pit Window",
+          "Virtual Energy",
+          "Fuel / VE",
+          "VE %",
+          "VE Average",
+          "VE 5 Lap Average",
+          "VE Laps Left"
+        ]
+      },
+      {
+        "name": "Car controls",
+        "modules": [
+          "TC",
+          "TC 2",
+          "TC Slip",
+          "ABS",
+          "Brake Bias",
+          "Brake Migration",
+          "Engine Map",
+          "Fuel Mix",
+          "Engine Power",
+          "Engine Brake",
+          "Turbo",
+          "Boost",
+          "ERS",
+          "MGU",
+          "MGU-K",
+          "Regen",
+          "ERS Mode",
+          "P2P",
+          "Throttle Shape",
+          "Differential",
+          "Diff Entry",
+          "Diff Mid",
+          "Diff Exit",
+          "Front Roll Bar",
+          "Rear Roll Bar",
+          "Roll Bars",
+          "Weight Jacker"
+        ]
+      },
+      {
+        "name": "Car status",
+        "modules": [
+          "RPM",
+          "Speed",
+          "Battery",
+          "SoC",
+          "Oil Pressure",
+          "Oil Temp",
+          "Water Temp",
+          "Oil Level",
+          "Fuel Pressure",
+          "Torque",
+          "Tire Front Left",
+          "Tire Front Right",
+          "Tire Rear Left",
+          "Tire Rear Right",
+          "Tire Front Left AVG",
+          "Tire Front Right AVG",
+          "Tire Rear Left AVG",
+          "Tire Rear Right AVG",
+          "Functions"
+        ]
+      },
+      {
+        "name": "Driver aids",
+        "modules": [
+          "Throttle",
+          "Brake",
+          "Clutch",
+          "Inputs",
+          "Virtual RPM",
+          "Virtual RPM - ATSR",
+          "Rev Bar",
+          "Spotter",
+          "Linear Map",
+          "Race Controls",
+          "Lift & Coast",
+          "Utility Bar"
+        ]
+      },
+      {
+        "name": "Track and weather",
+        "modules": [
+          "Weather"
+        ]
+      },
+      {
+        "name": "Ratings and incidents",
+        "modules": [
+          "iRating Estimate",
+          "Incidents"
+        ]
+      },
+      {
+        "name": "Pages",
+        "modules": [
+          "Relative",
+          "Standings",
+          "Track Opponents",
+          "Class Opponents",
+          "Map Animated",
+          "Map Static",
+          "Radar",
+          "Telemetry",
+          "Lap History",
+          "Race Flags",
+          "Tire Info",
+          "Damage"
+        ]
+      }
+    ],
+    "needs": {
+      "Virtual RPM - ATSR": "Needs ATSR Hub Evo"
+    }
+  },
+  "options": {
+    "barModes": [
+      "Sidebar & Topbar",
+      "Sidebar Only",
+      "Topbar Only",
+      "No Bars"
+    ],
+    "pageLayouts": [
+      "Modular",
+      "Full Screen"
+    ],
+    "moduleSizes": [
+      "3 x 3",
+      "2 x 2",
+      "MFM"
+    ],
+    "rowLayouts": [
+      {
+        "name": "Layout 1-1-1",
+        "spans": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Layout 1-2",
+        "spans": [
+          1,
+          2
+        ]
+      },
+      {
+        "name": "Layout 2-1",
+        "spans": [
+          2,
+          1
+        ]
+      },
+      {
+        "name": "Layout 3",
+        "spans": [
+          3
+        ]
+      }
+    ],
+    "rowLayoutsMedium": [
+      {
+        "name": "Layout 1-1",
+        "spans": [
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Layout 2",
+        "spans": [
+          2
+        ]
+      }
+    ],
+    "centralLayouts": [
+      {
+        "name": "Layout 1-1-1-1-1",
+        "spans": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Layout 2-1-1-1",
+        "spans": [
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Layout 1-2-1-1",
+        "spans": [
+          1,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Layout 1-1-2-1",
+        "spans": [
+          1,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "name": "Layout 1-1-1-2",
+        "spans": [
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "name": "Layout 2-2-1",
+        "spans": [
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "name": "Layout 1-2-2",
+        "spans": [
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "name": "Layout 2-1-2",
+        "spans": [
+          2,
+          1,
+          2
+        ]
+      }
+    ],
+    "lapReviewStripLayouts": [
+      {
+        "name": "1-1-1-1-1",
+        "spans": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "2-1-1-1",
+        "spans": [
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "1-1-1-2",
+        "spans": [
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "name": "1-3-1",
+        "spans": [
+          1,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "2-1-2",
+        "spans": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "name": "3-1-1",
+        "spans": [
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "1-1-3",
+        "spans": [
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "name": "3-2",
+        "spans": [
+          3,
+          2
+        ]
+      },
+      {
+        "name": "2-3",
+        "spans": [
+          2,
+          3
+        ]
+      },
+      {
+        "name": "5",
+        "spans": [
+          5
+        ]
+      }
+    ],
+    "lapReviewModes": [
+      {
+        "value": 0,
+        "label": "Strip"
+      },
+      {
+        "value": 1,
+        "label": "Full Screen"
+      }
+    ],
+    "lapReviewSessions": [
+      "Practice",
+      "Qualifying",
+      "Race"
+    ]
+  },
+  "geometry": {
+    "width": 854.0,
+    "height": 480.0,
+    "frames": [
+      {
+        "barMode": 0,
+        "name": "Sidebar & Topbar",
+        "topbar": {
+          "x": 48.0,
+          "y": 10.0,
+          "w": 758.0,
+          "h": 28.0
+        },
+        "leftSidebar": {
+          "x": 10.0,
+          "y": 10.0,
+          "w": 28.0,
+          "h": 460.0
+        },
+        "rightSidebar": {
+          "x": 816.0,
+          "y": 10.0,
+          "w": 28.0,
+          "h": 460.0
+        },
+        "leftModules": {
+          "x": 48.0,
+          "y": 48.0,
+          "w": 290.0,
+          "h": 278.0
+        },
+        "rightModules": {
+          "x": 516.0,
+          "y": 48.0,
+          "w": 290.0,
+          "h": 278.0
+        },
+        "modulesScale": 1.0,
+        "centralTop": 48.0,
+        "dataRow": [
+          {
+            "x": 48.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 198.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 516.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 666.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          }
+        ],
+        "bottomLeft": {
+          "x": 48.0,
+          "y": 384.0,
+          "w": 290.0,
+          "h": 86.0
+        },
+        "bottomRight": {
+          "x": 516.0,
+          "y": 384.0,
+          "w": 290.0,
+          "h": 86.0
+        },
+        "fullScreen": {
+          "x": 48.0,
+          "y": 48.0,
+          "w": 758.0,
+          "h": 422.0
+        },
+        "fullScreenScale": 1.0,
+        "alertBand": {
+          "x": 46.0,
+          "y": 46.0,
+          "w": 762.0,
+          "h": 94.0
+        }
+      },
+      {
+        "barMode": 1,
+        "name": "Sidebar Only",
+        "topbar": null,
+        "leftSidebar": {
+          "x": 10.0,
+          "y": 10.0,
+          "w": 28.0,
+          "h": 460.0
+        },
+        "rightSidebar": {
+          "x": 816.0,
+          "y": 10.0,
+          "w": 28.0,
+          "h": 460.0
+        },
+        "leftModules": {
+          "x": 48.0,
+          "y": 10.0,
+          "w": 290.0,
+          "h": 278.0
+        },
+        "rightModules": {
+          "x": 516.0,
+          "y": 10.0,
+          "w": 290.0,
+          "h": 278.0
+        },
+        "modulesScale": 1.0,
+        "centralTop": 29.0,
+        "dataRow": [
+          {
+            "x": 48.0,
+            "y": 316.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 198.0,
+            "y": 316.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 516.0,
+            "y": 316.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 666.0,
+            "y": 316.0,
+            "w": 140.0,
+            "h": 38.0
+          }
+        ],
+        "bottomLeft": {
+          "x": 48.0,
+          "y": 384.0,
+          "w": 290.0,
+          "h": 86.0
+        },
+        "bottomRight": {
+          "x": 516.0,
+          "y": 384.0,
+          "w": 290.0,
+          "h": 86.0
+        },
+        "fullScreen": {
+          "x": 48.0,
+          "y": 29.0,
+          "w": 758.0,
+          "h": 422.0
+        },
+        "fullScreenScale": 1.0,
+        "alertBand": {
+          "x": 46.0,
+          "y": 8.0,
+          "w": 762.0,
+          "h": 94.0
+        }
+      },
+      {
+        "barMode": 2,
+        "name": "Topbar Only",
+        "topbar": {
+          "x": 48.0,
+          "y": 10.0,
+          "w": 758.0,
+          "h": 28.0
+        },
+        "leftSidebar": null,
+        "rightSidebar": null,
+        "leftModules": {
+          "x": 10.0,
+          "y": 48.0,
+          "w": 290.0,
+          "h": 278.0
+        },
+        "rightModules": {
+          "x": 554.0,
+          "y": 48.0,
+          "w": 290.0,
+          "h": 278.0
+        },
+        "modulesScale": 1.0,
+        "centralTop": 48.0,
+        "dataRow": [
+          {
+            "x": 10.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 160.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 554.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 704.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          }
+        ],
+        "bottomLeft": {
+          "x": 10.0,
+          "y": 384.0,
+          "w": 290.0,
+          "h": 86.0
+        },
+        "bottomRight": {
+          "x": 554.0,
+          "y": 384.0,
+          "w": 290.0,
+          "h": 86.0
+        },
+        "fullScreen": {
+          "x": 48.0,
+          "y": 48.0,
+          "w": 758.0,
+          "h": 422.0
+        },
+        "fullScreenScale": 1.0,
+        "alertBand": {
+          "x": 8.0,
+          "y": 46.0,
+          "w": 838.0,
+          "h": 94.0
+        }
+      },
+      {
+        "barMode": 3,
+        "name": "No Bars",
+        "topbar": null,
+        "leftSidebar": null,
+        "rightSidebar": null,
+        "leftModules": {
+          "x": 10.0,
+          "y": 10.0,
+          "w": 327.99,
+          "h": 314.418
+        },
+        "rightModules": {
+          "x": 516.0,
+          "y": 10.0,
+          "w": 327.99,
+          "h": 314.418
+        },
+        "modulesScale": 1.131,
+        "centralTop": 29.0,
+        "dataRow": [
+          {
+            "x": 10.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 160.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 554.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          },
+          {
+            "x": 704.0,
+            "y": 336.0,
+            "w": 140.0,
+            "h": 38.0
+          }
+        ],
+        "bottomLeft": {
+          "x": 10.0,
+          "y": 384.0,
+          "w": 290.0,
+          "h": 86.0
+        },
+        "bottomRight": {
+          "x": 554.0,
+          "y": 384.0,
+          "w": 290.0,
+          "h": 86.0
+        },
+        "fullScreen": {
+          "x": 10.0,
+          "y": 10.0,
+          "w": 833.8,
+          "h": 464.2
+        },
+        "fullScreenScale": 1.1,
+        "alertBand": {
+          "x": 8.0,
+          "y": 8.0,
+          "w": 838.0,
+          "h": 104.0
+        }
+      }
+    ],
+    "rows": {
+      "small": {
+        "rowStep": 96.0,
+        "rowHeight": 86.0,
+        "layouts": [
+          [
+            {
+              "column": 1,
+              "x": 0,
+              "w": 90
+            },
+            {
+              "column": 2,
+              "x": 100,
+              "w": 90
+            },
+            {
+              "column": 3,
+              "x": 200,
+              "w": 90
+            }
+          ],
+          [
+            {
+              "column": 1,
+              "x": 0,
+              "w": 90
+            },
+            {
+              "column": 2,
+              "x": 100,
+              "w": 190
+            }
+          ],
+          [
+            {
+              "column": 1,
+              "x": 0,
+              "w": 190
+            },
+            {
+              "column": 2,
+              "x": 200,
+              "w": 90
+            }
+          ],
+          [
+            {
+              "column": 1,
+              "x": 0,
+              "w": 290
+            }
+          ]
+        ]
+      },
+      "medium": {
+        "rowStep": 144.0,
+        "rowHeight": 134.0,
+        "layouts": [
+          [
+            {
+              "column": 1,
+              "x": 0,
+              "w": 140
+            },
+            {
+              "column": 2,
+              "x": 150,
+              "w": 140
+            }
+          ],
+          [
+            {
+              "column": 1,
+              "x": 0,
+              "w": 290
+            }
+          ]
+        ]
+      }
+    },
+    "central": {
+      "x": 348.0,
+      "width": 158.0,
+      "inputsHeight": 182.0,
+      "inputBarWidth": 15.0,
+      "gearInset": 20.0,
+      "sectorBarHeight": 10.0,
+      "sectorBarShift": 20.0,
+      "sectorGap": 2.0,
+      "rowsOffset": 192.0,
+      "rowInset": 9.0,
+      "rowWidth": 140.0,
+      "rowHeight": 38.0,
+      "rowPitch": 48.0
+    },
+    "lapReviewStrip": {
+      "columnWidth": 140.0,
+      "columnGap": 14.0,
+      "height": 94.0
+    },
+    "lapReviewFullScreen": {
+      "sectors": {
+        "panel": {
+          "x": 5.0,
+          "y": 5.0,
+          "w": 844.0,
+          "h": 470.0
+        },
+        "headline": {
+          "x": 24.0,
+          "y": 24.0,
+          "w": 806.0,
+          "h": 224.014
+        },
+        "sectors": {
+          "x": 24.0,
+          "y": 260.014,
+          "w": 806.0,
+          "h": 100.217
+        },
+        "middle": [],
+        "bottom": [
+          {
+            "x": 24.0,
+            "y": 372.231,
+            "w": 262.0,
+            "h": 83.769
+          },
+          {
+            "x": 296.0,
+            "y": 372.231,
+            "w": 262.0,
+            "h": 83.769
+          },
+          {
+            "x": 568.0,
+            "y": 372.231,
+            "w": 262.0,
+            "h": 83.769
+          }
+        ]
+      },
+      "modules": {
+        "panel": {
+          "x": 5.0,
+          "y": 5.0,
+          "w": 844.0,
+          "h": 470.0
+        },
+        "headline": {
+          "x": 24.0,
+          "y": 24.0,
+          "w": 806.0,
+          "h": 240.463
+        },
+        "sectors": null,
+        "middle": [
+          {
+            "x": 24.0,
+            "y": 276.463,
+            "w": 262.0,
+            "h": 83.769
+          },
+          {
+            "x": 296.0,
+            "y": 276.463,
+            "w": 262.0,
+            "h": 83.769
+          },
+          {
+            "x": 568.0,
+            "y": 276.463,
+            "w": 262.0,
+            "h": 83.769
+          }
+        ],
+        "bottom": [
+          {
+            "x": 24.0,
+            "y": 372.231,
+            "w": 262.0,
+            "h": 83.769
+          },
+          {
+            "x": 296.0,
+            "y": 372.231,
+            "w": 262.0,
+            "h": 83.769
+          },
+          {
+            "x": 568.0,
+            "y": 372.231,
+            "w": 262.0,
+            "h": 83.769
+          }
+        ]
+      }
+    }
+  },
+  "settings": {
+    "alerts": {
+      "groups": [
+        "Vehicle Settings Alerts",
+        "Fuel Warnings",
+        "Lap Review",
+        "Pit Limiter",
+        "Engine & Ignition Alerts",
+        "Launch Mode",
+        "Lift Now",
+        "Engine Warnings",
+        "Penalty",
+        "Flags",
+        "Damage Alert",
+        "Rotary Dials"
+      ],
+      "options": [
+        {
+          "key": "AlertEnabled",
+          "group": "Vehicle Settings Alerts",
+          "label": "Show Vehicle Settings Alerts",
+          "type": "bool",
+          "default": true,
+          "description": "Shows an alert when you change a vehicle setting (TC, ABS, BB, Engine Map...).",
+          "switch": true
+        },
+        {
+          "key": "AlertSize",
+          "group": "Vehicle Settings Alerts",
+          "label": "Alert Size",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Strip"
+            },
+            {
+              "value": 1,
+              "label": "Full Screen"
+            }
+          ],
+          "description": "Strip runs across the top. Full Screen covers the dash."
+        },
+        {
+          "key": "AlertColors",
+          "group": "Vehicle Settings Alerts",
+          "label": "Alert Colors",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Normal"
+            },
+            {
+              "value": 1,
+              "label": "Inverted"
+            }
+          ],
+          "description": "Inverted uses a black background."
+        },
+        {
+          "key": "PitLimiterEnabled",
+          "group": "Pit Limiter",
+          "label": "Show Pit Limiter",
+          "type": "bool",
+          "default": true,
+          "description": "Shows speed and gear while the pit limiter is on.",
+          "switch": true
+        },
+        {
+          "key": "PitLimiterSize",
+          "group": "Pit Limiter",
+          "label": "Pit Limiter Size",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Small"
+            },
+            {
+              "value": 1,
+              "label": "Full Screen"
+            }
+          ],
+          "description": "Small covers the gear. Full Screen covers the dash."
+        },
+        {
+          "key": "PitLimiterColors",
+          "group": "Pit Limiter",
+          "label": "Pit Limiter Colors",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Normal"
+            },
+            {
+              "value": 1,
+              "label": "Inverted"
+            }
+          ],
+          "description": "Inverted uses a black background."
+        },
+        {
+          "key": "EngineAlertEnabled",
+          "group": "Engine & Ignition Alerts",
+          "label": "Show Engine & Ignition Alerts",
+          "type": "bool",
+          "default": true,
+          "description": "Shows IGN OFF and ENG OFF.",
+          "switch": true
+        },
+        {
+          "key": "EngineAlertSize",
+          "group": "Engine & Ignition Alerts",
+          "label": "Engine Alert Size",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Small"
+            },
+            {
+              "value": 1,
+              "label": "Full Screen"
+            }
+          ],
+          "description": "Small covers the gear. Full Screen covers the dash."
+        },
+        {
+          "key": "EngineAlertColors",
+          "group": "Engine & Ignition Alerts",
+          "label": "Engine Alert Colors",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Normal"
+            },
+            {
+              "value": 1,
+              "label": "Inverted"
+            }
+          ],
+          "description": "Inverted uses a black background."
+        },
+        {
+          "key": "LaunchAlertEnabled",
+          "group": "Launch Mode",
+          "label": "Show Launch Mode",
+          "type": "bool",
+          "default": false,
+          "description": "Shows LAUNCH and the RPM at a race start, with the clutch in. Green while the RPM and throttle are in the window.",
+          "switch": true
+        },
+        {
+          "key": "LaunchAlertSize",
+          "group": "Launch Mode",
+          "label": "Launch Mode Size",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Small"
+            },
+            {
+              "value": 1,
+              "label": "Full Screen"
+            }
+          ],
+          "description": "Small covers the gear. Full Screen covers the dash."
+        },
+        {
+          "key": "LaunchAlertColors",
+          "group": "Launch Mode",
+          "label": "Launch Mode Colors",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Normal"
+            },
+            {
+              "value": 1,
+              "label": "Inverted"
+            }
+          ],
+          "description": "Inverted uses a black background."
+        },
+        {
+          "key": "LaunchClutchAbove",
+          "group": "Launch Mode",
+          "label": "Clutch Above (%)",
+          "type": "number",
+          "default": 50,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "description": "Clutch pressed more than this."
+        },
+        {
+          "key": "LaunchSpeedBelow",
+          "group": "Launch Mode",
+          "label": "Speed Below",
+          "type": "number",
+          "default": 10,
+          "min": 0.0,
+          "max": 50.0,
+          "step": 1.0,
+          "description": "Standing still, or nearly. In SimHub's speed unit."
+        },
+        {
+          "key": "LaunchWindow",
+          "group": "Launch Mode",
+          "label": "Green Window",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Auto (F1)"
+            },
+            {
+              "value": 1,
+              "label": "On"
+            },
+            {
+              "value": 2,
+              "label": "Off"
+            }
+          ],
+          "description": "Auto: on in F1, off in other sims. Set a car's own window on its Vehicle level."
+        },
+        {
+          "key": "LaunchRpmFrom",
+          "group": "Launch Mode",
+          "label": "RPM Window",
+          "type": "number",
+          "default": 10500,
+          "min": 0.0,
+          "max": 20000.0,
+          "step": 100.0,
+          "description": "Green between these revs...",
+          "rangeTo": "LaunchRpmTo"
+        },
+        {
+          "key": "LaunchRpmTo",
+          "group": "Launch Mode",
+          "label": "RPM Window",
+          "type": "number",
+          "default": 12600,
+          "step": 1.0,
+          "rangeEnd": true
+        },
+        {
+          "key": "LaunchThrottleFrom",
+          "group": "Launch Mode",
+          "label": "Throttle Window (%)",
+          "type": "number",
+          "default": 20,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "description": "...and this much throttle.",
+          "rangeTo": "LaunchThrottleTo"
+        },
+        {
+          "key": "LaunchThrottleTo",
+          "group": "Launch Mode",
+          "label": "Throttle Window (%)",
+          "type": "number",
+          "default": 30,
+          "step": 1.0,
+          "rangeEnd": true
+        },
+        {
+          "key": "LiftAlertEnabled",
+          "group": "Lift Now",
+          "label": "Show Lift Now",
+          "type": "bool",
+          "default": true,
+          "description": "Shows LIFT NOW for as long as Le Mans Ultimate's lift and coast cue is on.",
+          "switch": true
+        },
+        {
+          "key": "LiftAlertSize",
+          "group": "Lift Now",
+          "label": "Lift Now Size",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Strip"
+            },
+            {
+              "value": 1,
+              "label": "Full Screen"
+            }
+          ],
+          "description": "Strip runs across the top. Full Screen covers the dash."
+        },
+        {
+          "key": "LiftAlertColors",
+          "group": "Lift Now",
+          "label": "Lift Now Colors",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Normal"
+            },
+            {
+              "value": 1,
+              "label": "Inverted"
+            }
+          ],
+          "description": "Inverted uses a black background."
+        },
+        {
+          "key": "LiftAlertPoint",
+          "group": "Lift Now",
+          "label": "Lift Point",
+          "type": "number",
+          "default": 220,
+          "min": 0.0,
+          "max": 255.0,
+          "step": 1.0,
+          "description": "The cue counts up to 255. Lower shows LIFT NOW earlier (default 220)."
+        },
+        {
+          "key": "FuelAlertEnabled",
+          "group": "Fuel Warnings",
+          "label": "Show Fuel Warnings",
+          "type": "bool",
+          "default": true,
+          "description": "Warns when you're running out of fuel, by laps of fuel left.",
+          "switch": true
+        },
+        {
+          "key": "FuelAlertColors",
+          "group": "Fuel Warnings",
+          "label": "Low Fuel Colors",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Normal"
+            },
+            {
+              "value": 1,
+              "label": "Inverted"
+            }
+          ],
+          "description": "Inverted uses a black background."
+        },
+        {
+          "key": "FuelWarningLaps",
+          "group": "Fuel Warnings",
+          "label": "Warning Levels (laps of fuel left)",
+          "type": "number",
+          "default": 4,
+          "step": 1.0,
+          "rangeEnd": true
+        },
+        {
+          "key": "FuelCriticalLaps",
+          "group": "Fuel Warnings",
+          "label": "Warning Levels (laps of fuel left)",
+          "type": "number",
+          "default": 2,
+          "min": 0.0,
+          "max": 10.0,
+          "step": 1.0,
+          "description": "Level 1 (right): the Fuel value blinks red. Level 2 (left): a LOW FUEL strip. 0 turns a level off.",
+          "rangeTo": "FuelWarningLaps"
+        },
+        {
+          "key": "PitNowAlertEnabled",
+          "group": "Fuel Warnings",
+          "label": "Show Pit Now",
+          "type": "bool",
+          "default": true,
+          "description": "A PIT NOW strip on the last part of the lap when about a lap of fuel is left (not in F1)."
+        },
+        {
+          "key": "EngineWarningEnabled",
+          "group": "Engine Warnings",
+          "label": "Show Engine Warnings",
+          "type": "bool",
+          "default": true,
+          "description": "A red strip when the engine runs too hot or loses pressure.",
+          "switch": true
+        },
+        {
+          "key": "EngineWarningWaterTemp",
+          "group": "Engine Warnings",
+          "label": "Water Temp",
+          "type": "bool",
+          "default": true,
+          "heading": "Warnings"
+        },
+        {
+          "key": "EngineWarningOilTemp",
+          "group": "Engine Warnings",
+          "label": "Oil Temp",
+          "type": "bool",
+          "default": true
+        },
+        {
+          "key": "EngineWarningOilPressure",
+          "group": "Engine Warnings",
+          "label": "Oil Pressure",
+          "type": "bool",
+          "default": true
+        },
+        {
+          "key": "EngineWarningFuelPressure",
+          "group": "Engine Warnings",
+          "label": "Fuel Pressure",
+          "type": "bool",
+          "default": true,
+          "description": "iRacing uses each car's own warning lights. LMU and rFactor 2 send engine overheating only."
+        },
+        {
+          "key": "EngineWarningWaterLimit",
+          "group": "Engine Warnings",
+          "label": "Water",
+          "type": "number",
+          "default": 110,
+          "min": 0.0,
+          "max": 200.0,
+          "step": 1.0,
+          "heading": "Limits (other sims, \u00b0C)"
+        },
+        {
+          "key": "EngineWarningOilLimit",
+          "group": "Engine Warnings",
+          "label": "Oil",
+          "type": "number",
+          "default": 130,
+          "min": 0.0,
+          "max": 200.0,
+          "step": 1.0,
+          "description": "Warns above these temperatures. 0 turns a limit off. Set a car's own limits on its Vehicle level."
+        },
+        {
+          "key": "PenaltyAlertEnabled",
+          "group": "Penalty",
+          "label": "Show Penalty",
+          "type": "bool",
+          "default": true,
+          "description": "A red strip until you serve your penalty. ACC names the penalty; LMU and rFactor 2 only say how many are left. Clear Alerts hides it until the penalty changes.",
+          "switch": true
+        },
+        {
+          "key": "FlagsAlertEnabled",
+          "group": "Flags",
+          "label": "Show Flags",
+          "type": "bool",
+          "default": true,
+          "description": "A new flag pops up over the gear for 3 seconds, then stays as a thin bar across the top while it's out. Clear Alerts hides the bar until the flag changes.",
+          "switch": true
+        },
+        {
+          "key": "RotaryDialsEnabled",
+          "group": "Rotary Dials",
+          "label": "Show Rotary Dials",
+          "type": "bool",
+          "default": true,
+          "description": "Shows dial labels and an alert when you turn a dial (Ascher, Greywolf, Generic Control Mapper). Duration: Alert Duration (Vehicle Settings Alerts).",
+          "switch": true
+        },
+        {
+          "key": "RotaryDialsSize",
+          "group": "Rotary Dials",
+          "label": "Rotary Dial Size",
+          "type": "choice",
+          "default": 1,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Strip"
+            },
+            {
+              "value": 1,
+              "label": "Full Screen"
+            }
+          ],
+          "description": "Strip runs across the top. Full Screen covers the dash."
+        },
+        {
+          "key": "RotaryDialsColors",
+          "group": "Rotary Dials",
+          "label": "Rotary Dial Colors",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Normal"
+            },
+            {
+              "value": 1,
+              "label": "Inverted"
+            }
+          ],
+          "description": "Inverted uses a black background."
+        },
+        {
+          "key": "DamageAlertEnabled",
+          "group": "Damage Alert",
+          "label": "Show Damage Alert",
+          "type": "bool",
+          "default": true,
+          "description": "Shows your damage when it gets worse.",
+          "switch": true
+        },
+        {
+          "key": "DamageAlertSize",
+          "group": "Damage Alert",
+          "label": "Damage Alert Size",
+          "type": "choice",
+          "default": 2,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Strip"
+            },
+            {
+              "value": 1,
+              "label": "Full Screen"
+            },
+            {
+              "value": 2,
+              "label": "Block"
+            }
+          ],
+          "description": "Strip runs across the top. Full Screen covers the dash. Block sits in the middle."
+        },
+        {
+          "key": "AlertDuration",
+          "group": "Vehicle Settings Alerts",
+          "label": "Alert Duration (ms)",
+          "type": "number",
+          "default": 1000,
+          "min": 500.0,
+          "max": 10000.0,
+          "step": 1.0,
+          "description": "In milliseconds (1000 = 1 second)"
+        },
+        {
+          "key": "DamageAlertDuration",
+          "group": "Damage Alert",
+          "label": "Damage Alert Duration (ms)",
+          "type": "number",
+          "default": 7500,
+          "min": 500.0,
+          "max": 10000.0,
+          "step": 1.0,
+          "description": "In milliseconds (1000 = 1 second)"
+        }
+      ]
+    },
+    "lapReview": {
+      "groups": [
+        "Sessions",
+        "Lap Review"
+      ],
+      "options": [
+        {
+          "key": "IsPractice",
+          "group": "Sessions",
+          "label": "Practice",
+          "type": "bool",
+          "default": true,
+          "description": "Lap Review tab: the session buttons' checkboxes."
+        },
+        {
+          "key": "IsQualifying",
+          "group": "Sessions",
+          "label": "Qualifying",
+          "type": "bool",
+          "default": true
+        },
+        {
+          "key": "IsRace",
+          "group": "Sessions",
+          "label": "Race",
+          "type": "bool",
+          "default": false
+        },
+        {
+          "key": "Colors",
+          "group": "Lap Review",
+          "label": "Lap Review Colors",
+          "type": "choice",
+          "default": 0,
+          "choices": [
+            {
+              "value": 0,
+              "label": "Normal"
+            },
+            {
+              "value": 1,
+              "label": "Inverted"
+            }
+          ],
+          "description": "Inverted uses a black background."
+        },
+        {
+          "key": "Duration",
+          "group": "Lap Review",
+          "label": "Lap Review Duration (ms)",
+          "type": "number",
+          "default": 3500,
+          "min": 500.0,
+          "max": 10000.0,
+          "step": 1.0,
+          "description": "In milliseconds (1000 = 1 second)"
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "preset": {
+      "Format": "LovelyDashProPreset",
+      "Version": 1,
+      "PagesLayout": {
+        "Pages": [
+          {
+            "Name": "Primary",
+            "Layout": {
+              "IsPractice": true,
+              "IsQualifying": false,
+              "IsRace": true,
+              "SidebarTopbar": {
+                "BarMode": 0,
+                "TopbarPage": "Delta",
+                "LeftSidebarPage": "Fuel",
+                "RightSidebarPage": "Linear Map"
+              },
+              "PageLayout": 0,
+              "MultifunctionModules": {
+                "LeftModules": {
+                  "Size": 1,
+                  "Row1Layout": 0,
+                  "Row2Layout": 0,
+                  "Row3Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "Tire Front Left",
+                    "Column2": "Tire Front Right",
+                    "Column3": "Blank"
+                  },
+                  "Row2Modules": {
+                    "Column1": "Tire Rear Left",
+                    "Column2": "Tire Rear Right",
+                    "Column3": "Blank"
+                  },
+                  "Row3Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Blank",
+                    "Column3": "Blank"
+                  }
+                },
+                "RightModules": {
+                  "Size": 0,
+                  "Row1Layout": 0,
+                  "Row2Layout": 1,
+                  "Row3Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "TC",
+                    "Column2": "TC 2",
+                    "Column3": "ABS"
+                  },
+                  "Row2Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Brake Bias",
+                    "Column3": "Blank"
+                  },
+                  "Row3Modules": {
+                    "Column1": "Pit Loss",
+                    "Column2": "Blank",
+                    "Column3": "Engine Map"
+                  }
+                }
+              },
+              "BottomModules": {
+                "LeftModules": {
+                  "Layout": 1,
+                  "Row1Modules": {
+                    "Column1": "Fuel",
+                    "Column2": "Refuel",
+                    "Column3": "Blank"
+                  }
+                },
+                "RightModules": {
+                  "Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "Fuel Average",
+                    "Column2": "Fuel Time Left",
+                    "Column3": "Fuel Laps Left"
+                  }
+                }
+              },
+              "CentralColumn": {
+                "SectorBar": true,
+                "ThrottleBrakeToggle": 0,
+                "RowLayout": 4,
+                "CentralRowModules": {
+                  "Row1": "Speed",
+                  "Row2": "Time Remaining",
+                  "Row3": "Functions",
+                  "Row4": "Weather",
+                  "Row5": "Session Time"
+                }
+              },
+              "ModuleData": {
+                "Column1": "Position",
+                "Column2": "Optimal Best Lap",
+                "Column3": "Estimated Lap",
+                "Column4": "Class Session Best"
+              },
+              "FullScreenPage": 0
+            }
+          },
+          {
+            "Name": "Leaderboard",
+            "Layout": {
+              "IsPractice": true,
+              "IsQualifying": false,
+              "IsRace": true,
+              "SidebarTopbar": {
+                "BarMode": 2,
+                "TopbarPage": "Next Race",
+                "LeftSidebarPage": "Fuel",
+                "RightSidebarPage": "Linear Map"
+              },
+              "PageLayout": 1,
+              "MultifunctionModules": {
+                "LeftModules": {
+                  "Size": 1,
+                  "Row1Layout": 0,
+                  "Row2Layout": 0,
+                  "Row3Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "Tire Front Left",
+                    "Column2": "Tire Front Right",
+                    "Column3": "Blank"
+                  },
+                  "Row2Modules": {
+                    "Column1": "Tire Rear Left",
+                    "Column2": "Tire Rear Right",
+                    "Column3": "Blank"
+                  },
+                  "Row3Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Blank",
+                    "Column3": "Blank"
+                  }
+                },
+                "RightModules": {
+                  "Size": 0,
+                  "Row1Layout": 0,
+                  "Row2Layout": 1,
+                  "Row3Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "TC",
+                    "Column2": "TC 2",
+                    "Column3": "ABS"
+                  },
+                  "Row2Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Brake Bias",
+                    "Column3": "Blank"
+                  },
+                  "Row3Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Blank",
+                    "Column3": "Engine Map"
+                  }
+                }
+              },
+              "BottomModules": {
+                "LeftModules": {
+                  "Layout": 1,
+                  "Row1Modules": {
+                    "Column1": "Fuel",
+                    "Column2": "Refuel",
+                    "Column3": "Blank"
+                  }
+                },
+                "RightModules": {
+                  "Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "Fuel Average",
+                    "Column2": "Fuel Time Left",
+                    "Column3": "Fuel Laps Left"
+                  }
+                }
+              },
+              "CentralColumn": {
+                "SectorBar": false,
+                "ThrottleBrakeToggle": 1,
+                "RowLayout": 0,
+                "CentralRowModules": {
+                  "Row1": "RPM",
+                  "Row2": "Speed",
+                  "Row3": "Session Time",
+                  "Row4": "Time Remaining",
+                  "Row5": "Session Name"
+                }
+              },
+              "ModuleData": {
+                "Column1": "Lap",
+                "Column2": "Position",
+                "Column3": "Last Lap",
+                "Column4": "Session Best"
+              },
+              "FullScreenPage": 1
+            }
+          },
+          {
+            "Name": "Damage",
+            "Layout": {
+              "IsPractice": true,
+              "IsQualifying": false,
+              "IsRace": true,
+              "SidebarTopbar": {
+                "BarMode": 2,
+                "TopbarPage": "Next Race",
+                "LeftSidebarPage": "Fuel",
+                "RightSidebarPage": "Linear Map"
+              },
+              "PageLayout": 1,
+              "MultifunctionModules": {
+                "LeftModules": {
+                  "Size": 1,
+                  "Row1Layout": 0,
+                  "Row2Layout": 0,
+                  "Row3Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "Tire Front Left",
+                    "Column2": "Tire Front Right",
+                    "Column3": "Blank"
+                  },
+                  "Row2Modules": {
+                    "Column1": "Tire Rear Left",
+                    "Column2": "Tire Rear Right",
+                    "Column3": "Blank"
+                  },
+                  "Row3Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Blank",
+                    "Column3": "Blank"
+                  }
+                },
+                "RightModules": {
+                  "Size": 0,
+                  "Row1Layout": 0,
+                  "Row2Layout": 1,
+                  "Row3Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "TC",
+                    "Column2": "TC 2",
+                    "Column3": "ABS"
+                  },
+                  "Row2Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Brake Bias",
+                    "Column3": "Blank"
+                  },
+                  "Row3Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Blank",
+                    "Column3": "Engine Map"
+                  }
+                }
+              },
+              "BottomModules": {
+                "LeftModules": {
+                  "Layout": 1,
+                  "Row1Modules": {
+                    "Column1": "Fuel",
+                    "Column2": "Refuel",
+                    "Column3": "Blank"
+                  }
+                },
+                "RightModules": {
+                  "Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "Fuel Average",
+                    "Column2": "Fuel Time Left",
+                    "Column3": "Fuel Laps Left"
+                  }
+                }
+              },
+              "CentralColumn": {
+                "SectorBar": true,
+                "ThrottleBrakeToggle": 0,
+                "RowLayout": 0,
+                "CentralRowModules": {
+                  "Row1": "Lap",
+                  "Row2": "Session Time",
+                  "Row3": "Time Remaining",
+                  "Row4": "Session Name",
+                  "Row5": "Functions"
+                }
+              },
+              "ModuleData": {
+                "Column1": "Blank",
+                "Column2": "Blank",
+                "Column3": "Last Lap",
+                "Column4": "Session Best"
+              },
+              "FullScreenPage": 11
+            }
+          },
+          {
+            "Name": "Map",
+            "Layout": {
+              "IsPractice": true,
+              "IsQualifying": false,
+              "IsRace": true,
+              "SidebarTopbar": {
+                "BarMode": 2,
+                "TopbarPage": "Next Race",
+                "LeftSidebarPage": "Fuel",
+                "RightSidebarPage": "Linear Map"
+              },
+              "PageLayout": 1,
+              "MultifunctionModules": {
+                "LeftModules": {
+                  "Size": 1,
+                  "Row1Layout": 0,
+                  "Row2Layout": 0,
+                  "Row3Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "Tire Front Left",
+                    "Column2": "Tire Front Right",
+                    "Column3": "Blank"
+                  },
+                  "Row2Modules": {
+                    "Column1": "Tire Rear Left",
+                    "Column2": "Tire Rear Right",
+                    "Column3": "Blank"
+                  },
+                  "Row3Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Blank",
+                    "Column3": "Blank"
+                  }
+                },
+                "RightModules": {
+                  "Size": 0,
+                  "Row1Layout": 0,
+                  "Row2Layout": 1,
+                  "Row3Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "TC",
+                    "Column2": "TC 2",
+                    "Column3": "ABS"
+                  },
+                  "Row2Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Brake Bias",
+                    "Column3": "Blank"
+                  },
+                  "Row3Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Blank",
+                    "Column3": "Engine Map"
+                  }
+                }
+              },
+              "BottomModules": {
+                "LeftModules": {
+                  "Layout": 1,
+                  "Row1Modules": {
+                    "Column1": "Fuel",
+                    "Column2": "Refuel",
+                    "Column3": "Blank"
+                  }
+                },
+                "RightModules": {
+                  "Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "Fuel Average",
+                    "Column2": "Fuel Time Left",
+                    "Column3": "Fuel Laps Left"
+                  }
+                }
+              },
+              "CentralColumn": {
+                "SectorBar": false,
+                "ThrottleBrakeToggle": 1,
+                "RowLayout": 0,
+                "CentralRowModules": {
+                  "Row1": "RPM",
+                  "Row2": "Speed",
+                  "Row3": "Session Time",
+                  "Row4": "Time Remaining",
+                  "Row5": "Session Name"
+                }
+              },
+              "ModuleData": {
+                "Column1": "Lap",
+                "Column2": "Position",
+                "Column3": "Last Lap",
+                "Column4": "Session Best"
+              },
+              "FullScreenPage": 5
+            }
+          },
+          {
+            "Name": "Quali",
+            "Layout": {
+              "IsPractice": true,
+              "IsQualifying": true,
+              "IsRace": false,
+              "SidebarTopbar": {
+                "BarMode": 0,
+                "TopbarPage": "Delta",
+                "LeftSidebarPage": "Fuel",
+                "RightSidebarPage": "Linear Map"
+              },
+              "PageLayout": 0,
+              "MultifunctionModules": {
+                "LeftModules": {
+                  "Size": 0,
+                  "Row1Layout": 3,
+                  "Row2Layout": 0,
+                  "Row3Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "Delta",
+                    "Column2": "Blank",
+                    "Column3": "Blank"
+                  },
+                  "Row2Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Blank",
+                    "Column3": "Tire Front Left AVG"
+                  },
+                  "Row3Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Blank",
+                    "Column3": "Tire Rear Left AVG"
+                  }
+                },
+                "RightModules": {
+                  "Size": 0,
+                  "Row1Layout": 3,
+                  "Row2Layout": 0,
+                  "Row3Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "Estimated Lap",
+                    "Column2": "TC 2",
+                    "Column3": "ABS"
+                  },
+                  "Row2Modules": {
+                    "Column1": "Tire Front Right AVG",
+                    "Column2": "Blank",
+                    "Column3": "Blank"
+                  },
+                  "Row3Modules": {
+                    "Column1": "Tire Rear Right AVG",
+                    "Column2": "Blank",
+                    "Column3": "Blank"
+                  }
+                }
+              },
+              "BottomModules": {
+                "LeftModules": {
+                  "Layout": 0,
+                  "Row1Modules": {
+                    "Column1": "Blank",
+                    "Column2": "Blank",
+                    "Column3": "Blank"
+                  }
+                },
+                "RightModules": {
+                  "Layout": 2,
+                  "Row1Modules": {
+                    "Column1": "Fuel Time Left",
+                    "Column2": "Fuel Laps Left",
+                    "Column3": "Blank"
+                  }
+                }
+              },
+              "CentralColumn": {
+                "SectorBar": true,
+                "ThrottleBrakeToggle": 0,
+                "RowLayout": 4,
+                "CentralRowModules": {
+                  "Row1": "Speed",
+                  "Row2": "Time Remaining",
+                  "Row3": "Functions",
+                  "Row4": "Weather",
+                  "Row5": "Session Time"
+                }
+              },
+              "ModuleData": {
+                "Column1": "Lap",
+                "Column2": "Position",
+                "Column3": "Last Lap",
+                "Column4": "Class Session Best"
+              },
+              "FullScreenPage": 0
+            }
+          }
+        ]
+      },
+      "AlertsNotifications": {
+        "AlertEnabled": true,
+        "AlertSize": 1,
+        "AlertColors": 1,
+        "PitLimiterEnabled": true,
+        "PitLimiterSize": 0,
+        "PitLimiterColors": 0,
+        "EngineAlertEnabled": true,
+        "EngineAlertSize": 0,
+        "EngineAlertColors": 0,
+        "LaunchAlertEnabled": false,
+        "LaunchAlertSize": 0,
+        "LaunchAlertColors": 0,
+        "LaunchClutchAbove": 50,
+        "LaunchSpeedBelow": 10,
+        "LaunchWindow": 0,
+        "LaunchRpmFrom": 10500,
+        "LaunchRpmTo": 12600,
+        "LaunchThrottleFrom": 20,
+        "LaunchThrottleTo": 30,
+        "LiftAlertEnabled": true,
+        "LiftAlertSize": 0,
+        "LiftAlertColors": 0,
+        "LiftAlertPoint": 219,
+        "FuelAlertEnabled": true,
+        "FuelAlertColors": 0,
+        "FuelWarningLaps": 4,
+        "FuelCriticalLaps": 2,
+        "PitNowAlertEnabled": true,
+        "EngineWarningEnabled": true,
+        "EngineWarningWaterTemp": true,
+        "EngineWarningOilTemp": true,
+        "EngineWarningOilPressure": true,
+        "EngineWarningFuelPressure": true,
+        "EngineWarningWaterLimit": 110,
+        "EngineWarningOilLimit": 130,
+        "PenaltyAlertEnabled": true,
+        "FlagsAlertEnabled": true,
+        "RotaryDialsEnabled": true,
+        "RotaryDialsSize": 1,
+        "RotaryDialsColors": 0,
+        "DamageAlertEnabled": true,
+        "DamageAlertSize": 0,
+        "AlertDuration": 1000,
+        "DamageAlertDuration": 7500
+      },
+      "LapReview": {
+        "IsPractice": true,
+        "IsQualifying": true,
+        "IsRace": true,
+        "Colors": 0,
+        "Duration": 3500,
+        "Practice": {
+          "Mode": 0,
+          "StripLayout": "1-1-1-2",
+          "StripModules": {
+            "1-1-1-1-1": [
+              "Position",
+              "Lap Time",
+              "Lap Delta",
+              "Fuel Used",
+              "Top Speed"
+            ],
+            "1-3-1": [
+              "Position",
+              "Sector Deltas",
+              "Lap Time"
+            ],
+            "2-1-2": [
+              "Lap Time",
+              "Position",
+              "Gaps"
+            ],
+            "3-2": [
+              "Sectors",
+              "Lap Time"
+            ],
+            "2-3": [
+              "Lap Time",
+              "Sectors"
+            ],
+            "5": [
+              "Fuel Used"
+            ],
+            "1-1-1-2": [
+              "Position",
+              "Lap Time",
+              "Lap Delta",
+              "Sector Deltas"
+            ]
+          },
+          "FullScreenSectors": false,
+          "FullScreenMiddle": [
+            "Lap Delta",
+            "Gaps",
+            "Tire Wear"
+          ],
+          "FullScreenBottom": [
+            "Position",
+            "Fuel Used",
+            "Top Speed"
+          ]
+        },
+        "Qualifying": {
+          "Mode": 0,
+          "StripLayout": "1-1-1-2",
+          "StripModules": {
+            "1-1-1-1-1": [
+              "Position",
+              "Lap Time",
+              "Lap Delta",
+              "Fuel Used",
+              "Top Speed"
+            ],
+            "1-3-1": [
+              "Position",
+              "Sector Deltas",
+              "Lap Time"
+            ],
+            "2-1-2": [
+              "Lap Time",
+              "Position",
+              "Gaps"
+            ],
+            "3-2": [
+              "Sectors",
+              "Lap Time"
+            ],
+            "2-3": [
+              "Lap Time",
+              "Sectors"
+            ],
+            "5": [
+              "Fuel Used"
+            ],
+            "1-1-1-2": [
+              "Position",
+              "Lap Time",
+              "Lap Delta",
+              "Sector Deltas"
+            ]
+          },
+          "FullScreenSectors": false,
+          "FullScreenMiddle": [
+            "Lap Delta",
+            "Gaps",
+            "Tire Wear"
+          ],
+          "FullScreenBottom": [
+            "Position",
+            "Fuel Used",
+            "Top Speed"
+          ]
+        },
+        "Race": {
+          "Mode": 0,
+          "StripLayout": "1-1-1-2",
+          "StripModules": {
+            "1-1-1-1-1": [
+              "Position",
+              "Lap Time",
+              "Lap Delta",
+              "Fuel Used",
+              "Top Speed"
+            ],
+            "1-3-1": [
+              "Position",
+              "Sector Deltas",
+              "Lap Time"
+            ],
+            "2-1-2": [
+              "Lap Time",
+              "Position",
+              "Gaps"
+            ],
+            "3-2": [
+              "Sectors",
+              "Lap Time"
+            ],
+            "2-3": [
+              "Lap Time",
+              "Sectors"
+            ],
+            "5": [
+              "Fuel Used"
+            ],
+            "1-1-1-2": [
+              "Position",
+              "Fuel Used",
+              "Top Speed",
+              "Gaps"
+            ]
+          },
+          "FullScreenSectors": false,
+          "FullScreenMiddle": [
+            "Lap Delta",
+            "Gaps",
+            "Tire Wear"
+          ],
+          "FullScreenBottom": [
+            "Position",
+            "Fuel Used",
+            "Top Speed"
+          ]
+        }
+      }
+    },
+    "page": {
+      "IsPractice": true,
+      "IsQualifying": false,
+      "IsRace": true,
+      "SidebarTopbar": {
+        "BarMode": 0,
+        "TopbarPage": "Delta",
+        "LeftSidebarPage": "Fuel",
+        "RightSidebarPage": "Linear Map"
+      },
+      "PageLayout": 0,
+      "MultifunctionModules": {
+        "LeftModules": {
+          "Size": 1,
+          "Row1Layout": 0,
+          "Row2Layout": 0,
+          "Row3Layout": 0,
+          "Row1Modules": {
+            "Column1": "Tire Front Left",
+            "Column2": "Tire Front Right",
+            "Column3": "Blank"
+          },
+          "Row2Modules": {
+            "Column1": "Tire Rear Left",
+            "Column2": "Tire Rear Right",
+            "Column3": "Blank"
+          },
+          "Row3Modules": {
+            "Column1": "Blank",
+            "Column2": "Blank",
+            "Column3": "Blank"
+          }
+        },
+        "RightModules": {
+          "Size": 0,
+          "Row1Layout": 0,
+          "Row2Layout": 1,
+          "Row3Layout": 0,
+          "Row1Modules": {
+            "Column1": "TC",
+            "Column2": "TC 2",
+            "Column3": "ABS"
+          },
+          "Row2Modules": {
+            "Column1": "Blank",
+            "Column2": "Brake Bias",
+            "Column3": "Blank"
+          },
+          "Row3Modules": {
+            "Column1": "Pit Loss",
+            "Column2": "Blank",
+            "Column3": "Engine Map"
+          }
+        }
+      },
+      "BottomModules": {
+        "LeftModules": {
+          "Layout": 1,
+          "Row1Modules": {
+            "Column1": "Fuel",
+            "Column2": "Refuel",
+            "Column3": "Blank"
+          }
+        },
+        "RightModules": {
+          "Layout": 0,
+          "Row1Modules": {
+            "Column1": "Fuel Average",
+            "Column2": "Fuel Time Left",
+            "Column3": "Fuel Laps Left"
+          }
+        }
+      },
+      "CentralColumn": {
+        "SectorBar": true,
+        "ThrottleBrakeToggle": 0,
+        "RowLayout": 4,
+        "CentralRowModules": {
+          "Row1": "Speed",
+          "Row2": "Time Remaining",
+          "Row3": "Functions",
+          "Row4": "Weather",
+          "Row5": "Session Time"
+        }
+      },
+      "ModuleData": {
+        "Column1": "Position",
+        "Column2": "Optimal Best Lap",
+        "Column3": "Estimated Lap",
+        "Column4": "Class Session Best"
+      },
+      "FullScreenPage": 0
+    },
+    "alerts": {
+      "AlertEnabled": true,
+      "AlertSize": 0,
+      "AlertColors": 0,
+      "PitLimiterEnabled": true,
+      "PitLimiterSize": 0,
+      "PitLimiterColors": 0,
+      "EngineAlertEnabled": true,
+      "EngineAlertSize": 0,
+      "EngineAlertColors": 0,
+      "LaunchAlertEnabled": false,
+      "LaunchAlertSize": 0,
+      "LaunchAlertColors": 0,
+      "LaunchClutchAbove": 50,
+      "LaunchSpeedBelow": 10,
+      "LaunchWindow": 0,
+      "LaunchRpmFrom": 10500,
+      "LaunchRpmTo": 12600,
+      "LaunchThrottleFrom": 20,
+      "LaunchThrottleTo": 30,
+      "LiftAlertEnabled": true,
+      "LiftAlertSize": 0,
+      "LiftAlertColors": 0,
+      "LiftAlertPoint": 220,
+      "FuelAlertEnabled": true,
+      "FuelAlertColors": 0,
+      "FuelWarningLaps": 4,
+      "FuelCriticalLaps": 2,
+      "PitNowAlertEnabled": true,
+      "EngineWarningEnabled": true,
+      "EngineWarningWaterTemp": true,
+      "EngineWarningOilTemp": true,
+      "EngineWarningOilPressure": true,
+      "EngineWarningFuelPressure": true,
+      "EngineWarningWaterLimit": 110,
+      "EngineWarningOilLimit": 130,
+      "PenaltyAlertEnabled": true,
+      "FlagsAlertEnabled": true,
+      "RotaryDialsEnabled": true,
+      "RotaryDialsSize": 1,
+      "RotaryDialsColors": 0,
+      "DamageAlertEnabled": true,
+      "DamageAlertSize": 2,
+      "AlertDuration": 1000,
+      "DamageAlertDuration": 7500
+    },
+    "lapReview": {
+      "IsPractice": true,
+      "IsQualifying": true,
+      "IsRace": false,
+      "Colors": 0,
+      "Duration": 3500,
+      "Practice": {
+        "Mode": 0,
+        "StripLayout": "1-3-1",
+        "StripModules": {
+          "1-1-1-1-1": [
+            "Position",
+            "Lap Time",
+            "Lap Delta",
+            "Fuel Used",
+            "Top Speed"
+          ],
+          "2-1-1-1": [
+            "Lap Time",
+            "Position",
+            "Fuel Used",
+            "Top Speed"
+          ],
+          "1-1-1-2": [
+            "Position",
+            "Fuel Used",
+            "Top Speed",
+            "Lap Time"
+          ],
+          "1-3-1": [
+            "Position",
+            "Sectors",
+            "Lap Delta"
+          ],
+          "2-1-2": [
+            "Lap Time",
+            "Position",
+            "Gaps"
+          ],
+          "3-1-1": [
+            "Sectors",
+            "Lap Delta",
+            "Position"
+          ],
+          "1-1-3": [
+            "Position",
+            "Lap Delta",
+            "Sectors"
+          ],
+          "3-2": [
+            "Sectors",
+            "Lap Time"
+          ],
+          "2-3": [
+            "Lap Time",
+            "Sectors"
+          ],
+          "5": [
+            "Sectors"
+          ]
+        },
+        "FullScreenSectors": true,
+        "FullScreenMiddle": [
+          "Lap Delta",
+          "Gaps",
+          "Tire Wear"
+        ],
+        "FullScreenBottom": [
+          "Position",
+          "Fuel Used",
+          "Top Speed"
+        ]
+      },
+      "Qualifying": {
+        "Mode": 0,
+        "StripLayout": "1-3-1",
+        "StripModules": {
+          "1-1-1-1-1": [
+            "Position",
+            "Lap Time",
+            "Lap Delta",
+            "Fuel Used",
+            "Top Speed"
+          ],
+          "2-1-1-1": [
+            "Lap Time",
+            "Position",
+            "Fuel Used",
+            "Top Speed"
+          ],
+          "1-1-1-2": [
+            "Position",
+            "Fuel Used",
+            "Top Speed",
+            "Lap Time"
+          ],
+          "1-3-1": [
+            "Position",
+            "Sectors",
+            "Lap Delta"
+          ],
+          "2-1-2": [
+            "Lap Time",
+            "Position",
+            "Gaps"
+          ],
+          "3-1-1": [
+            "Sectors",
+            "Lap Delta",
+            "Position"
+          ],
+          "1-1-3": [
+            "Position",
+            "Lap Delta",
+            "Sectors"
+          ],
+          "3-2": [
+            "Sectors",
+            "Lap Time"
+          ],
+          "2-3": [
+            "Lap Time",
+            "Sectors"
+          ],
+          "5": [
+            "Sectors"
+          ]
+        },
+        "FullScreenSectors": true,
+        "FullScreenMiddle": [
+          "Lap Delta",
+          "Gaps",
+          "Tire Wear"
+        ],
+        "FullScreenBottom": [
+          "Position",
+          "Fuel Used",
+          "Top Speed"
+        ]
+      },
+      "Race": {
+        "Mode": 0,
+        "StripLayout": "1-3-1",
+        "StripModules": {
+          "1-1-1-1-1": [
+            "Position",
+            "Lap Time",
+            "Lap Delta",
+            "Fuel Used",
+            "Top Speed"
+          ],
+          "2-1-1-1": [
+            "Lap Time",
+            "Position",
+            "Fuel Used",
+            "Top Speed"
+          ],
+          "1-1-1-2": [
+            "Position",
+            "Fuel Used",
+            "Top Speed",
+            "Lap Time"
+          ],
+          "1-3-1": [
+            "Position",
+            "Sectors",
+            "Lap Delta"
+          ],
+          "2-1-2": [
+            "Lap Time",
+            "Position",
+            "Gaps"
+          ],
+          "3-1-1": [
+            "Sectors",
+            "Lap Delta",
+            "Position"
+          ],
+          "1-1-3": [
+            "Position",
+            "Lap Delta",
+            "Sectors"
+          ],
+          "3-2": [
+            "Sectors",
+            "Lap Time"
+          ],
+          "2-3": [
+            "Lap Time",
+            "Sectors"
+          ],
+          "5": [
+            "Sectors"
+          ]
+        },
+        "FullScreenSectors": true,
+        "FullScreenMiddle": [
+          "Lap Delta",
+          "Gaps",
+          "Tire Wear"
+        ],
+        "FullScreenBottom": [
+          "Position",
+          "Fuel Used",
+          "Top Speed"
+        ]
+      }
+    },
+    "lapReviewSession": {
+      "Mode": 0,
+      "StripLayout": "1-3-1",
+      "StripModules": {
+        "1-1-1-1-1": [
+          "Position",
+          "Lap Time",
+          "Lap Delta",
+          "Fuel Used",
+          "Top Speed"
+        ],
+        "2-1-1-1": [
+          "Lap Time",
+          "Position",
+          "Fuel Used",
+          "Top Speed"
+        ],
+        "1-1-1-2": [
+          "Position",
+          "Fuel Used",
+          "Top Speed",
+          "Lap Time"
+        ],
+        "1-3-1": [
+          "Position",
+          "Sectors",
+          "Lap Delta"
+        ],
+        "2-1-2": [
+          "Lap Time",
+          "Position",
+          "Gaps"
+        ],
+        "3-1-1": [
+          "Sectors",
+          "Lap Delta",
+          "Position"
+        ],
+        "1-1-3": [
+          "Position",
+          "Lap Delta",
+          "Sectors"
+        ],
+        "3-2": [
+          "Sectors",
+          "Lap Time"
+        ],
+        "2-3": [
+          "Lap Time",
+          "Sectors"
+        ],
+        "5": [
+          "Sectors"
+        ]
+      },
+      "FullScreenSectors": true,
+      "FullScreenMiddle": [
+        "Lap Delta",
+        "Gaps",
+        "Tire Wear"
+      ],
+      "FullScreenBottom": [
+        "Position",
+        "Fuel Used",
+        "Top Speed"
+      ]
+    }
+  }
+}

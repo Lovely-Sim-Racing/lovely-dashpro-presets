@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lovely Dash Pro Preset Editor</title>
+  <meta name="description" content="Build a Lovely Dash Pro preset in your browser: the same pages, modules and settings as the Lovely Plugin, with a live preview.">
+  <link rel="icon" type="image/png" href="lr-logo.png">
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <h1><img class="brand-wordmark" src="lovely-dash-pro.png" alt="Lovely Dash Pro" width="228" height="24"><span class="brand-title">Online Preset Editor</span></h1>
+      <p class="sub"><strong>Online Preset Editor</strong> – Build, preview and export your Dash Pro presets</p>
+    </div>
+    <a class="brand-logo" href="https://lsr.gg" target="_blank" rel="noopener" title="Lovely Sim Racing"><img src="lr-logo.png" alt="Lovely Sim Racing" width="64" height="72"></a>
+    <div class="top-actions">
+      <button class="btn" id="btnNew" type="button">New</button>
+      <button class="btn" id="btnOpen" type="button">Open</button>
+      <button class="btn btn-accent" id="btnExport" type="button">Export</button>
+      <button class="btn" id="btnSubmit" type="button" title="Share it in the community presets">Submit</button>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" data-tab="pages" type="button">Pages Layout</button>
+    <button class="tab" role="tab" data-tab="alerts" type="button">Alerts &amp; Notifications</button>
+    <button class="tab" role="tab" data-tab="lapReview" type="button">Lap Review</button>
+    <span class="tab-spacer"></span>
+    <button class="link" id="btnUndo" type="button" title="Undo (Ctrl+Z)">Undo</button>
+    <button class="link" id="btnRedo" type="button" title="Redo (Ctrl+Y)">Redo</button>
+  </nav>
+
+  <main id="main">
+    <div class="loading" id="loading">Loading…</div>
+  </main>
+
+  <footer class="foot">
+    <span id="footVersion"></span>
+    <a class="foot-logo" href="https://lsr.gg" target="_blank" rel="noopener" title="Lovely Sim Racing"><img src="lr-logo.png" alt="Lovely Sim Racing" width="64" height="72"></a>
+    <a class="foot-link" href="https://github.com/Lovely-Sim-Racing/lovely-dashpro-presets" target="_blank" rel="noopener">Presets on GitHub</a>
+  </footer>
+
+  <div class="popup" id="picker" hidden>
+    <div class="popup-head">
+      <strong id="pickerTitle"></strong>
+      <button class="icon-btn" id="pickerClose" type="button" aria-label="Close">✕</button>
+    </div>
+    <input id="pickerSearch" type="search" placeholder="Search modules" autocomplete="off">
+    <div class="popup-list" id="pickerList"></div>
+  </div>
+
+  <div class="modal-back" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h2 id="modalTitle"></h2>
+      <div id="modalBody"></div>
+      <div class="modal-actions" id="modalActions"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+  <input type="file" id="fileInput" accept=".dashpro,.json,application/json" hidden>
+
+  <script src="editor.js"></script>
+</body>
+</html>

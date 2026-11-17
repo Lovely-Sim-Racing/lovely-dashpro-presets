@@ -18,6 +18,9 @@ Open **Dash Pro** and click **Browse Presets** (top right) to see every preset h
 
 A preset replaces the pages and layouts, the Lap Review settings and the Alerts & Notifications settings of whatever you have selected: All Devices, a device, a sim, a class or a single vehicle. Everything else stays as it is.
 
+### In your browser
+The **[Lovely Dash Pro Preset Editor](https://lovely-sim-racing.github.io/lovely-dashpro-presets/editor/)** is the plugin's Dash Pro editor in your browser, with a preview of every page. Start from the Dash Pro Default or open any preset here, make it your own, then **Export** it and import it in the plugin, or **Submit** it to share it.
+
 ### By hand
 Download a preset's `.dashpro` file from its folder in [presets](presets) (`dash-pro-default/dash-pro-default.dashpro`, for example), then click **Import** (top right of the Dash Pro page) and choose the file.
 
@@ -169,6 +172,8 @@ Sharing a preset takes a couple of minutes, and you don't need to know Git. See 
 2. Open a new issue with the **[Submit a Preset](../../issues/new?template=submit-preset.yml)** form.
 3. Fill in a name and a short description, and attach your preset: zip the `.dashpro` file and drag the zip in (GitHub doesn't accept `.dashpro` files directly), or paste the file's contents.
 
+Built it in the [online editor](https://lovely-sim-racing.github.io/lovely-dashpro-presets/editor/)? Click **Submit** there instead: the form opens filled in, preset included.
+
 We check every submission, make the screenshots and add it to the list. You'll get a reply on your issue when it's live, or if something needs fixing.
 
 ### Maintainers
@@ -177,6 +182,8 @@ Submissions are added with two scripts:
 1. Create `presets/{name}/` with the preset as `{name}.dashpro` and an `info.json`.
 2. Render the screenshots with `Render-Preset.ps1 -Folder presets/{name}` (Lovely preview tools; needs SimHub and the Lovely dashboards on the same PC).
 3. Run `scripts/Build-Manifest.ps1`. It checks every preset, rewrites `presets/manifest.json` and every preset's `README.md` (with `scripts/Build-Readmes.ps1`), and stops if anything is wrong.
+
+The online editor lives in `editor/`. Its data (`editor-schema.json` and `images/`) is generated from the Lovely Plugin and the Lovely dashboards: see [editor/README.md](editor/README.md).
 
 To keep the JSON files consistently formatted, the repo uses the same `pre-commit` hooks as the other Lovely repos. They check every `.json` and `.dashpro` file, and format the `.json` files; `.dashpro` files stay on one line, exactly as the plugin exports them:
 
