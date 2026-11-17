@@ -225,6 +225,11 @@
   // ---------------------------------------------------------------- model access
   const pages = () => state.preset.PagesLayout.Pages;
   const layout = () => pages()[state.page].Layout;
+  // A page as the plugin lists it: its name and the sessions it's on, "Primary (P, Q, R)" (just the name when it's on in none)
+  const pageLabel = (p) => {
+    const on = SESSIONS.filter((s) => p.Layout && p.Layout['Is' + s]).map((s) => s[0]);
+    return on.length ? `${p.Name} (${on.join(', ')})` : p.Name;
+  };
   const allowed = (kind) => (kind === 'lapReview' ? S.modules.lapReview : S.modules[kind]) || [];
   const frameFor = (barMode) => S.geometry.frames[clamp(barMode, 0, S.geometry.frames.length - 1)];
 
@@ -585,7 +590,7 @@
     const select = el('select', { 'aria-label': 'Page', onchange: (e) => {
       if (e.target.value === '__add') { e.target.value = String(state.page); addPage(); return; }
       state.page = +e.target.value; save(); render();
-    } }, pages().map((p, i) => el('option', { value: i }, p.Name)), el('option', { disabled: true }, '──────────'), el('option', { value: '__add' }, 'Add new page…'));
+    } }, pages().map((p, i) => el('option', { value: i }, pageLabel(p))), el('option', { disabled: true }, '──────────'), el('option', { value: '__add' }, 'Add new page…'));
     select.value = String(state.page);
 
     main.append(el('div', { class: 'bar page-bar' },
@@ -770,7 +775,7 @@
       })),
       el('div', { class: 'group' },
         el('span', { class: 'label' }, 'Shown over'),
-        (() => { const sel = el('select', { 'aria-label': 'Page shown underneath', onchange: (e) => { state.page = +e.target.value; save(); render(); } }, pages().map((p, i) => el('option', { value: i }, p.Name))); sel.value = String(state.page); return sel; })(),
+        (() => { const sel = el('select', { 'aria-label': 'Page shown underneath', onchange: (e) => { state.page = +e.target.value; save(); render(); } }, pages().map((p, i) => el('option', { value: i }, pageLabel(p)))); sel.value = String(state.page); return sel; })(),
         el('button', { type: 'button', class: 'link', disabled: !on, title: 'Give the other two sessions this layout (their on/off stays)', onclick: () => change(() => { for (const s of SESSIONS) if (s !== name) LR[s] = clone(ses); }) }, 'Copy to all sessions'))));
 
     main.append(sectionTitle('LAP REVIEW LAYOUT', toggle('Preview', state.preview, (v) => { state.preview = v; save(); render(); })));
