@@ -1079,8 +1079,15 @@
     $('#btnOpen').addEventListener('click', openDialog);
     $('#btnExport').addEventListener('click', exportDialog);
     $('#btnSubmit').addEventListener('click', submitDialog);
-    // The promo used to be closable: drop the flag that remembered it
-    try { localStorage.removeItem(STORE + '-promo-closed'); } catch (e) { /* no storage */ }
+    // Lovely Dash Pro promo: ✕ hides it for this visit only (this tab; it's back next time the editor is opened)
+    try { localStorage.removeItem(STORE + '-promo-closed'); } catch (e) { /* no storage */ } // the old "closed for good" flag
+    let promoClosed = false;
+    try { promoClosed = sessionStorage.getItem(STORE + '-promo-closed') === '1'; } catch (e) { /* no storage: show it */ }
+    $('#promo').hidden = promoClosed;
+    $('#promoClose').addEventListener('click', () => {
+      $('#promo').hidden = true;
+      try { sessionStorage.setItem(STORE + '-promo-closed', '1'); } catch (e) { /* no storage */ }
+    });
     $('#fileInput').addEventListener('change', (e) => {
       const file = e.target.files[0];
       e.target.value = '';

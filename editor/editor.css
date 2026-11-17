@@ -44,6 +44,9 @@ a { color: var(--accent); }
 .brand { min-width: 0; }
 .brand h1 { margin: 0; line-height: 1; }
 .brand-wordmark { display: block; height: 22px; width: auto; }
+/* The wordmark links to the Lovely Dash Pro page */
+.brand-wordmark-link { display: inline-block; border-radius: 3px; transition: opacity .15s; }
+.brand-wordmark-link:hover { opacity: .85; }
 /* The page's heading is "Lovely Dash Pro Online Preset Editor": the second part is shown in the line under the wordmark */
 .brand-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .brand .sub { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
@@ -101,11 +104,14 @@ main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24
 .foot-link { justify-self: end; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
 .foot-promo { color: #ff00d8; font-weight: 600; }
 
-/* Lovely Dash Pro promo under the tabs: a flat deep magenta (the PRO badge's colour, darkened), slim, always shown */
+/* Lovely Dash Pro promo at the top: a flat deep magenta (the PRO badge's colour, darkened), slim; ✕ hides it for the visit */
 .promo {
   display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
-  padding: 9px 24px; font-size: 13px; color: #e2cfdf; background: #2a0726;
+  padding: 9px 48px; position: relative; font-size: 13px; color: #e2cfdf; background: #2a0726;
 }
+.promo[hidden] { display: none; }
+.promo-close { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #e2cfdf; }
+.promo-close:hover { background: rgba(255, 255, 255, .12); color: #fff; }
 .promo p { margin: 0; text-align: center; }
 .promo strong { color: var(--text); font-weight: 600; }
 .promo-cta { background: #ff00d8; color: #fff; font-weight: 600; text-decoration: none; padding: 4px 12px 5px; border-radius: 4px; white-space: nowrap; }

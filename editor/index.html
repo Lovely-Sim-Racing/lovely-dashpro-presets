@@ -19,18 +19,19 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dashpro.lsr.gg/editor/social.jpg">
   <!-- ?v= : bump it whenever editor.css or editor.js changes, so caches (Cloudflare, browsers) fetch the new files -->
-  <link rel="stylesheet" href="editor.css?v=2026-11-17.2">
+  <link rel="stylesheet" href="editor.css?v=2026-11-17.3">
 </head>
 <body>
-  <!-- Lovely Dash Pro promo: at the very top, always shown (no close); the footer has a link too -->
+  <!-- Lovely Dash Pro promo: at the very top; ✕ hides it for this visit only (back next time); the footer has a link too -->
   <aside class="promo" id="promo">
     <p><strong>Design your own SimHub dashboard</strong> with the Lovely Dash Pro.</p>
     <a class="promo-cta" href="https://lsr.gg/dashpro" target="_blank" rel="noopener">Find out more</a>
+    <button class="icon-btn promo-close" id="promoClose" type="button" aria-label="Close" title="Close">✕</button>
   </aside>
 
   <header class="top">
     <div class="brand">
-      <h1><img class="brand-wordmark" src="lovely-dash-pro.png" alt="Lovely Dash Pro" width="228" height="24"><span class="brand-title">Online Preset Editor</span></h1>
+      <h1><a class="brand-wordmark-link" href="https://lsr.gg/dashpro" target="_blank" rel="noopener" title="Lovely Dash Pro"><img class="brand-wordmark" src="lovely-dash-pro.png" alt="Lovely Dash Pro" width="228" height="24"></a><span class="brand-title">Online Preset Editor</span></h1>
       <p class="sub"><strong>Online Preset Editor</strong> – Build, preview and export your Dash Pro presets</p>
     </div>
     <a class="brand-logo" href="https://lsr.gg" target="_blank" rel="noopener" title="Lovely Sim Racing"><img src="lr-logo.png" alt="Lovely Sim Racing" width="64" height="72"></a>
@@ -89,6 +90,6 @@
   <div class="toast" id="toast" hidden></div>
   <input type="file" id="fileInput" accept=".dashpro,.json,application/json" hidden>
 
-  <script src="editor.js?v=2026-11-17.2"></script>
+  <script src="editor.js?v=2026-11-17.3"></script>
 </body>
 </html>
