@@ -901,7 +901,7 @@
   function openCommunity(p) {
     closeModal();
     fetch('../presets/' + p.path, { cache: 'no-store' }).then((r) => r.ok ? r.text() : Promise.reject(r.status))
-      .then((t) => loadPreset(t, p.name, `"${p.name}"`))
+      .then((t) => { if (loadPreset(t, p.name, `"${p.name}"`)) track('open_preset', { source: 'community', preset_name: p.name }); })
       .catch(() => showProblems('Can\'t open this preset', [`"${p.name}" couldn't be downloaded.`], []));
   }
 
@@ -936,7 +936,7 @@
       if (n !== state.name) { state.name = n; save(); }
       return true;
     };
-    downloadBtn.addEventListener('click', () => { if (keepName()) { download(text); closeModal(); } });
+    downloadBtn.addEventListener('click', () => { if (keepName()) { download(text); track('export_preset', { method: 'download' }); closeModal(); } });
     name.addEventListener('input', () => { error.textContent = ''; });
     name.addEventListener('keydown', (e) => { if (e.key === 'Enter') downloadBtn.click(); });
     const body = [
@@ -947,7 +947,7 @@
     body.push(error);
     openModal('Export the preset', body, [
       el('button', { type: 'button', class: 'btn', onclick: closeModal }, 'Cancel'),
-      el('button', { type: 'button', class: 'btn', onclick: () => { if (keepName()) copyText(text); } }, 'Copy'),
+      el('button', { type: 'button', class: 'btn', onclick: () => { if (keepName()) { copyText(text); track('export_preset', { method: 'copy' }); } } }, 'Copy'),
       downloadBtn]);
     name.focus(); name.select();
   }
@@ -1003,6 +1003,7 @@
       const text = exportText();
       const { url, how } = await submitUrl(fields, text);
       if (how === 'attach') download(text);
+      track('submit_preset', { method: how });
       window.open(url, '_blank', 'noopener');
       closeModal();
       openModal('Finish on GitHub', [
@@ -1025,6 +1026,11 @@
       el('button', { type: 'button', class: 'btn', onclick: closeModal }, 'Cancel'),
       el('button', { type: 'button', class: 'btn btn-accent', onclick: go }, 'Continue on GitHub')]);
     (state.name ? desc : name).focus();
+  }
+
+  // Google Analytics event (index.html loads GA on the live site only; a no-op elsewhere)
+  function track(name, params) {
+    try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) { /* never break the editor */ }
   }
 
   function download(text) {

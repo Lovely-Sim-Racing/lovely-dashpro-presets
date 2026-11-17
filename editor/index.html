@@ -3,6 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Analytics: the editor's own property (kept apart from the plugin's), only on the live site so local tests aren't counted -->
+  <script>
+    var GA_ID = 'G-TM85L5NEWR'; // the editor's GA4 measurement ID (G-...); empty = no analytics
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (GA_ID && location.hostname === 'dashpro.lsr.gg') {
+      var ga = document.createElement('script'); ga.async = true; ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(ga);
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    }
+  </script>
   <title>Lovely Dash Pro Preset Editor</title>
   <meta name="description" content="Build a Lovely Dash Pro preset in your browser: the same pages, modules and settings as the Lovely Plugin, with a live preview.">
   <link rel="icon" type="image/png" href="lr-logo.png">
@@ -19,7 +31,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dashpro.lsr.gg/editor/social.jpg">
   <!-- ?v= : bump it whenever editor.css or editor.js changes, so caches (Cloudflare, browsers) fetch the new files -->
-  <link rel="stylesheet" href="editor.css?v=2026-11-17.3">
+  <link rel="stylesheet" href="editor.css?v=2026-11-17.4">
 </head>
 <body>
   <!-- Lovely Dash Pro promo: at the very top; ✕ hides it for this visit only (back next time); the footer has a link too -->
@@ -90,6 +102,6 @@
   <div class="toast" id="toast" hidden></div>
   <input type="file" id="fileInput" accept=".dashpro,.json,application/json" hidden>
 
-  <script src="editor.js?v=2026-11-17.3"></script>
+  <script src="editor.js?v=2026-11-17.4"></script>
 </body>
 </html>
