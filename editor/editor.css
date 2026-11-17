@@ -214,16 +214,16 @@ main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24
 }
 .panel .head { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 14px; }
 .panel .caption { color: var(--muted); text-align: center; margin: auto; font-size: 13px; }
-.picto-row { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px; flex: 1; min-height: 0; align-items: center; }
-.picto-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; flex: 1; align-content: center; }
-.picto-grid .picto { height: 76px; }
+/* Layout pickers fill their panel like the plugin's (UniformGrid cells, 3px margin): a row of options, or the 4x2 Rows grid */
+.picto-row { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 6px; flex: 1; min-height: 0; align-items: stretch; }
+.picto-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); gap: 6px; flex: 1; min-height: 0; }
 .picto {
-  border: 1px solid var(--dim); border-radius: 4px; padding: 5px; background: transparent; cursor: pointer; display: grid; gap: 3px; height: 100%; max-height: 40px; min-height: 22px;
+  border: 1px solid var(--dim); border-radius: 4px; padding: 5px; background: transparent; cursor: pointer; display: grid; gap: 4px; min-height: 22px;
 }
 .picto:hover, .picto.selected { border-color: #fff; }
 .picto span { background: var(--dim); border-radius: 2px; min-width: 6px; min-height: 6px; }
 .picto.selected span { background: #fff; }
-.toolbars .picto-row { min-height: 34px; width: 540px; max-width: 100%; }
+.toolbars .picto-row { flex: none; height: 34px; width: 540px; max-width: 100%; }
 
 /* The plugin's notes under a section title (Lap Review off in a session, sessions without a page): orange */
 .lock-note { color: #e3a50a; font-size: 13px; margin: -4px 0 10px; }
