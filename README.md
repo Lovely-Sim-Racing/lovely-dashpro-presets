@@ -19,7 +19,7 @@ Open **Dash Pro** and click **Browse Presets** (top right) to see every preset h
 A preset replaces the pages and layouts, the Lap Review settings and the Alerts & Notifications settings of whatever you have selected: All Devices, a device, a sim, a class or a single vehicle. Everything else stays as it is.
 
 ### In your browser
-The **[Lovely Dash Pro Editor](https://lovely-sim-racing.github.io/lovely-dashpro-presets/editor/)** is the plugin's Dash Pro editor in your browser, with a preview of every page. Start from the Dash Pro Default or open any preset here, make it your own, then **Export** it and import it in the plugin, or **Submit** it to share it.
+The **[Lovely Dash Pro Preset Editor](https://lovely-sim-racing.github.io/lovely-dashpro-presets/editor/)** is the plugin's Dash Pro editor in your browser, with a preview of every page. Start from the Dash Pro Default or open any preset here, make it your own, then **Export** it and import it in the plugin, or **Submit** it to share it.
 
 ### By hand
 Download a preset's `.dashpro` file from its folder in [presets](presets) (`dash-pro-default/dash-pro-default.dashpro`, for example), then click **Import** (top right of the Dash Pro page) and choose the file.

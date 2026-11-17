@@ -1,5 +1,5 @@
 /*
-  Lovely Dash Pro Editor: the plugin's Dash Pro editor (Pages Layout, Alerts & Notifications, Lap Review) in the browser.
+  Lovely Dash Pro Preset Editor: the plugin's Dash Pro editor (Pages Layout, Alerts & Notifications, Lap Review) in the browser.
   Everything it offers comes from editor-schema.json (written from the Lovely Plugin), and the preview is made of
   images/ (every module cut from the real dash). It reads and writes .dashpro presets exactly as the plugin does:
   one line of JSON, the plugin's key order, missing settings filled with the plugin's defaults.
