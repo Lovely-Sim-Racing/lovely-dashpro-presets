@@ -786,8 +786,6 @@
         return el('div', { class: 'session' + (s === name ? ' selected' : ''), role: 'button', tabindex: '0', onclick: () => { state.lrSession = s; render(); }, onkeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); state.lrSession = s; render(); } } }, cb, s);
       })),
       el('div', { class: 'group' },
-        el('span', { class: 'label' }, 'Shown over'),
-        (() => { const sel = el('select', { 'aria-label': 'Page shown underneath', onchange: (e) => { state.page = +e.target.value; save(); render(); } }, pages().map((p, i) => el('option', { value: i }, pageLabel(p)))); sel.value = String(state.page); return sel; })(),
         el('button', { type: 'button', class: 'link', disabled: !on, title: 'Give the other two sessions this layout (their on/off stays)', onclick: () => change(() => { for (const s of SESSIONS) if (s !== name) LR[s] = clone(ses); }) }, 'Copy to all sessions'))));
 
     main.append(sectionTitle('LAP REVIEW LAYOUT', toggle('Preview', state.preview, (v) => { state.preview = v; save(); render(); })));
