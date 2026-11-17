@@ -245,13 +245,26 @@ main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24
 .modal ul.warnings { color: #ffcc66; margin: 0 0 10px; padding-left: 18px; }
 .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; flex-wrap: wrap; }
 .modal input[type=text] { width: 100%; }
-.preset-list { display: grid; gap: 8px; }
-.preset-item { display: grid; grid-template-columns: 120px 1fr; gap: 12px; align-items: center; background: var(--panel-2); border: 1px solid var(--line-faint); border-radius: 6px; padding: 8px; cursor: pointer; text-align: left; }
-.preset-item:hover { border-color: var(--accent); }
-.preset-item img { width: 120px; border-radius: 4px; display: block; }
-.preset-item strong { display: block; }
-.preset-item span { color: var(--muted); font-size: 12px; }
-.open-choices { display: grid; gap: 8px; margin-bottom: 14px; }
+/* The wide dialog fits the window: title, buttons and Close stay put, only the preset grid scrolls */
+.modal.wide { width: 780px; display: flex; flex-direction: column; overflow: hidden; }
+.modal.wide #modalBody { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.modal.wide .preset-grid { flex: 1; min-height: 150px; overflow-y: auto; align-content: start; padding-right: 6px; margin-right: -6px; }
+.modal.wide .modal-actions { flex: none; }
+.preset-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 6px 0 10px; }
+.preset-head h2 { font-size: 15px; margin: 0; }
+.preset-head input[type=search] { width: 260px; max-width: 100%; }
+.preset-card[hidden] { display: none; }
+.modal p.preset-none { margin: 10px 0 0; }
+/* Open: the community presets as cards, like the plugin's Browse Presets (first page, name, author / pages / date) */
+.preset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; }
+.preset-card { display: flex; flex-direction: column; gap: 2px; background: #2e2e2e; border: 1px solid #2e2e2e; border-radius: 4px; padding: 8px; cursor: pointer; text-align: left; min-width: 0; }
+.preset-card:hover, .preset-card:focus-visible { border-color: var(--accent); }
+.preset-shot { position: relative; height: 112px; margin-bottom: 6px; background: #1e1e1e; border-radius: 3px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.preset-shot img { max-width: 100%; max-height: 100%; display: block; }
+.preset-shot .featured { position: absolute; top: 5px; right: 5px; background: #ff1493; color: #fff; font-size: 10px; font-weight: 500; padding: 1px 7px 2px; border: 3px solid #000; border-radius: 3px; }
+.preset-card strong { font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.preset-card .meta { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.open-choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin-bottom: 14px; }
 
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: #2a2a2a; border: 1px solid var(--line); border-radius: 6px; padding: 8px 16px; z-index: 40; }
 .toast[hidden] { display: none; }

@@ -844,13 +844,45 @@
       el('button', { type: 'button', class: 'btn', onclick: pasteDialog }, 'Paste a preset…'),
       el('button', { type: 'button', class: 'btn', onclick: () => { closeModal(); loadPreset(S.defaults.preset, 'Dash Pro Default', 'the Dash Pro Default'); } }, 'The Dash Pro Default'));
     body.push(choices);
-    const list = el('div', { class: 'preset-list' }, el('p', null, 'Loading the community presets…'));
-    body.push(el('h2', { style: { fontSize: '15px', margin: '6px 0 10px' } }, 'Community presets'), list);
-    openModal('Open a preset', body, [el('button', { type: 'button', class: 'btn', onclick: closeModal }, 'Close')]);
+    const list = el('div', { class: 'preset-grid' }, el('p', null, 'Loading the community presets…'));
+    const search = el('input', { type: 'search', placeholder: 'Search by name or author', 'aria-label': 'Search presets by name or author', autocomplete: 'off', disabled: true });
+    const none = el('p', { class: 'preset-none', hidden: true });
+    body.push(el('div', { class: 'preset-head' }, el('h2', null, 'Community presets'), search), list, none);
+    openModal('Open a preset', body, [el('button', { type: 'button', class: 'btn', onclick: closeModal }, 'Close')], { wide: true });
     fetch('../presets/manifest.json', { cache: 'no-store' }).then((r) => r.ok ? r.json() : Promise.reject(r.status)).then((m) => {
-      list.replaceChildren(...m.presets.map((p) => el('button', { type: 'button', class: 'preset-item', onclick: () => openCommunity(p) },
-        el('img', { src: '../presets/' + p.preview, alt: '', loading: 'lazy' }),
-        el('div', null, el('strong', null, p.name), el('span', null, `${p.author} · ${p.pages.length} page${p.pages.length === 1 ? '' : 's'}`)))));
+      // As the plugin's Browse Presets: featured first (1 first), then the newest; each card shows the preset's first page
+      const presets = m.presets.filter((p) => p && p.path).sort((a, b) =>
+        (a.featured || Infinity) - (b.featured || Infinity) || String(b.added || '').localeCompare(String(a.added || '')) || a.name.localeCompare(b.name));
+      const cards = presets.map((p) => {
+        const shot = (p.pageImages || []).find((s) => s) || p.preview;
+        const count = (p.pages || []).length;
+        const meta = [p.author, count === 1 ? '1 page' : `${count} pages`, p.added].filter(Boolean).join(' · ');
+        const card = el('button', { type: 'button', class: 'preset-card', title: p.description || p.name, onclick: () => openCommunity(p) },
+          el('div', { class: 'preset-shot' },
+            shot ? el('img', { src: '../presets/' + shot, alt: '', loading: 'lazy' }) : null,
+            p.featured ? el('span', { class: 'featured' }, 'FEATURED') : null),
+          el('strong', null, p.name),
+          el('span', { class: 'meta' }, meta));
+        card.dataset.search = `${p.name || ''}\n${p.author || ''}`.toLowerCase();
+        return card;
+      });
+      list.replaceChildren(...cards);
+      // Search: every word typed must be in the name or the author
+      const filter = () => {
+        const words = search.value.toLowerCase().split(/\s+/).filter(Boolean);
+        let shown = 0;
+        for (const c of cards) { const hit = words.every((w) => c.dataset.search.includes(w)); c.hidden = !hit; if (hit) shown++; }
+        none.hidden = shown > 0;
+        none.textContent = `No presets match "${search.value.trim()}".`;
+        list.scrollTop = 0;
+      };
+      search.disabled = false;
+      search.addEventListener('input', filter);
+      search.addEventListener('keydown', (e) => {
+        // Enter opens the only match
+        if (e.key === 'Enter') { const shown = cards.filter((c) => !c.hidden); if (shown.length === 1) shown[0].click(); }
+      });
+      search.focus();
     }).catch(() => list.replaceChildren(el('p', null, 'The community presets can\'t be loaded right now.')));
   }
 
@@ -1000,8 +1032,10 @@
   }
 
   // ---------------------------------------------------------------- modal, toast
-  function openModal(title, body, actions) {
+  // opts.wide: a wider dialog (the preset grid)
+  function openModal(title, body, actions, opts = {}) {
     closePicker();
+    $('#modal .modal').classList.toggle('wide', !!opts.wide);
     $('#modalTitle').textContent = title;
     $('#modalBody').replaceChildren(...body);
     $('#modalActions').replaceChildren(...actions);
