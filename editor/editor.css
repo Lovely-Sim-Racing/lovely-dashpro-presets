@@ -36,10 +36,10 @@ a { color: var(--accent); }
 
 /* ---------------------------------------------------------------- header and tabs */
 /* Header: the Lovely Dash Pro wordmark and what this is on the left, the LR shield in the middle, the preset's name
-   and actions on the right */
+   and actions on the right. Header and tabs are one black block, with no line between them */
 .top {
   display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center;
-  padding: 14px 24px; border-bottom: 1px solid var(--line-faint); background: var(--panel);
+  padding: 14px 24px 4px; background: #000;
 }
 .brand { min-width: 0; }
 .brand h1 { margin: 0; line-height: 1; }
@@ -79,7 +79,7 @@ textarea { width: 100%; min-height: 160px; font: 12px/1.4 Consolas, monospace; r
 .icon-btn:hover { color: var(--text); background: var(--button-hover); }
 
 .tabs {
-  display: flex; gap: 4px; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--line-faint); background: var(--panel);
+  display: flex; gap: 4px; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--line-faint); background: #000;
   overflow-x: auto;
 }
 .tab { background: none; border: 0; border-bottom: 3px solid transparent; padding: 12px 14px 10px; font-size: 15px; color: var(--muted); cursor: pointer; white-space: nowrap; }
