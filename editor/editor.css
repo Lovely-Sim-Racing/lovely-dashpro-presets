@@ -51,7 +51,7 @@ a { color: var(--accent); }
 /* The LR shield: its black edge would vanish on the dark header, so a soft light halo keeps its outline */
 /* Links to lsr.gg; centred on the page at every width */
 .brand-logo, .foot-logo { justify-self: center; display: block; line-height: 0; border-radius: 6px; transition: transform .15s; }
-.brand-logo img, .foot-logo img { width: 40px; height: auto; display: block; filter: drop-shadow(0 0 1px rgba(255, 255, 255, .35)); }
+.brand-logo img, .foot-logo img { width: 32px; height: auto; display: block; filter: drop-shadow(0 0 1px rgba(255, 255, 255, .35)); }
 .brand-logo:hover, .foot-logo:hover { transform: scale(1.06); }
 .foot-logo img { width: 28px; }
 .top-actions { justify-self: end; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; align-items: center; }
@@ -101,17 +101,15 @@ main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24
 .foot-link { justify-self: end; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
 .foot-promo { color: #ff00d8; font-weight: 600; }
 
-/* Lovely Dash Pro promo under the tabs: a flat deep magenta (the PRO badge's colour, darkened), slim, closable */
+/* Lovely Dash Pro promo under the tabs: a flat deep magenta (the PRO badge's colour, darkened), slim, always shown */
 .promo {
   display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
-  padding: 9px 48px; position: relative; font-size: 13px; color: #e2cfdf; background: #2a0726;
+  padding: 9px 24px; font-size: 13px; color: #e2cfdf; background: #2a0726;
 }
-.promo[hidden] { display: none; }
 .promo p { margin: 0; text-align: center; }
 .promo strong { color: var(--text); font-weight: 600; }
 .promo-cta { background: #ff00d8; color: #fff; font-weight: 600; text-decoration: none; padding: 4px 12px 5px; border-radius: 4px; white-space: nowrap; }
 .promo-cta:hover { background: #ff3be2; }
-.promo-close { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); }
 
 /* ---------------------------------------------------------------- sections */
 .section-title {

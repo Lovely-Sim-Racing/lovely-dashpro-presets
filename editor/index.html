@@ -21,6 +21,12 @@
   <link rel="stylesheet" href="editor.css">
 </head>
 <body>
+  <!-- Lovely Dash Pro promo: at the very top, always shown (no close); the footer has a link too -->
+  <aside class="promo" id="promo">
+    <p><strong>Design your own SimHub dashboard</strong> with the Lovely Dash Pro.</p>
+    <a class="promo-cta" href="https://lsr.gg/dashpro" target="_blank" rel="noopener">Find out more</a>
+  </aside>
+
   <header class="top">
     <div class="brand">
       <h1><img class="brand-wordmark" src="lovely-dash-pro.png" alt="Lovely Dash Pro" width="228" height="24"><span class="brand-title">Online Preset Editor</span></h1>
@@ -47,13 +53,6 @@
       <button class="link" id="btnRedo" type="button" title="Redo (Ctrl+Y)">Redo</button>
     </div>
   </nav>
-
-  <!-- Lovely Dash Pro promo: closable (remembered in the browser); the footer keeps a link -->
-  <aside class="promo" id="promo" hidden>
-    <p><strong>Run your presets in SimHub</strong> with the Lovely Dash Pro. Become a Member and</p>
-    <a class="promo-cta" href="https://lsr.gg/dashpro" target="_blank" rel="noopener">Get the Lovely Dash Pro</a>
-    <button class="icon-btn promo-close" id="promoClose" type="button" aria-label="Close" title="Close">✕</button>
-  </aside>
 
   <main id="main">
     <div class="loading" id="loading">Loading…</div>
