@@ -50,7 +50,9 @@ function Get-PageRows($layout) {
     $bars = $layout.SidebarTopbar; $mode = [int]$bars.BarMode
     $rows = @()
     if ([int]$layout.PageLayout -eq 1) {
-        $rows += Row 'Layout' ("Full Screen: " + $fullScreenPages[[int]$layout.FullScreenPage])
+        # By name (FullScreen, plugin 4.2.0.0 and up), else by number (FullScreenPage)
+        $fsName = if ($layout.FullScreen -and $fullScreenPages -contains $layout.FullScreen) { $layout.FullScreen } else { $fullScreenPages[[int]$layout.FullScreenPage] }
+        $rows += Row 'Layout' ("Full Screen: " + $fsName)
     } else {
         $rows += Row 'Layout' 'Modular'
     }
