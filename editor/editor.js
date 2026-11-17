@@ -211,8 +211,8 @@
     pushUndo(JSON.stringify({ preset: state.preset, page: state.page, name: state.name }));
     state.preset = result.preset;
     state.page = 0;
+    // The name it was opened as (the community preset's, the file's): offered when exporting and submitting
     if (name != null) state.name = name;
-    $('#presetName').value = state.name;
     save(); render(); updateUndoButtons();
     if (result.warnings.length) showProblems(`Opened ${source || 'the preset'}`, [], result.warnings);
     else toast(`Opened ${source || 'the preset'}`);
@@ -869,22 +869,44 @@
     area.focus();
   }
 
-  const fileName = () => {
-    const base = (state.name || 'Dash Pro Preset').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[\\/:*?"<>|]+/g, '-').trim();
+  // The .dashpro file name for a preset name: accents dropped, characters Windows doesn't allow replaced
+  const fileName = (name = state.name) => {
+    const base = (name || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[\\/:*?"<>|]+/g, '-').trim();
     return (base || 'Dash Pro Preset') + '.dashpro';
   };
+
+  // A labelled form field for the Export and Submit dialogs
+  const formField = (label, input, hint) => el('label', { style: { display: 'grid', gap: '4px', marginBottom: '12px' } },
+    el('span', null, label), input, hint ? el('span', { style: { color: 'var(--muted)', fontSize: '12px' } }, hint) : null);
 
   function exportDialog() {
     const check = validate(state.preset);
     if (check.problems.length) { showProblems('Fix these before exporting', check.problems, check.warnings); return; }
     const text = exportText();
+    const name = el('input', { type: 'text', maxlength: '60', value: state.name || '', placeholder: 'My Preset', autocomplete: 'off' });
+    const error = el('p', { style: { color: 'var(--danger)', minHeight: '1.4em', margin: '0' } });
+    const downloadBtn = el('button', { type: 'button', class: 'btn btn-accent' });
+    const update = () => { downloadBtn.textContent = `Download ${fileName(name.value.trim())}`; error.textContent = ''; };
+    const keepName = () => {
+      const n = name.value.trim();
+      if (!n) { error.textContent = 'The preset needs a name.'; name.focus(); return false; }
+      if (n !== state.name) { state.name = n; save(); }
+      return true;
+    };
+    downloadBtn.addEventListener('click', () => { if (keepName()) { download(text); closeModal(); } });
+    name.addEventListener('input', update);
+    name.addEventListener('keydown', (e) => { if (e.key === 'Enter') downloadBtn.click(); });
+    update();
     const body = [
       el('p', null, `${pages().length} page${pages().length === 1 ? '' : 's'}, with Alerts & Notifications and Lap Review. In the Lovely Plugin, open Dash Pro and click Import, then pick this file.`),
+      formField('Preset name', name, 'Names the file. Submitting it uses this name too.'),
     ];
     if (check.warnings.length) body.push(el('ul', { class: 'warnings' }, check.warnings.map((w) => el('li', null, w))));
+    body.push(error);
     openModal('Export the preset', body, [
-      el('button', { type: 'button', class: 'btn', onclick: () => { copyText(text); } }, 'Copy'),
-      el('button', { type: 'button', class: 'btn btn-accent', onclick: () => { download(text); closeModal(); } }, `Download ${fileName()}`)]);
+      el('button', { type: 'button', class: 'btn', onclick: () => { if (keepName()) copyText(text); } }, 'Copy'),
+      downloadBtn]);
+    name.focus(); name.select();
   }
 
   // ---------------------------------------------------------------- submit (GitHub's Submit a Preset form, filled in)
@@ -923,7 +945,7 @@
     if (check.problems.length) { showProblems('Fix these before submitting', check.problems, check.warnings); return; }
     let author = '';
     try { author = localStorage.getItem(STORE + '-author') || ''; } catch (e) { /* no storage */ }
-    const field = (label, input, hint) => el('label', { style: { display: 'grid', gap: '4px', marginBottom: '12px' } }, el('span', null, label), input, hint ? el('span', { style: { color: 'var(--muted)', fontSize: '12px' } }, hint) : null);
+    const field = formField;
     const name = el('input', { type: 'text', maxlength: '60', value: state.name || '', placeholder: 'LMU Endurance' });
     const who = el('input', { type: 'text', maxlength: '60', value: author, placeholder: 'Your name or team' });
     const desc = el('textarea', { rows: '3', maxlength: '400', placeholder: 'Fuel and Virtual Energy focused, with a qualifying page.', style: { minHeight: '70px', font: 'inherit' } });
@@ -933,7 +955,7 @@
       const fields = { name: name.value.trim(), author: who.value.trim(), description: desc.value.trim(), tags: tags.value.trim() };
       if (!fields.name) { error.textContent = 'The preset needs a name.'; name.focus(); return; }
       if (!fields.description) { error.textContent = 'Add a sentence or two about it.'; desc.focus(); return; }
-      if (fields.name !== state.name) { state.name = fields.name; $('#presetName').value = fields.name; save(); }
+      if (fields.name !== state.name) { state.name = fields.name; save(); }
       try { localStorage.setItem(STORE + '-author', fields.author); } catch (e) { /* no storage */ }
       const text = exportText();
       const { url, how } = await submitUrl(fields, text);
@@ -1008,11 +1030,10 @@
     document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => { state.tab = t.dataset.tab; state.layoutMode = false; save(); render(); }));
     $('#btnUndo').addEventListener('click', () => undo(-1));
     $('#btnRedo').addEventListener('click', () => undo(1));
-    $('#btnNew').addEventListener('click', () => { if (loadPreset(S.defaults.preset, '', 'a new preset (the Dash Pro Default)')) $('#presetName').focus(); });
+    $('#btnNew').addEventListener('click', () => loadPreset(S.defaults.preset, '', 'a new preset (the Dash Pro Default)'));
     $('#btnOpen').addEventListener('click', openDialog);
     $('#btnExport').addEventListener('click', exportDialog);
     $('#btnSubmit').addEventListener('click', submitDialog);
-    $('#presetName').addEventListener('input', (e) => { state.name = e.target.value; save(); });
     $('#fileInput').addEventListener('change', (e) => {
       const file = e.target.files[0];
       e.target.value = '';
@@ -1065,7 +1086,6 @@
     // ?preset=<id>: open a community preset (from the presets' pages)
     const id = new URLSearchParams(location.search).get('preset');
     if (!restore()) { state.preset = normalize(S.defaults.preset).preset; state.name = ''; }
-    $('#presetName').value = state.name;
     render(); updateUndoButtons();
     if (id) {
       fetch('../presets/manifest.json', { cache: 'no-store' }).then((r) => r.json()).then((m) => {
