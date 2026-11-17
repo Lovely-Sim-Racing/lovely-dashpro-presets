@@ -885,8 +885,7 @@
     const text = exportText();
     const name = el('input', { type: 'text', maxlength: '60', value: state.name || '', placeholder: 'My Preset', autocomplete: 'off' });
     const error = el('p', { style: { color: 'var(--danger)', minHeight: '1.4em', margin: '0' } });
-    const downloadBtn = el('button', { type: 'button', class: 'btn btn-accent' });
-    const update = () => { downloadBtn.textContent = `Download ${fileName(name.value.trim())}`; error.textContent = ''; };
+    const downloadBtn = el('button', { type: 'button', class: 'btn btn-accent' }, 'Download');
     const keepName = () => {
       const n = name.value.trim();
       if (!n) { error.textContent = 'The preset needs a name.'; name.focus(); return false; }
@@ -894,9 +893,8 @@
       return true;
     };
     downloadBtn.addEventListener('click', () => { if (keepName()) { download(text); closeModal(); } });
-    name.addEventListener('input', update);
+    name.addEventListener('input', () => { error.textContent = ''; });
     name.addEventListener('keydown', (e) => { if (e.key === 'Enter') downloadBtn.click(); });
-    update();
     const body = [
       el('p', null, `${pages().length} page${pages().length === 1 ? '' : 's'}, with Alerts & Notifications and Lap Review. In the Lovely Plugin, open Dash Pro and click Import, then pick this file.`),
       formField('Preset name', name, 'Names the file. Submitting it uses this name too.'),
@@ -904,6 +902,7 @@
     if (check.warnings.length) body.push(el('ul', { class: 'warnings' }, check.warnings.map((w) => el('li', null, w))));
     body.push(error);
     openModal('Export the preset', body, [
+      el('button', { type: 'button', class: 'btn', onclick: closeModal }, 'Cancel'),
       el('button', { type: 'button', class: 'btn', onclick: () => { if (keepName()) copyText(text); } }, 'Copy'),
       downloadBtn]);
     name.focus(); name.select();
