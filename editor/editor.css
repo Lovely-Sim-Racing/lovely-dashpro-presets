@@ -149,6 +149,12 @@ main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24
 
 .page-bar select { min-width: 220px; }
 .page-bar .links { display: flex; gap: 12px; }
+/* The page actions as icons, like the plugin: 16px, grey, the accent color on hover, 14px apart */
+.page-bar .page-actions { gap: 14px; margin-left: 4px; align-items: center; }
+.icon-link { background: none; border: 0; padding: 0; color: var(--muted); cursor: pointer; display: inline-flex; line-height: 0; }
+.icon-link svg { width: 16px; height: 16px; fill: currentColor; }
+.icon-link:hover:not(:disabled) { color: var(--accent); }
+.icon-link:disabled { color: var(--dim); opacity: .5; cursor: default; }
 
 /* ---------------------------------------------------------------- the dash */
 .toolbars { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 16px; align-items: center; margin-bottom: 12px; }

@@ -603,11 +603,12 @@
     select.value = String(state.page);
 
     main.append(el('div', { class: 'bar page-bar' },
-      el('div', { class: 'group' }, select, el('div', { class: 'links' },
-        el('button', { type: 'button', class: 'link', disabled: state.page === 0, onclick: () => movePage(-1) }, 'Up'),
-        el('button', { type: 'button', class: 'link', disabled: state.page === pages().length - 1, onclick: () => movePage(1) }, 'Down'),
-        el('button', { type: 'button', class: 'link', onclick: renamePage }, 'Rename'),
-        el('button', { type: 'button', class: 'link', disabled: pages().length < 2, onclick: deletePage }, 'Delete'))),
+      el('div', { class: 'group' }, select, el('div', { class: 'links page-actions' },
+        pageAction('ArrowUp', 'Move page up', state.page === 0, () => movePage(-1)),
+        pageAction('ArrowDown', 'Move page down', state.page === pages().length - 1, () => movePage(1)),
+        pageAction('Pen', 'Rename page', false, renamePage),
+        pageAction('Copy', 'Duplicate page', false, duplicatePage),
+        pageAction('Trash', 'Delete page', pages().length < 2, deletePage))),
       el('div', { class: 'group' }, el('span', { class: 'label' }, 'Active in Session'),
         SESSIONS.map((s) => toggle(s, L['Is' + s], (v) => change(() => { L['Is' + s] = v; }))))));
 
@@ -651,6 +652,42 @@
       pages().push({ Name: name, Layout: clone(S.defaults.page) });
       state.page = pages().length - 1;
     }));
+  }
+
+  // The plugin's page action icons: FontAwesome 5 paths as SimHub's MahApps icon pack draws them
+  // (ArrowUpSolid, ArrowDownSolid, PenSolid, CopyRegular, TrashAltRegular)
+  const ICONS = {
+    ArrowUp: 'M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z',
+    ArrowDown: 'M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z',
+    Pen: 'M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z',
+    Copy: 'M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z',
+    Trash: 'M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z',
+  };
+
+  function icon(name) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 512 512');
+    svg.setAttribute('aria-hidden', 'true');
+    const path = document.createElementNS(NS, 'path');
+    path.setAttribute('d', ICONS[name]);
+    svg.append(path);
+    return svg;
+  }
+
+  // An icon button for the page bar: grey, the accent color on hover, the name as tooltip (as the plugin)
+  const pageAction = (name, label, disabled, onClick) =>
+    el('button', { type: 'button', class: 'icon-link', title: label, 'aria-label': label, disabled, onclick: onClick }, icon(name));
+
+  // As the plugin: a copy of the page straight after it (same layout and sessions), "<page> (copy)", "(copy 2)" ... and selected
+  function duplicatePage() {
+    const original = pages()[state.page];
+    let name = `${original.Name} (copy)`;
+    for (let n = 2; pages().some((p) => p.Name === name); n++) name = `${original.Name} (copy ${n})`;
+    change(() => {
+      pages().splice(state.page + 1, 0, { Name: name, Layout: clone(original.Layout) });
+      state.page += 1;
+    });
   }
 
   function renamePage() { promptName('Rename the page', pages()[state.page].Name, 'Rename', (name) => change(() => { pages()[state.page].Name = name; })); }
