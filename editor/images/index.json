@@ -1,5 +1,6 @@
 {
   "scale": 2,
+  "version": "2026-11-18.1945",
   "topbar": {
     "Delta": "topbar/delta.png",
     "Track Gaps": "topbar/track-gaps.png",

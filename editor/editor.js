@@ -46,7 +46,9 @@
     return e;
   }
 
-  const img = (path) => path ? 'images/' + path : null;
+  // index.json's "version" (new on every image export) goes on each image address, so caches (Cloudflare keeps
+  // images 4 h, browsers too) fetch the new images after an export instead of the old ones
+  const img = (path) => path ? 'images/' + path + (IMG && IMG.version ? '?v=' + IMG.version : '') : null;
 
   // JavaScript lists number-like keys ("5", a Lap Review strip layout) before the others, which would reorder the
   // plugin's JSON. They're read with a ~ in front (kept in order) and written back without it.
