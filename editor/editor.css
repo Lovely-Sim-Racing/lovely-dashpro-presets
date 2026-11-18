@@ -116,13 +116,13 @@ main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24
 .consent-actions { display: flex; justify-content: flex-end; gap: 8px; }
 @media (max-width: 480px) { .consent { left: 16px; right: 16px; max-width: none; } }
 
-/* Lovely Dash Pro promo at the top: a flat deep magenta (the PRO badge's colour, darkened), slim; ✕ hides it for the visit */
+/* Lovely Dash Pro promo at the top: a flat deep Lovely Blue (#2B98FB, darkened), slim; ✕ hides it for the visit */
 .promo {
   display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
-  padding: 9px 48px; position: relative; font-size: 13px; color: #e2cfdf; background: #2a0726;
+  padding: 9px 48px; position: relative; font-size: 13px; color: #cfe2f5; background: #0b2d4d;
 }
 .promo[hidden] { display: none; }
-.promo-close { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #e2cfdf; }
+.promo-close { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #cfe2f5; }
 .promo-close:hover { background: rgba(255, 255, 255, .12); color: #fff; }
 .promo p { margin: 0; text-align: center; }
 .promo strong { color: var(--text); font-weight: 600; }
