@@ -126,8 +126,8 @@ main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 20px 24
 .promo-close:hover { background: rgba(255, 255, 255, .12); color: #fff; }
 .promo p { margin: 0; text-align: center; }
 .promo strong { color: var(--text); font-weight: 600; }
-.promo-cta { background: #ff00d8; color: #fff; font-weight: 600; text-decoration: none; padding: 4px 12px 5px; border-radius: 4px; white-space: nowrap; }
-.promo-cta:hover { background: #ff3be2; }
+.promo-cta { background: #2b98fb; color: #fff; font-weight: 600; text-decoration: none; padding: 4px 12px 5px; border-radius: 4px; white-space: nowrap; }
+.promo-cta:hover { background: #4fabfc; }
 
 /* ---------------------------------------------------------------- sections */
 .section-title {
