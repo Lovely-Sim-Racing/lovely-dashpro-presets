@@ -247,6 +247,33 @@
       "added": "2026-11-11",
       "updated": "2026-11-12",
       "featured": 5
+    },
+    {
+      "id": "thaus0n-iracing",
+      "name": "Thaus0n iRacing",
+      "author": "Thaus0n",
+      "description": "For iRacing, with one layout for every session: TC, ABS and brake bias on the left, the delta and lap times on the right, fuel along the bottom and the PC clock in the centre, plus a full screen leaderboard for practice and the race.",
+      "tags": [
+        "iRacing",
+        "16:9"
+      ],
+      "pages": [
+        "Practice & Quali",
+        "Race",
+        "Leaderboard"
+      ],
+      "version": 1,
+      "path": "thaus0n-iracing/thaus0n-iracing.dashpro",
+      "preview": "thaus0n-iracing/preview.png",
+      "pageImages": [
+        "thaus0n-iracing/pages/01-practice-quali.png",
+        "thaus0n-iracing/pages/02-race.png",
+        "thaus0n-iracing/pages/03-leaderboard.png"
+      ],
+      "lapReview": "thaus0n-iracing/lap-review.png",
+      "added": "2026-11-19",
+      "updated": "2026-11-19",
+      "featured": null
     }
   ]
 }
