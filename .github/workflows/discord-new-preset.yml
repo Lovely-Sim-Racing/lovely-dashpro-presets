@@ -1,6 +1,8 @@
 # Announces each new preset on Discord when it goes live: a push to main that adds a presets/{id}/info.json.
 # Posts the name, author, description, tags and the first page's screenshot, linked to the preset's page.
 # Needs the repo secret DISCORD_WEBHOOK_URL (Discord channel > Edit Channel > Integrations > Webhooks).
+# Pings the @notify-dashpro role when the repo variable DISCORD_NOTIFY_ROLE_ID holds its ID (Discord, with
+# Developer Mode on: Server Settings > Roles > notify-dashpro > ... > Copy Role ID). Without it: no ping.
 # Run it by hand (Actions > Announce new preset on Discord > Run workflow) to post one preset again, e.g. to test.
 name: Announce new preset on Discord
 
@@ -25,6 +27,7 @@ jobs:
       - name: Post new presets
         env:
           WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          ROLE: ${{ vars.DISCORD_NOTIFY_ROLE_ID }}
           BEFORE: ${{ github.event.before }}
           MANUAL: ${{ github.event.inputs.preset }}
           REPO: ${{ github.repository }}
@@ -52,8 +55,11 @@ jobs:
               --slurpfile info "$info" \
               --arg url "https://github.com/$REPO/tree/main/presets/$id" \
               --arg image "$image" \
+              --arg role "$ROLE" \
               '$info[0] as $p | {
                 username: "Lovely Dash Pro Presets",
+                content: (if $role != "" then "<@&" + $role + ">" else "" end),
+                allowed_mentions: { roles: (if $role != "" then [$role] else [] end) },
                 embeds: [{
                   title: ("New preset: " + $p.name),
                   url: $url,
