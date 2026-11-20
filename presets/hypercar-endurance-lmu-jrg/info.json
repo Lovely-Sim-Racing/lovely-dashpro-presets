@@ -1,0 +1,8 @@
+{
+  "name": "Hypercar Endurance LMU JRG",
+  "author": "JRG Racing",
+  "description": "For LMU Hypercars, on two pages used in every session, with no separate qualifying page: the main page has TC, the class gaps and the tyres on the left, regen, SoC, brake bias and migration on the right, and fuel, VE and pit loss along the bottom; the second page swaps in a large multifunction panel on the left (tyres) and the car's settings on the right.",
+  "tags": ["LMU", "Hypercar", "16:9"],
+  "added": "2026-11-20",
+  "updated": "2026-11-20"
+}

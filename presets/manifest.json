@@ -65,6 +65,32 @@
       "featured": null
     },
     {
+      "id": "hypercar-endurance-lmu-jrg",
+      "name": "Hypercar Endurance LMU JRG",
+      "author": "JRG Racing",
+      "description": "For LMU Hypercars, on two pages used in every session, with no separate qualifying page: the main page has TC, the class gaps and the tyres on the left, regen, SoC, brake bias and migration on the right, and fuel, VE and pit loss along the bottom; the second page swaps in a large multifunction panel on the left (tyres) and the car's settings on the right.",
+      "tags": [
+        "LMU",
+        "Hypercar",
+        "16:9"
+      ],
+      "pages": [
+        "JRG LMU Hyper Main",
+        "JRG Hyper MFM P2"
+      ],
+      "version": 1,
+      "path": "hypercar-endurance-lmu-jrg/hypercar-endurance-lmu-jrg.dashpro",
+      "preview": "hypercar-endurance-lmu-jrg/preview.png",
+      "pageImages": [
+        "hypercar-endurance-lmu-jrg/pages/01-jrg-lmu-hyper-main.png",
+        "hypercar-endurance-lmu-jrg/pages/02-jrg-hyper-mfm-p2.png"
+      ],
+      "lapReview": "hypercar-endurance-lmu-jrg/lap-review.png",
+      "added": "2026-11-20",
+      "updated": "2026-11-20",
+      "featured": null
+    },
+    {
       "id": "lmu-gt3",
       "name": "LMU GT3",
       "author": "Clive Melbourne",
