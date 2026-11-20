@@ -1,0 +1,71 @@
+# Announces each new preset on Discord when it goes live: a push to main that adds a presets/{id}/info.json.
+# Posts the name, author, description, tags and the first page's screenshot, linked to the preset's page.
+# Needs the repo secret DISCORD_WEBHOOK_URL (Discord channel > Edit Channel > Integrations > Webhooks).
+# Run it by hand (Actions > Announce new preset on Discord > Run workflow) to post one preset again, e.g. to test.
+name: Announce new preset on Discord
+
+on:
+  push:
+    branches: [main]
+    paths: ['presets/*/info.json']
+  workflow_dispatch:
+    inputs:
+      preset:
+        description: Preset folder name (e.g. simple-gt3)
+        required: true
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Post new presets
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          BEFORE: ${{ github.event.before }}
+          MANUAL: ${{ github.event.inputs.preset }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          if [ -z "$WEBHOOK" ]; then echo "No DISCORD_WEBHOOK_URL secret: nothing posted."; exit 0; fi
+
+          if [ -n "$MANUAL" ]; then
+            ids="$MANUAL"
+          elif [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            echo "No previous commit to compare with: nothing posted."; exit 0
+          else
+            # Only presets added in this push, not updates to existing ones
+            ids=$(git diff --name-only --diff-filter=A "$BEFORE" "$SHA" -- 'presets/*/info.json' | cut -d/ -f2)
+          fi
+
+          for id in $ids; do
+            info="presets/$id/info.json"
+            if [ ! -f "$info" ]; then echo "No $info: skipped."; continue; fi
+            shot=$(ls "presets/$id/pages/"01-*.png 2>/dev/null | head -n 1)
+            image=""
+            if [ -n "$shot" ]; then image="https://raw.githubusercontent.com/$REPO/$SHA/$shot"; fi
+
+            payload=$(jq -n \
+              --slurpfile info "$info" \
+              --arg url "https://github.com/$REPO/tree/main/presets/$id" \
+              --arg image "$image" \
+              '$info[0] as $p | {
+                username: "Lovely Dash Pro Presets",
+                embeds: [{
+                  title: ("New preset: " + $p.name),
+                  url: $url,
+                  description: $p.description,
+                  color: 2003199,
+                  fields: ([{ name: "Author", value: $p.author, inline: true }]
+                    + (if ($p.tags | length) > 0 then [{ name: "Tags", value: ($p.tags | join(", ")), inline: true }] else [] end)),
+                  image: { url: $image }
+                }]
+              } | if $image == "" then del(.embeds[0].image) else . end')
+
+            curl -sS --fail-with-body -H "Content-Type: application/json" -d "$payload" "$WEBHOOK"
+            echo "Posted $id"
+            sleep 2
+          done
