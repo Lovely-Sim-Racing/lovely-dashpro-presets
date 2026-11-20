@@ -1,0 +1,8 @@
+{
+  "name": "Simple GT3",
+  "author": "JRG Racing",
+  "description": "A simple GT3 layout for Le Mans Ultimate. The Primary page for practice and the race has large tire modules on the left and fuel, VE and the pit stop on the right. The Quali page shows lap times, time remaining and tire temperatures, and a full screen Damage page completes the set.",
+  "tags": ["LMU", "GT3", "16:9"],
+  "added": "2026-11-20",
+  "updated": "2026-11-20"
+}
