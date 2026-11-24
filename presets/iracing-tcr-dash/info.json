@@ -1,0 +1,8 @@
+{
+  "name": "iRacing TCR Dash",
+  "author": "Chris Indeherberge",
+  "description": "For iRacing's TCR class, with a page for each session that follows your own class in multiclass races. The race page has the gaps to the class cars ahead and behind, fuel use, the pit window and pit loss; qualifying is all about lap times, with the session and class bests; practice keeps the lap times and fuel use in view. RPM and speed in the centre, brake bias and ABS at the bottom right.",
+  "tags": ["iRacing", "TCR", "Endurance", "Multiclass", "16:9"],
+  "added": "2026-11-24",
+  "updated": "2026-11-24"
+}

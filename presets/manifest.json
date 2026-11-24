@@ -91,6 +91,36 @@
       "featured": null
     },
     {
+      "id": "iracing-tcr-dash",
+      "name": "iRacing TCR Dash",
+      "author": "Chris Indeherberge",
+      "description": "For iRacing's TCR class, with a page for each session that follows your own class in multiclass races. The race page has the gaps to the class cars ahead and behind, fuel use, the pit window and pit loss; qualifying is all about lap times, with the session and class bests; practice keeps the lap times and fuel use in view. RPM and speed in the centre, brake bias and ABS at the bottom right.",
+      "tags": [
+        "iRacing",
+        "TCR",
+        "Endurance",
+        "Multiclass",
+        "16:9"
+      ],
+      "pages": [
+        "Primary",
+        "Qualification",
+        "Practice"
+      ],
+      "version": 1,
+      "path": "iracing-tcr-dash/iracing-tcr-dash.dashpro",
+      "preview": "iracing-tcr-dash/preview.png",
+      "pageImages": [
+        "iracing-tcr-dash/pages/01-primary.png",
+        "iracing-tcr-dash/pages/02-qualification.png",
+        "iracing-tcr-dash/pages/03-practice.png"
+      ],
+      "lapReview": "iracing-tcr-dash/lap-review.png",
+      "added": "2026-11-24",
+      "updated": "2026-11-24",
+      "featured": null
+    },
+    {
       "id": "lmu-gt3",
       "name": "LMU GT3",
       "author": "Clive Melbourne",
