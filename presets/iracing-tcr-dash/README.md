@@ -3,15 +3,15 @@
 
 # iRacing TCR Dash
 
-For iRacing's TCR class, with a page for each session that follows your own class in multiclass races. The race page has the gaps to the class cars ahead and behind, fuel use, the pit window and pit loss; qualifying is all about lap times, with the session and class bests; practice keeps the lap times and fuel use in view. RPM and speed in the centre, brake bias and ABS at the bottom right.
+For iRacing's TCR class, with a page for each session that follows your own class in multiclass races. Practice and qualifying are about lap times, with the last lap, the session best and the delta (and the class best in qualifying), plus fuel use; the race page has the gaps to the class cars ahead and behind, fuel use, the pit window and pit loss. RPM and speed in the centre, brake bias and ABS at the bottom right.
 
-![Primary](pages/01-primary.png)
+![Practice](pages/01-practice.png)
 
 | | |
 | --- | --- |
 | **Author** | Chris Indeherberge |
 | **Tags** | `iRacing` `TCR` `Endurance` `Multiclass` `16:9` |
-| **Pages** | 3: Primary, Qualification, Practice |
+| **Pages** | 3: Practice, Qualification, Race |
 | **Added** | 2026-11-24 |
 | **Updated** | 2026-11-24 |
 | **Preset format** | v1 |
@@ -25,8 +25,38 @@ Importing replaces the pages and layouts, the Lap Review and the Alerts & Notifi
 
 ## Pages
 
-### 1. Primary
-![Primary](pages/01-primary.png)
+### 1. Practice
+![Practice](pages/01-practice.png)
+
+| | |
+| --- | --- |
+| **Layout** | Modular |
+| **Sessions** | Practice |
+| **Topbar** | Utility Bar |
+| **Left modules** | 3 x 3: Last Lap / Session Best / Fuel |
+| **Right modules** | 3 x 3: Delta / Current Lap / Estimated Lap |
+| **Central column** | RPM, Speed, Weather |
+| **Bottom left** | Fuel 5 Lap Average |
+| **Bottom right** | Brake Bias, ABS |
+| **Data row** | Fuel Laps Left, Fuel Time Left, Incidents, PC Time |
+
+### 2. Qualification
+![Qualification](pages/02-qualification.png)
+
+| | |
+| --- | --- |
+| **Layout** | Modular |
+| **Sessions** | Qualifying |
+| **Topbar** | Utility Bar |
+| **Left modules** | 3 x 3: Last Lap / Session Best / Class Session Best |
+| **Right modules** | 3 x 3: Delta / Current Lap / Estimated Lap |
+| **Central column** | RPM, Speed, Weather |
+| **Bottom left** | Fuel |
+| **Bottom right** | Brake Bias, ABS |
+| **Data row** | Fuel Laps Left, Fuel Time Left, Incidents, PC Time |
+
+### 3. Race
+![Race](pages/03-race.png)
 
 | | |
 | --- | --- |
@@ -39,36 +69,6 @@ Importing replaces the pages and layouts, the Lap Review and the Alerts & Notifi
 | **Bottom left** | Refuel, Pit Window |
 | **Bottom right** | Brake Bias, ABS |
 | **Data row** | Fuel Last Lap, Fuel Time Left, Incidents, PC Time |
-
-### 2. Qualification
-![Qualification](pages/02-qualification.png)
-
-| | |
-| --- | --- |
-| **Layout** | Modular |
-| **Sessions** | Qualifying |
-| **Topbar** | Utility Bar |
-| **Left modules** | 3 x 3: Session Best / Class Session Best |
-| **Right modules** | 3 x 3: Delta / Current Lap / Estimated Lap |
-| **Central column** | RPM, Speed, Weather |
-| **Bottom left** | Fuel |
-| **Bottom right** | Brake Bias, ABS |
-| **Data row** | Fuel Laps Left, Fuel Time Left, Incidents, PC Time |
-
-### 3. Practice
-![Practice](pages/03-practice.png)
-
-| | |
-| --- | --- |
-| **Layout** | Modular |
-| **Sessions** | Practice |
-| **Topbar** | Utility Bar |
-| **Left modules** | 3 x 3: Session Best / Class Session Best / Fuel |
-| **Right modules** | 3 x 3: Delta / Current Lap / Estimated Lap |
-| **Central column** | RPM, Speed, Weather |
-| **Bottom left** | Fuel 5 Lap Average |
-| **Bottom right** | Brake Bias, ABS |
-| **Data row** | Fuel Laps Left, Fuel Time Left, Incidents, PC Time |
 
 ## Lap Review
 ![Lap Review](lap-review.png)
