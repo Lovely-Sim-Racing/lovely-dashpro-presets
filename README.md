@@ -6,6 +6,7 @@
 
 <p align="center">
 Ready-made page setups for Lovely Dashboard Pro, shared by the community.<br>
+Build your own in the <a href="https://dashpro.lsr.gg/editor/"><strong>Online Preset Editor</strong></a>.<br>
 <strong>Preset Format v1</strong>
 </p>
 
@@ -17,6 +18,9 @@ Ready-made page setups for Lovely Dashboard Pro, shared by the community.<br>
 Open **Dash Pro** and click **Browse Presets** (top right) to see every preset here, with screenshots. Pick one and click **Import**.
 
 A preset replaces the pages and layouts, the Lap Review settings and the Alerts & Notifications settings of whatever you have selected: All Devices, a device, a sim, a class or a single vehicle. Everything else stays as it is.
+
+### In the Online Editor
+The **[Online Preset Editor](https://dashpro.lsr.gg/editor/)** is the plugin's Dash Pro editor in your browser, with a live preview of every page. Click **Open** to start from any preset here (or your own `.dashpro` file), change it, then click **Export** to save a `.dashpro` file you can import in the plugin, or **Submit** to share it here.
 
 ### By hand
 Download a preset's `.dashpro` file from its folder in [presets](presets) (`dash-pro-default/dash-pro-default.dashpro`, for example), then click **Import** (top right of the Dash Pro page) and choose the file.
@@ -168,6 +172,8 @@ Sharing a preset takes a couple of minutes, and you don't need to know Git. See 
 1. In the Lovely Plugin, set up your pages and click **Export** at the top right of the Dash Pro page.
 2. Open a new issue with the **[Submit a Preset](../../issues/new?template=submit-preset.yml)** form.
 3. Fill in a name and a short description, and attach your preset: zip the `.dashpro` file and drag the zip in (GitHub doesn't accept `.dashpro` files directly), or paste the file's contents.
+
+Built your preset in the [Online Preset Editor](https://dashpro.lsr.gg/editor/)? Click **Submit** there instead: it opens the form with everything filled in, preset included.
 
 We check every submission, make the screenshots and add it to the list. You'll get a reply on your issue when it's live, or if something needs fixing.
 

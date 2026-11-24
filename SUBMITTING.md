@@ -29,6 +29,8 @@ Before you export, check that:
 - Each page is on in the right sessions (Practice, Qualifying, Race).
 - You've tried it in a session, so nothing is missing or overlapping.
 
+**Made it in the [Online Preset Editor](https://dashpro.lsr.gg/editor/)?** Click **Submit** there. It opens the Submit a Preset form with your preset and its name already filled in, so you can skip to step 3 and check the fields.
+
 ## 2. Open the Submit a Preset form
 Open a new issue with the **[Submit a Preset](../../issues/new?template=submit-preset.yml)** form. You need a free GitHub account.
 
