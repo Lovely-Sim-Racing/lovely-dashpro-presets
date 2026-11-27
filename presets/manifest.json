@@ -147,6 +147,39 @@
       "featured": null
     },
     {
+      "id": "lmu-gt3-bmw-style",
+      "name": "LMU GT3 BMW Style",
+      "author": "Ntimfo",
+      "description": "For LMU GT3 cars, with a Race page, a Quali page for practice and qualifying, and full-screen Track Opponents, Relative and Damage pages. The race page has fuel this lap, laps and time left, the tires, engine map, TC, ABS and brake bias, the delta and track gaps; the quali page has the delta, estimated lap, all-time best and the cars ahead and behind.",
+      "tags": [
+        "LMU",
+        "GT3",
+        "BMW M4",
+        "16:9"
+      ],
+      "pages": [
+        "Race",
+        "Quali",
+        "Track Opponents",
+        "Relative",
+        "Damage"
+      ],
+      "version": 1,
+      "path": "lmu-gt3-bmw-style/lmu-gt3-bmw-style.dashpro",
+      "preview": "lmu-gt3-bmw-style/preview.png",
+      "pageImages": [
+        "lmu-gt3-bmw-style/pages/01-race.png",
+        "lmu-gt3-bmw-style/pages/02-quali.png",
+        "lmu-gt3-bmw-style/pages/03-track-opponents.png",
+        "lmu-gt3-bmw-style/pages/04-relative.png",
+        "lmu-gt3-bmw-style/pages/05-damage.png"
+      ],
+      "lapReview": "lmu-gt3-bmw-style/lap-review.png",
+      "added": "2026-11-27",
+      "updated": "2026-11-27",
+      "featured": null
+    },
+    {
       "id": "lmu-hyper",
       "name": "LMU Hyper",
       "author": "Rontti",
